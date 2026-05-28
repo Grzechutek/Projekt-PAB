@@ -1,0 +1,1 @@
+Tu bedzie fajny kurde projekt 
