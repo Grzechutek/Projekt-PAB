@@ -1,0 +1,10 @@
+2026-06-04 00:30:07.152 +02:00 [INF] GET /api/games/1/reviews — zwrócono 1 recenzji
+2026-06-04 00:30:07.215 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 274.3750 ms
+2026-06-04 00:42:50.383 +02:00 [INF] HTTP GET /api/friends responded 401 in 23.8129 ms
+2026-06-04 00:43:11.268 +02:00 [INF] HTTP GET /api/friends/requests responded 401 in 2.7548 ms
+2026-06-04 00:43:52.873 +02:00 [INF] HTTP GET /api/friends responded 401 in 3.0688 ms
+2026-06-04 00:44:41.300 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-04 00:44:41.313 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 642.5875 ms
+2026-06-04 00:44:46.089 +02:00 [INF] HTTP GET /api/friends responded 401 in 0.2544 ms
+2026-06-04 00:45:08.911 +02:00 [INF] GET /api/friends — userId=2, 1 znajomych
+2026-06-04 00:45:08.924 +02:00 [INF] HTTP GET /api/friends responded 200 in 103.8562 ms
