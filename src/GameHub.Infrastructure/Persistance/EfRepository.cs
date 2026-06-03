@@ -76,4 +76,17 @@ public class EfRepository<T> : IRepository<T> where T : BaseEntity
 
     public void RemoveRange(IEnumerable<T> entities)
         => _set.RemoveRange(entities);
+
+    public async Task<IReadOnlyList<T>> FindWithIncludesAsync(
+    Expression<Func<T, bool>> predicate,
+    CancellationToken ct = default,
+    params Expression<Func<T, object?>>[] includes)
+    {
+        IQueryable<T> query = _set.AsNoTracking().Where(predicate);
+
+        foreach (var include in includes)
+            query = query.Include(include);
+
+        return await query.ToListAsync(ct);
+    }
 }
