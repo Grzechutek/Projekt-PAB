@@ -42,4 +42,10 @@ public interface IRepository<T> where T : BaseEntity
     void Update(T entity);
     void Remove(T entity);
     void RemoveRange(IEnumerable<T> entities);
+
+    /// Wersja FindAsync z eager loadingiem powiązanych encji.
+    Task<IReadOnlyList<T>> FindWithIncludesAsync(
+        Expression<Func<T, bool>> predicate,
+        CancellationToken ct = default,
+        params Expression<Func<T, object?>>[] includes);
 }

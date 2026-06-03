@@ -57,6 +57,13 @@ dotnet add src/GameHub.Infrastructure/GameHub.Infrastructure.csproj \
        package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.* 
 dotnet add src/GameHub.Infrastructure/GameHub.Infrastructure.csproj \
        package Microsoft.EntityFrameworkCore.Design --version 8.0.*
+dotnet add src/GameHub.Infrastructure/GameHub.Infrastructure.csproj \
+       package Microsoft.AspNetCore.Identity.EntityFrameworkCore \
+       --version 8.0.*
+dotnet add src/GameHub.Infrastructure/GameHub.Infrastructure.csproj \
+        package System.IdentityModel.Tokens.Jwt --version 7.*
+dotnet add src/GameHub.Infrastructure package BCrypt.Net-Next
+dotnet add src/GameHub.BlazorServer package Serilog.Enrichers.Environment
 
 # ── NuGet: WebAPI ────────────────────────────────────────────
 dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package Serilog.AspNetCore
@@ -64,6 +71,8 @@ dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package Serilog.Sinks.File
 dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package Serilog.Sinks.Console
 dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package Serilog.Enrichers.Environment
 dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package Serilog.Enrichers.Thread
+dotnet add src/GameHub.WebAPI/GameHub.WebAPI.csproj package \
+    Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.*
 
 # ── NuGet: BlazorServer ──────────────────────────────────────
 dotnet add src/GameHub.BlazorServer/GameHub.BlazorServer.csproj package Serilog.AspNetCore

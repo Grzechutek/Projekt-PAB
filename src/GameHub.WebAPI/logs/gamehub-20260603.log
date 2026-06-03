@@ -1,0 +1,77 @@
+2026-06-03 17:50:06.588 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-03 17:50:07.374 +02:00 [INF] HTTP POST /api/auth/register responded 400 in 702.9989 ms
+2026-06-03 17:50:31.579 +02:00 [INF] New user registered: string
+2026-06-03 17:50:31.590 +02:00 [INF] HTTP POST /api/auth/register responded 200 in 3492.2802 ms
+2026-06-03 17:50:47.554 +02:00 [INF] HTTP POST /api/auth/login responded 400 in 50.5916 ms
+2026-06-03 17:50:49.253 +02:00 [INF] HTTP POST /api/auth/login responded 400 in 1.4577 ms
+2026-06-03 17:50:56.691 +02:00 [INF] HTTP POST /api/auth/login responded 401 in 217.8284 ms
+2026-06-03 17:51:07.425 +02:00 [INF] User logged in: string@email.com
+2026-06-03 17:51:07.430 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 700.2029 ms
+2026-06-03 17:51:12.720 +02:00 [INF] HTTP GET /api/auth/profile responded 401 in 38.6036 ms
+2026-06-03 17:51:24.476 +02:00 [INF] User logged in: string@email.com
+2026-06-03 17:51:24.484 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 756.9736 ms
+2026-06-03 17:51:26.858 +02:00 [INF] HTTP GET /api/auth/profile responded 401 in 5.2016 ms
+2026-06-03 17:51:29.165 +02:00 [INF] HTTP GET /api/auth/profile responded 401 in 2.7996 ms
+2026-06-03 17:51:38.810 +02:00 [INF] HTTP GET /api/auth/profile responded 401 in 0.7580 ms
+2026-06-03 17:51:47.330 +02:00 [INF] User logged in: string@email.com
+2026-06-03 17:51:47.334 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 666.1257 ms
+2026-06-03 17:52:08.898 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 120.1232 ms
+2026-06-03 17:52:14.863 +02:00 [INF] HTTP PUT /api/auth/profile responded 204 in 56.7813 ms
+2026-06-03 17:52:17.006 +02:00 [INF] HTTP PUT /api/auth/profile responded 204 in 8.6055 ms
+2026-06-03 17:52:37.927 +02:00 [INF] HTTP PUT /api/auth/profile responded 204 in 33.9996 ms
+2026-06-03 17:55:08.203 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-03 17:55:10.934 +02:00 [INF] User logged in: string@email.com
+2026-06-03 17:55:10.966 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 2686.4762 ms
+2026-06-03 17:55:29.119 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 335.8306 ms
+2026-06-03 17:55:39.133 +02:00 [INF] HTTP PUT /api/auth/profile responded 204 in 251.9549 ms
+2026-06-03 17:55:43.155 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 7.5413 ms
+2026-06-03 17:55:57.740 +02:00 [INF] HTTP POST /api/games/1/buy responded 404 in 77.8191 ms
+2026-06-03 17:56:00.425 +02:00 [INF] HTTP POST /api/games/1/buy responded 404 in 6.4021 ms
+2026-06-03 17:56:04.178 +02:00 [INF] HTTP POST /api/games/0/buy responded 404 in 5.9167 ms
+2026-06-03 17:56:23.171 +02:00 [INF] HTTP POST /api/games/0/buy responded 404 in 4.9913 ms
+2026-06-03 17:56:37.966 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 44.7629 ms
+2026-06-03 17:56:43.884 +02:00 [INF] HTTP POST /api/wallet/topup responded 400 in 75.7845 ms
+2026-06-03 17:56:52.042 +02:00 [INF] TopUp 100 PLN for userId 1
+2026-06-03 17:56:52.049 +02:00 [INF] HTTP POST /api/wallet/topup responded 200 in 218.8196 ms
+2026-06-03 18:08:25.290 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-03 18:08:25.620 +02:00 [INF] HTTP POST /api/auth/login responded 401 in 271.7108 ms
+2026-06-03 18:09:20.398 +02:00 [INF] HTTP POST /api/auth/login responded 401 in 24.3752 ms
+2026-06-03 18:10:59.204 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u")
+2026-06-03 18:10:59.263 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'GameHub.Infrastructure.Persistence.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Users'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Users'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-06-03 18:13:07.701 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-03 18:13:08.328 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-03 18:13:08.346 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 586.1675 ms
+2026-06-03 18:13:23.260 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 90.3153 ms
+2026-06-03 18:13:34.220 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 53.6112 ms
+2026-06-03 18:13:52.802 +02:00 [INF] TopUp 10000 PLN for userId 1
+2026-06-03 18:13:52.806 +02:00 [INF] HTTP POST /api/wallet/topup responded 200 in 65.3316 ms
+2026-06-03 18:13:55.974 +02:00 [INF] User 1 purchased game 1
+2026-06-03 18:13:55.981 +02:00 [INF] HTTP POST /api/games/1/buy responded 200 in 40.3337 ms
+2026-06-03 18:14:02.575 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 73.9161 ms

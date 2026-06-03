@@ -1,123 +1,124 @@
 ﻿// src/GameHub.WebAPI/Program.cs
+using System.Text;
+using GameHub.Application.Interfaces;
+using GameHub.Application.Services;
+using GameHub.Domain.Interfaces;
+using GameHub.Infrastructure.Persistence;
+using GameHub.Infrastructure.Security;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
-using GameHub.Infrastructure.Persistence;
-using GameHub.Domain.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
-// ── 1. Bootstrap logger — działa zanim DI będzie gotowe ──────────────────────
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
     .WriteTo.Console()
-    .CreateBootstrapLogger();
+    .WriteTo.File(
+        "logs/gamehub-.log",
+        rollingInterval: RollingInterval.Day)
+    .WriteTo.File(
+        "logs/errors-.log",
+        rollingInterval: RollingInterval.Day,
+        restrictedToMinimumLevel: LogEventLevel.Warning)
+    .CreateLogger();
 
-try
-{
-    Log.Information("Uruchamianie GameHub.WebAPI...");
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
 
-    var builder = WebApplication.CreateBuilder(args);
+// ── Baza danych ──────────────────────────────────────────────────────────────
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-    // ── 2. Serilog — konfiguracja docelowa ───────────────────────────────────
-    builder.Host.UseSerilog((ctx, services, cfg) =>
+// ── Repozytoria i UnitOfWork ─────────────────────────────────────────────────
+builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+
+// ── Security (Infrastructure) ────────────────────────────────────────────────
+builder.Services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
+builder.Services.AddScoped<ITokenService, JwtTokenService>();
+
+// ── Serwisy aplikacyjne ──────────────────────────────────────────────────────
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IWalletService, WalletService>();
+
+// ── JWT Authentication ───────────────────────────────────────────────────────
+var jwtKey = builder.Configuration["Jwt:Key"]
+    ?? throw new InvalidOperationException("Jwt:Key is not configured.");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt =>
     {
-        var logsPath = Path.Combine(AppContext.BaseDirectory, "logs");
-
-        cfg
-            // Czytaj ustawienia z appsettings (opcjonalne nadpisanie)
-            .ReadFrom.Configuration(ctx.Configuration)
-            .ReadFrom.Services(services)
-
-            // Wzbogać każdy log o nazwę maszyny i wątku
-            .Enrich.FromLogContext()
-            .Enrich.WithMachineName()
-            .Enrich.WithThreadId()
-
-            // ── Sink: konsola (dev-friendly) ─────────────────────────────
-            .WriteTo.Console(
-                outputTemplate:
-                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} " +
-                    "{NewLine}{Exception}")
-
-            // ── Sink: plik dzienny — wszystkie logi ≥ Information ────────
-            .WriteTo.File(
-                path: Path.Combine(logsPath, "gamehub-.log"),
-                rollingInterval: RollingInterval.Day,
-                retainedFileCountLimit: 30,
-                outputTemplate:
-                    "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] " +
-                    "{SourceContext} {Message:lj}{NewLine}{Exception}",
-                restrictedToMinimumLevel: LogEventLevel.Information)
-
-            // ── Sink: plik dzienny — tylko błędy (Warning+) ──────────────
-            .WriteTo.File(
-                path: Path.Combine(logsPath, "errors-.log"),
-                rollingInterval: RollingInterval.Day,
-                retainedFileCountLimit: 30,
-                outputTemplate:
-                    "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] " +
-                    "{SourceContext} {Message:lj}{NewLine}{Exception}",
-                restrictedToMinimumLevel: LogEventLevel.Warning)
-
-            // Poziomy minimalne
-            .MinimumLevel.Information()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-            .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information)
-            .MinimumLevel.Override("System", LogEventLevel.Warning);
+        opt.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                                           Encoding.UTF8.GetBytes(jwtKey))
+        };
     });
 
-    // ── 3. Serwisy ───────────────────────────────────────────────────────────
-    builder.Services.AddControllers();
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-
-    // Connection string z appsettings.json
-    var connectionString = builder.Configuration
-        .GetConnectionString("DefaultConnection");
-
-    // Rejestracja DbContext — Scoped = nowa instancja per request HTTP
-    builder.Services.AddDbContext<AppDbContext>(opt =>
-        opt.UseSqlite(connectionString));
-
-    // Rejestracja UnitOfWork — też Scoped, żeby dzielił ten sam DbContext
-    builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
-
-    // ── 4. Pipeline HTTP ─────────────────────────────────────────────────────
-    var app = builder.Build();
-
-    // Loguj każde żądanie HTTP (middleware Serilog)
-    app.UseSerilogRequestLogging(opts =>
+builder.Services.AddAuthorization();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GameHub API", Version = "v1" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        opts.MessageTemplate =
-            "HTTP {RequestMethod} {RequestPath} odpowiedział {StatusCode} " +
-            "w {Elapsed:0.0000} ms";
-        opts.GetLevel = (ctx, elapsed, ex) =>
-            ex != null || ctx.Response.StatusCode >= 500
-                ? LogEventLevel.Error
-                : ctx.Response.StatusCode >= 400
-                    ? LogEventLevel.Warning
-                    : LogEventLevel.Information;
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Wpisz token JWT (bez słowa Bearer)"
     });
-
-    if (app.Environment.IsDevelopment())
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                    { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
-    app.UseHttpsRedirection();
-    app.UseAuthorization();
-    app.MapControllers();
+var app = builder.Build();
 
-    app.Run();
-}
-catch (Exception ex) when (ex is not HostAbortedException)
+if (app.Environment.IsDevelopment())
 {
-    Log.Fatal(ex, "GameHub.WebAPI zakończył działanie z nieoczekiwanym błędem.");
-    return 1;
-}
-finally
-{
-    Log.CloseAndFlush();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-return 0;
+app.UseHttpsRedirection();
+app.UseSerilogRequestLogging();
+app.UseAuthentication();   // przed UseAuthorization
+app.UseAuthorization();
+app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+
+    await db.Database.MigrateAsync(); // ← tworzy tabele z migracji
+    await DataSeeder.SeedAsync(db, hasher);
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+    await DataSeeder.SeedAsync(db, hasher);
+}
+
+app.Run();
