@@ -1,0 +1,67 @@
+@page "/login"
+@using GameHub.BlazorWASM.Models
+@using GameHub.BlazorWASM.Services
+@inject AuthService AuthService
+@inject NavigationManager NavManager
+
+<PageTitle>GameHub - Logowanie</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-16">
+    <MudPaper Class="pa-8 rounded-xl" Elevation="4" Style="background-color: #020617; border: 1px solid rgba(168,85,247,0.3);">
+        <div class="d-flex justify-center mb-4">
+            <MudIcon Icon="@Icons.Material.Filled.Gamepad" Color="Color.Primary" Size="Size.Large" />
+        </div>
+        <MudText Typo="Typo.h4" Align="Align.Center" Style="font-weight: 900; color: white;" Class="mb-6">Logowanie</MudText>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <MudAlert Severity="Severity.Error" Class="mb-4">@errorMessage</MudAlert>
+        }
+
+        <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+            <DataAnnotationsValidator />
+            
+            <MudTextField @bind-Value="loginModel.Email" For="@(() => loginModel.Email)" 
+                          Label="Adres Email" Variant="Variant.Outlined" Class="mb-4" />
+                          
+            <MudTextField @bind-Value="loginModel.Password" For="@(() => loginModel.Password)" 
+                          Label="Hasło" InputType="InputType.Password" Variant="Variant.Outlined" Class="mb-6" />
+                          
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" Size="Size.Large" Class="rounded-lg font-weight-bold">
+                @if (isLoading)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                }
+                else
+                {
+                    <MudText>Zaloguj się</MudText>
+                }
+            </MudButton>
+        </EditForm>
+        
+        <MudText Align="Align.Center" Class="mt-6" Style="color: #94a3b8;">
+            Nie masz jeszcze konta? <MudLink Href="/register" Color="Color.Primary" Underline="Underline.Always">Zarejestruj się</MudLink>
+        </MudText>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private LoginRequest loginModel = new();
+    private string? errorMessage;
+    private bool isLoading = false;
+
+    private async Task HandleLogin()
+    {
+        isLoading = true;
+        errorMessage = null;
+        
+        errorMessage = await AuthService.LoginAsync(loginModel);
+        
+        if (errorMessage == null)
+        {
+            NavManager.NavigateTo("/"); // Sukces -> Przejście na stronę główną
+        }
+        
+        isLoading = false;
+    }
+}

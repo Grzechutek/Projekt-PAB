@@ -91,6 +91,17 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+//dodane aby działo na róznych portach
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazorWasm",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5191") // Zmieńcie port!
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -101,6 +112,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseSerilogRequestLogging();
+app.UseRouting();
+app.UseCors("AllowBlazorWasm");
 app.UseAuthentication();   // przed UseAuthorization
 app.UseAuthorization();
 app.MapControllers();
@@ -114,11 +127,5 @@ using (var scope = app.Services.CreateScope())
     await DataSeeder.SeedAsync(db, hasher);
 }
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
-    await DataSeeder.SeedAsync(db, hasher);
-}
 
 app.Run();

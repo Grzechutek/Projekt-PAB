@@ -1,0 +1,64 @@
+
+
+@page "/library"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+@using GameHub.BlazorWASM.Models
+@using GameHub.BlazorWASM.Services
+@inject GameService GameService
+
+<MudText Typo="Typo.h3" GutterBottom="true" Color="Color.Primary">Twoja Biblioteka</MudText>
+
+@if (errorMessage != null)
+{
+    <MudAlert Severity="Severity.Error" Class="mb-4">@errorMessage</MudAlert>
+}
+
+@if (games == null && errorMessage == null)
+{
+    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+}
+else if (games != null && !games.Any())
+{
+    <MudText Typo="Typo.h6" Style="color: #94a3b8;">Nie masz jeszcze żadnych gier. Zrób zakupy w sklepie!</MudText>
+}
+else if (games != null)
+{
+    <MudGrid>
+        @foreach (var game in games)
+        {
+            <MudItem xs="12" sm="6" md="4" lg="3">
+                <MudCard Elevation="4" Style="height: 100%; display: flex; flex-direction: column; background-color: #1e1e2d; color: white;">
+                    <MudCardMedia Image="@(string.IsNullOrEmpty(game.CoverImageUrl) ? "https://placehold.co/600x400/2a2a3c/a855f7?text=Brak+Ok%C5%82adki" : game.CoverImageUrl)" Height="200" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">@game.Title</MudText>
+                        <MudText Typo="Typo.body2" Color="Color.Primary" Class="mb-2">@game.Genre</MudText>
+                        <MudText Typo="Typo.body2" Color="Color.Success">Posiadasz tę grę</MudText>
+                    </MudCardContent>
+                    <MudCardActions Class="mt-auto">
+                        <MudButton Variant="Variant.Filled" Color="Color.Secondary" FullWidth="true">Graj</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+@code {
+    private List<GameDto>? games;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Próbujemy pobrać gry
+            games = await GameService.GetLibraryAsync();
+        }
+        catch (Exception ex)
+        {
+            // Jeśli backend odrzuci zapytanie (np. stary token), chwytamy błąd!
+            errorMessage = "Nie udało się pobrać biblioteki. Spróbuj zalogować się ponownie.";
+            games = new List<GameDto>(); // Pusta lista zatrzymuje kręcące się kółko
+        }
+    }
+}

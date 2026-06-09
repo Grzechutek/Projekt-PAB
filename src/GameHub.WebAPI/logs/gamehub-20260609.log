@@ -1,0 +1,390 @@
+2026-06-09 00:02:44.613 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 00:02:44.653 +02:00 [INF] HTTP OPTIONS /api/auth/register responded 204 in 1.4385 ms
+2026-06-09 00:02:45.127 +02:00 [INF] New user registered: Test2115
+2026-06-09 00:02:45.132 +02:00 [INF] HTTP POST /api/auth/register responded 200 in 471.6279 ms
+2026-06-09 00:02:45.148 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2394 ms
+2026-06-09 00:02:45.402 +02:00 [INF] User logged in: Test2115@test.com
+2026-06-09 00:02:45.403 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 253.8096 ms
+2026-06-09 00:39:54.329 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.DefaultAddressStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-09 00:59:32.308 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 00:59:32.355 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 6.6771 ms
+2026-06-09 00:59:32.762 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 00:59:32.766 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 404.0618 ms
+2026-06-09 01:01:43.710 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.7384 ms
+2026-06-09 01:01:43.745 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:01:43.760 +02:00 [INF] HTTP GET /api/games responded 200 in 48.1549 ms
+2026-06-09 01:06:42.444 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.4710 ms
+2026-06-09 01:06:42.681 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 01:06:42.681 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 235.5422 ms
+2026-06-09 01:11:31.783 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.4712 ms
+2026-06-09 01:11:31.788 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:11:31.789 +02:00 [INF] HTTP GET /api/games responded 200 in 4.1512 ms
+2026-06-09 01:11:44.962 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1136 ms
+2026-06-09 01:11:44.966 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:11:44.967 +02:00 [INF] HTTP GET /api/games responded 200 in 3.3857 ms
+2026-06-09 01:20:54.376 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 2.9783 ms
+2026-06-09 01:20:54.384 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:20:54.385 +02:00 [INF] HTTP GET /api/games responded 200 in 6.1446 ms
+2026-06-09 01:20:58.023 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.4420 ms
+2026-06-09 01:20:58.084 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 58.7040 ms
+2026-06-09 01:21:05.356 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2390 ms
+2026-06-09 01:21:05.359 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:21:05.359 +02:00 [INF] HTTP GET /api/games responded 200 in 2.3213 ms
+2026-06-09 01:21:08.484 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.3299 ms
+2026-06-09 01:21:08.580 +02:00 [INF] User 2 purchased game 4
+2026-06-09 01:21:08.580 +02:00 [INF] HTTP POST /api/games/4/buy responded 200 in 94.7715 ms
+2026-06-09 01:21:15.488 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1626 ms
+2026-06-09 01:21:15.491 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:21:15.492 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2413 ms
+2026-06-09 01:21:34.424 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.3846 ms
+2026-06-09 01:21:34.430 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 3.9632 ms
+2026-06-09 01:21:41.747 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.2235 ms
+2026-06-09 01:21:41.765 +02:00 [INF] User 2 purchased game 3
+2026-06-09 01:21:41.766 +02:00 [INF] HTTP POST /api/games/3/buy responded 200 in 16.4129 ms
+2026-06-09 01:21:45.424 +02:00 [INF] HTTP OPTIONS /api/games/2/buy responded 204 in 0.1963 ms
+2026-06-09 01:21:45.431 +02:00 [INF] HTTP POST /api/games/2/buy responded 400 in 5.0866 ms
+2026-06-09 01:37:41.908 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 01:37:41.959 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 8.7402 ms
+2026-06-09 01:37:42.071 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:37:42.111 +02:00 [INF] HTTP GET /api/games responded 200 in 143.3515 ms
+2026-06-09 01:37:50.013 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 1.0830 ms
+2026-06-09 01:37:50.104 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 89.4396 ms
+2026-06-09 01:37:52.084 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.1061 ms
+2026-06-09 01:37:52.096 +02:00 [INF] HTTP POST /api/games/4/buy responded 400 in 10.7063 ms
+2026-06-09 01:37:55.121 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.2320 ms
+2026-06-09 01:37:55.129 +02:00 [INF] HTTP POST /api/games/3/buy responded 400 in 6.2307 ms
+2026-06-09 01:37:58.165 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1152 ms
+2026-06-09 01:37:58.168 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:37:58.169 +02:00 [INF] HTTP GET /api/games responded 200 in 2.5824 ms
+2026-06-09 01:47:09.139 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.5825 ms
+2026-06-09 01:47:09.145 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:47:09.145 +02:00 [INF] HTTP GET /api/games responded 200 in 4.9546 ms
+2026-06-09 01:50:51.342 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.5875 ms
+2026-06-09 01:50:51.346 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:50:51.346 +02:00 [INF] HTTP GET /api/games responded 200 in 3.2887 ms
+2026-06-09 01:51:00.658 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0535 ms
+2026-06-09 01:51:00.660 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:51:00.660 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9294 ms
+2026-06-09 01:51:05.666 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0587 ms
+2026-06-09 01:51:05.667 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:51:05.667 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9325 ms
+2026-06-09 01:51:11.951 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0650 ms
+2026-06-09 01:51:11.953 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:51:11.953 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0634 ms
+2026-06-09 01:51:12.897 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 01:51:12.897 +02:00 [INF] HTTP GET /api/games responded 200 in 1.6295 ms
+2026-06-09 01:59:49.434 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.DefaultAddressStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-09 02:02:44.711 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 02:02:44.756 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 6.2868 ms
+2026-06-09 02:02:44.820 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 02:02:44.845 +02:00 [INF] HTTP GET /api/games responded 200 in 82.7457 ms
+2026-06-09 02:02:46.730 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.9765 ms
+2026-06-09 02:02:46.735 +02:00 [INF] HTTP GET /api/games/library responded 404 in 3.2825 ms
+2026-06-09 02:02:49.050 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 02:02:49.051 +02:00 [INF] HTTP GET /api/games responded 200 in 43.2346 ms
+2026-06-09 02:02:51.480 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.3584 ms
+2026-06-09 02:02:51.557 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 75.6300 ms
+2026-06-09 02:02:53.549 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.2390 ms
+2026-06-09 02:02:53.559 +02:00 [INF] HTTP POST /api/games/4/buy responded 400 in 7.7810 ms
+2026-06-09 02:02:55.421 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.2426 ms
+2026-06-09 02:02:55.431 +02:00 [INF] HTTP POST /api/games/3/buy responded 400 in 7.2855 ms
+2026-06-09 02:02:58.383 +02:00 [INF] HTTP OPTIONS /api/games/5/buy responded 204 in 0.2449 ms
+2026-06-09 02:02:58.480 +02:00 [INF] User 2 purchased game 5
+2026-06-09 02:02:58.480 +02:00 [INF] HTTP POST /api/games/5/buy responded 200 in 95.3751 ms
+2026-06-09 02:03:01.076 +02:00 [INF] HTTP OPTIONS /api/games/2/buy responded 204 in 0.2807 ms
+2026-06-09 02:03:01.083 +02:00 [INF] HTTP POST /api/games/2/buy responded 400 in 5.1695 ms
+2026-06-09 02:03:02.452 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2526 ms
+2026-06-09 02:03:02.454 +02:00 [INF] HTTP GET /api/games/library responded 404 in 0.6398 ms
+2026-06-09 02:03:03.464 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3166 ms
+2026-06-09 02:03:03.468 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 02:03:03.469 +02:00 [INF] HTTP GET /api/games responded 200 in 3.3505 ms
+2026-06-09 02:07:34.793 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1393 ms
+2026-06-09 02:07:35.123 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 02:07:35.123 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 328.5569 ms
+2026-06-09 02:07:35.187 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0842 ms
+2026-06-09 02:07:35.188 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 02:07:35.188 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9598 ms
+2026-06-09 02:07:39.500 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.2170 ms
+2026-06-09 02:07:39.506 +02:00 [INF] HTTP POST /api/games/3/buy responded 400 in 4.3572 ms
+2026-06-09 02:07:41.407 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2870 ms
+2026-06-09 02:07:41.409 +02:00 [INF] HTTP GET /api/games/library responded 404 in 0.5226 ms
+2026-06-09 02:07:44.078 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1711 ms
+2026-06-09 02:07:44.082 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 02:07:44.083 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6617 ms
+2026-06-09 08:11:50.185 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 08:11:50.186 +02:00 [INF] HTTP GET /api/games responded 200 in 6.9516 ms
+2026-06-09 08:12:01.151 +02:00 [INF] HTTP GET /api/games/library responded 404 in 0.2693 ms
+2026-06-09 08:12:05.557 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 08:12:05.557 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2009 ms
+2026-06-09 08:47:05.729 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 08:47:05.817 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 08:47:05.845 +02:00 [INF] HTTP GET /api/games responded 200 in 81.9825 ms
+2026-06-09 08:47:47.442 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.0126 ms
+2026-06-09 08:47:47.812 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 08:47:47.813 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 369.8030 ms
+2026-06-09 08:47:47.903 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0853 ms
+2026-06-09 08:47:47.921 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 08:47:47.921 +02:00 [INF] HTTP GET /api/games responded 200 in 17.2152 ms
+2026-06-09 09:14:15.643 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 09:14:15.692 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 8.8748 ms
+2026-06-09 09:14:15.787 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:14:15.824 +02:00 [INF] HTTP GET /api/games responded 200 in 121.4989 ms
+2026-06-09 09:14:18.236 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.9771 ms
+2026-06-09 09:14:18.312 +02:00 [INF] HTTP GET /api/games/library responded 200 in 74.0243 ms
+2026-06-09 09:14:20.766 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2788 ms
+2026-06-09 09:14:20.779 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:14:20.780 +02:00 [INF] HTTP GET /api/games responded 200 in 11.8600 ms
+2026-06-09 09:14:23.485 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.3152 ms
+2026-06-09 09:14:23.556 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 67.9858 ms
+2026-06-09 09:14:24.995 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2808 ms
+2026-06-09 09:14:25.002 +02:00 [INF] HTTP GET /api/games/library responded 200 in 6.1695 ms
+2026-06-09 09:14:27.914 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2155 ms
+2026-06-09 09:14:27.919 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:14:27.920 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8094 ms
+2026-06-09 09:14:36.289 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.2623 ms
+2026-06-09 09:14:36.298 +02:00 [INF] HTTP POST /api/games/3/buy responded 400 in 6.1798 ms
+2026-06-09 09:14:59.674 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:14:59.675 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1148 ms
+2026-06-09 09:15:26.513 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1851 ms
+2026-06-09 09:15:26.838 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:15:26.839 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 325.0520 ms
+2026-06-09 09:15:26.927 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0682 ms
+2026-06-09 09:15:26.928 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:15:26.928 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0182 ms
+2026-06-09 09:15:29.499 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.3654 ms
+2026-06-09 09:15:29.505 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.0641 ms
+2026-06-09 09:15:34.794 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2776 ms
+2026-06-09 09:15:34.799 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:15:34.800 +02:00 [INF] HTTP GET /api/games responded 200 in 3.0663 ms
+2026-06-09 09:17:15.633 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 1.7003 ms
+2026-06-09 09:17:15.653 +02:00 [INF] HTTP GET /api/games/library responded 200 in 17.7914 ms
+2026-06-09 09:28:54.341 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.5640 ms
+2026-06-09 09:28:54.349 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:28:54.349 +02:00 [INF] HTTP GET /api/games responded 200 in 7.1385 ms
+2026-06-09 09:28:54.882 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0883 ms
+2026-06-09 09:28:54.885 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.0085 ms
+2026-06-09 09:28:58.700 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:28:58.700 +02:00 [INF] HTTP GET /api/games responded 200 in 2.5593 ms
+2026-06-09 09:31:07.785 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1832 ms
+2026-06-09 09:31:07.791 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:31:07.791 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6345 ms
+2026-06-09 09:31:17.759 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1958 ms
+2026-06-09 09:31:17.761 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:31:17.761 +02:00 [INF] HTTP GET /api/games responded 200 in 1.3429 ms
+2026-06-09 09:33:10.270 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1405 ms
+2026-06-09 09:33:10.277 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:33:10.277 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6903 ms
+2026-06-09 09:33:16.151 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0523 ms
+2026-06-09 09:33:16.154 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:33:16.154 +02:00 [INF] HTTP GET /api/games responded 200 in 1.7006 ms
+2026-06-09 09:33:49.051 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0328 ms
+2026-06-09 09:33:49.053 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:33:49.053 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9458 ms
+2026-06-09 09:33:58.483 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:33:58.484 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2490 ms
+2026-06-09 09:34:01.624 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:34:01.624 +02:00 [INF] HTTP GET /api/games responded 200 in 3.0910 ms
+2026-06-09 09:34:36.386 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.4009 ms
+2026-06-09 09:34:36.622 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:34:36.622 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 235.2742 ms
+2026-06-09 09:34:36.698 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0374 ms
+2026-06-09 09:34:36.699 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:34:36.699 +02:00 [INF] HTTP GET /api/games responded 200 in 0.8792 ms
+2026-06-09 09:34:42.982 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0792 ms
+2026-06-09 09:34:42.985 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:34:42.985 +02:00 [INF] HTTP GET /api/games responded 200 in 1.6542 ms
+2026-06-09 09:36:25.913 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.DefaultAddressStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-09 09:36:44.147 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.DefaultAddressStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-09 09:40:17.936 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 09:40:17.990 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 12.7961 ms
+2026-06-09 09:40:18.098 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:40:18.137 +02:00 [INF] HTTP GET /api/games responded 200 in 140.2398 ms
+2026-06-09 09:40:41.341 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.6690 ms
+2026-06-09 09:40:41.726 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:40:41.727 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 383.7437 ms
+2026-06-09 09:40:41.815 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0761 ms
+2026-06-09 09:40:41.818 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:40:41.818 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9803 ms
+2026-06-09 09:40:45.500 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2090 ms
+2026-06-09 09:40:45.551 +02:00 [INF] HTTP GET /api/games/library responded 200 in 50.0581 ms
+2026-06-09 09:40:46.834 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3490 ms
+2026-06-09 09:40:46.839 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:40:46.840 +02:00 [INF] HTTP GET /api/games responded 200 in 3.7200 ms
+2026-06-09 09:43:01.386 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:43:01.387 +02:00 [INF] HTTP GET /api/games responded 200 in 7.9540 ms
+2026-06-09 09:43:26.672 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1939 ms
+2026-06-09 09:43:26.905 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:43:26.905 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 231.6108 ms
+2026-06-09 09:43:27.022 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0888 ms
+2026-06-09 09:43:27.024 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:43:27.024 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9459 ms
+2026-06-09 09:43:35.216 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1379 ms
+2026-06-09 09:43:35.220 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.3388 ms
+2026-06-09 09:43:38.936 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.4473 ms
+2026-06-09 09:43:39.378 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3955 ms
+2026-06-09 09:43:39.383 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:43:39.383 +02:00 [INF] HTTP GET /api/games responded 200 in 3.5982 ms
+2026-06-09 09:51:29.733 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 09:51:29.771 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 7.0346 ms
+2026-06-09 09:51:29.838 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:51:29.864 +02:00 [INF] HTTP GET /api/games responded 200 in 86.2335 ms
+2026-06-09 09:51:52.146 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.7203 ms
+2026-06-09 09:51:52.529 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:51:52.530 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 382.5504 ms
+2026-06-09 09:51:52.616 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0629 ms
+2026-06-09 09:51:52.619 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:51:52.620 +02:00 [INF] HTTP GET /api/games responded 200 in 2.7794 ms
+2026-06-09 09:51:56.179 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2186 ms
+2026-06-09 09:51:56.233 +02:00 [INF] HTTP GET /api/games/library responded 200 in 51.9547 ms
+2026-06-09 09:52:10.336 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3375 ms
+2026-06-09 09:52:10.341 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:52:10.342 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8148 ms
+2026-06-09 09:54:23.647 +02:00 [INF] HTTP OPTIONS /api/auth/register responded 204 in 0.2047 ms
+2026-06-09 09:54:23.938 +02:00 [INF] New user registered: Test123
+2026-06-09 09:54:23.938 +02:00 [INF] HTTP POST /api/auth/register responded 200 in 289.6512 ms
+2026-06-09 09:54:23.957 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0525 ms
+2026-06-09 09:54:24.158 +02:00 [INF] User logged in: est@gamehub.com
+2026-06-09 09:54:24.158 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 200.8663 ms
+2026-06-09 09:54:24.245 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0547 ms
+2026-06-09 09:54:24.246 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:54:24.247 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9305 ms
+2026-06-09 09:54:30.998 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.3058 ms
+2026-06-09 09:54:31.005 +02:00 [INF] HTTP GET /api/games/library responded 200 in 5.7044 ms
+2026-06-09 09:54:33.150 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2053 ms
+2026-06-09 09:54:33.154 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:54:33.154 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6060 ms
+2026-06-09 09:55:18.307 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1126 ms
+2026-06-09 09:55:18.543 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 09:55:18.543 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 234.8307 ms
+2026-06-09 09:55:18.629 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0578 ms
+2026-06-09 09:55:18.631 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:55:18.631 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0333 ms
+2026-06-09 09:55:48.271 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2438 ms
+2026-06-09 09:55:48.506 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 09:55:48.506 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 234.4620 ms
+2026-06-09 09:55:48.591 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0530 ms
+2026-06-09 09:55:48.593 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:55:48.593 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9708 ms
+2026-06-09 09:55:53.697 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2024 ms
+2026-06-09 09:55:53.704 +02:00 [INF] HTTP GET /api/games/library responded 200 in 5.1776 ms
+2026-06-09 09:55:54.766 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1657 ms
+2026-06-09 09:55:54.770 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:55:54.771 +02:00 [INF] HTTP GET /api/games responded 200 in 3.2536 ms
+2026-06-09 09:56:00.669 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.2603 ms
+2026-06-09 09:56:00.740 +02:00 [INF] User 3 purchased game 4
+2026-06-09 09:56:00.741 +02:00 [INF] HTTP POST /api/games/4/buy responded 200 in 70.9683 ms
+2026-06-09 09:56:04.421 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0705 ms
+2026-06-09 09:56:04.424 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.2718 ms
+2026-06-09 09:56:07.944 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1235 ms
+2026-06-09 09:56:07.948 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:56:07.949 +02:00 [INF] HTTP GET /api/games responded 200 in 3.3350 ms
+2026-06-09 09:56:14.443 +02:00 [INF] HTTP OPTIONS /api/games/3/buy responded 204 in 0.1237 ms
+2026-06-09 09:56:14.453 +02:00 [INF] HTTP POST /api/games/3/buy responded 400 in 7.8937 ms
+2026-06-09 09:56:20.662 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1255 ms
+2026-06-09 09:56:20.668 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.8607 ms
+2026-06-09 09:56:21.550 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0785 ms
+2026-06-09 09:56:21.554 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:56:21.554 +02:00 [INF] HTTP GET /api/games responded 200 in 2.8630 ms
+2026-06-09 09:56:24.894 +02:00 [INF] HTTP OPTIONS /api/games/5/buy responded 204 in 0.1883 ms
+2026-06-09 09:56:24.911 +02:00 [INF] User 3 purchased game 5
+2026-06-09 09:56:24.912 +02:00 [INF] HTTP POST /api/games/5/buy responded 200 in 15.8884 ms
+2026-06-09 09:56:26.780 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1345 ms
+2026-06-09 09:56:26.785 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.2241 ms
+2026-06-09 09:58:33.259 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1859 ms
+2026-06-09 09:58:33.491 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 09:58:33.491 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 231.1183 ms
+2026-06-09 09:58:33.574 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0347 ms
+2026-06-09 09:58:33.575 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 09:58:33.575 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9940 ms

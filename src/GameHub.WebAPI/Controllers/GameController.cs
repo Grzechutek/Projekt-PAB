@@ -211,4 +211,28 @@ public class GamesController : ControllerBase
             return StatusCode(500, new { error = "Purchase failed." });
         }
     }
+    // ──────────────────────────────────────────────────────────────────────
+    // GET /api/games/library  [Authorize]
+    // Zwraca listę gier posiadanych przez zalogowanego użytkownika
+    // ──────────────────────────────────────────────────────────────────────
+    [Authorize]
+    [HttpGet("library")]
+    public async Task<IActionResult> GetLibrary(CancellationToken ct)
+    {
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        // 1. Znajdujemy transakcje zakupu (UserGames) dla tego usera
+        var userGames = await _uow.UserGames.FindAsync(ug => ug.UserId == userId, ct);
+        var ownedGameIds = userGames.Select(ug => ug.GameId).ToList();
+
+        // 2. Pobieramy pełne dane tych gier
+        var games = await _uow.Games.FindAsync(g => ownedGameIds.Contains(g.Id), ct);
+
+        // 3. Mapujemy na DTO
+        var dtos = games.Select(g => new GameDto(
+            g.Id, g.Title, g.Description, g.Genre,
+            g.Price, g.CoverImageUrl, g.IsVisible, g.CreatedAt, null)).ToList();
+
+        return Ok(dtos);
+    }
 }
