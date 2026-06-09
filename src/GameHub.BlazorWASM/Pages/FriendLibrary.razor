@@ -1,4 +1,4 @@
-@page "/library"
+@page "/friend/{Id:int}/library"
 @attribute [Microsoft.AspNetCore.Authorization.Authorize]
 
 @using System.Net.Http.Json
@@ -6,8 +6,12 @@
 @inject ISnackbar Snackbar
 @inject NavigationManager NavManager
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8">
-    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Moja Biblioteka</MudText>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-16">
+    <MudButton Variant="Variant.Text" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" Class="mb-4" Href="/friends">
+        Wróć do listy znajomych
+    </MudButton>
+
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Biblioteka Znajomego</MudText>
 
     @if (_isLoading)
     {
@@ -15,25 +19,20 @@
             <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
         </div>
     }
-    else if (_myGames == null || !_myGames.Any())
+    else if (_games == null || !_games.Any())
     {
-        @* PIĘKNY STAN PUSTY (Gdy gracz nie ma jeszcze gier) *@
         <MudContainer MaxWidth="MaxWidth.Small" Class="text-center mt-16">
             <MudIcon Icon="@Icons.Material.Filled.VideogameAssetOff" Color="Color.Surface" Style="font-size: 6rem;" Class="mb-4" />
-            <MudText Typo="Typo.h5" Style="color: #94a3b8; font-weight: bold;">Twoja biblioteka jest pusta</MudText>
+            <MudText Typo="Typo.h5" Style="color: #94a3b8; font-weight: bold;">Pusto tutaj</MudText>
             <MudText Typo="Typo.body1" Style="color: #64748b;" Class="mb-6 mt-2">
-                Wygląda na to, że nie posiadasz jeszcze żadnych gier. Czas wyruszyć na zakupy i znaleźć coś dla siebie!
+                Wygląda na to, że ten gracz nie posiada jeszcze żadnych gier na swoim koncie.
             </MudText>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" Href="/">
-                Wróć do Sklepu
-            </MudButton>
         </MudContainer>
     }
     else
     {
-        @* SIATKA POSIADANYCH GIER *@
         <MudGrid>
-            @foreach (var game in _myGames)
+            @foreach (var game in _games)
             {
                 <MudItem xs="12" sm="6" md="4" lg="3">
                     <MudCard Elevation="4" Style="background-color: #1e1e2d; color: white; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
@@ -41,20 +40,12 @@
                         
                         <MudCardContent>
                             <MudText Typo="Typo.h6" Style="font-weight: bold;">@game.Title</MudText>
-                            @if(game.PurchasedAt.HasValue)
-                            {
-                                <MudText Typo="Typo.caption" Style="color: #94a3b8;">
-                                    Zakupiono: @game.PurchasedAt.Value.ToString("dd.MM.yyyy")
-                                </MudText>
-                            }
+                            <MudText Typo="Typo.caption" Style="color: #94a3b8;">
+                                W kolekcji znajomego
+                            </MudText>
                         </MudCardContent>
                         
-                        <MudCardActions Class="mt-auto pb-4 px-4 d-flex justify-space-between">
-                            <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.PlayArrow" OnClick="@PlayGame" Class="flex-grow-1 mr-2">
-                                Zagraj
-                            </MudButton>
-                            
-                            @* Przycisk do wystawiania opinii *@
+                        <MudCardActions Class="mt-auto pb-4 px-4 d-flex justify-end">
                             <MudTooltip Text="Szczegóły i Recenzje">
                                 <MudIconButton Icon="@Icons.Material.Filled.StarRate" Color="Color.Secondary" Variant="Variant.Filled" OnClick="@(() => GoToDetails(game.Id))" />
                             </MudTooltip>
@@ -67,19 +58,29 @@
 </MudContainer>
 
 @code {
-    private List<LibraryGameDto>? _myGames;
+    [Parameter]
+    public int Id { get; set; }
+
+    private List<FriendGameDto>? _games;
     private bool _isLoading = true;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            // Oczekujemy, że ten endpoint zwraca gry należące do zalogowanego użytkownika
-            _myGames = await Http.GetFromJsonAsync<List<LibraryGameDto>>("api/games/library");
+            var response = await Http.GetAsync($"api/users/{Id}/library");
+            if (response.IsSuccessStatusCode)
+            {
+                _games = await response.Content.ReadFromJsonAsync<List<FriendGameDto>>();
+            }
+            else
+            {
+                Snackbar.Add("Nie masz uprawnień, aby zobaczyć tę bibliotekę.", Severity.Warning);
+            }
         }
         catch (Exception)
         {
-            Snackbar.Add("Nie udało się pobrać gier z serwera.", Severity.Error);
+            Snackbar.Add("Błąd wczytywania gier.", Severity.Error);
         }
         finally
         {
@@ -87,24 +88,15 @@
         }
     }
 
-    private void PlayGame()
-    {
-        // Mock uruchamiania gry :)
-        Snackbar.Add("Uruchamianie silnika gry... (Symulacja!)", Severity.Info);
-    }
-
     private void GoToDetails(int gameId)
     {
-        // Przenosi do widoku pojedynczej gry
         NavManager.NavigateTo($"/game/{gameId}");
     }
 
-    // Klasa reprezentująca dane odbierane z backendu
-    public class LibraryGameDto
+    public class FriendGameDto
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
-        public DateTime? PurchasedAt { get; set; }
         public string? CoverImageUrl { get; set; }
     }
 }

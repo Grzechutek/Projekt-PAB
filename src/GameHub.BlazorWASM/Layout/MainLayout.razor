@@ -1,80 +1,81 @@
 ﻿@inherits LayoutComponentBase
 @using System.Security.Claims
 
-@* Wstrzyknięcia do obsługi wylogowania *@
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 @inject NavigationManager NavManager
 
 <MudThemeProvider Theme="_customTheme" IsDarkMode="true" />
 <MudDialogProvider />
 <MudSnackbarProvider />
-<MudPopoverProvider /> @* Niezbędne do działania rozwijanego menu! *@
+<MudPopoverProvider />
 
 <MudLayout>
     @* GÓRNY PASEK (HEADER) *@
     <MudAppBar Elevation="1" Color="Color.Surface" Fixed="true">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggle" />
-        
         <MudSpacer />
-        
-        @* Pasek wyszukiwania (Mock) *@
-        <MudTextField T="string" Placeholder="Szukaj gier, twórców..." Variant="Variant.Outlined" 
-                      Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" 
-                      Margin="Margin.Dense" Class="mr-6" Style="max-width: 400px; background-color: rgba(0,0,0,0.2);" />
+        <MudTextField T="string" Placeholder="Szukaj gier..." Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Margin="Margin.Dense" Class="mr-6" Style="max-width: 400px; background-color: rgba(0,0,0,0.2);" />
 
-        @* SPRAWDZAMY AUTORYZACJĘ *@
-        <AuthorizeView>
+        @* UWAGA: Context="auth" zapobiega błędom InvalidCastException *@
+        <AuthorizeView Context="auth">
             <Authorized>
-                @* Portfel (Dynamiczny) *@
                 <div class="d-flex align-center rounded-pill px-3 py-1 mr-4" style="border: 1px solid rgba(234, 179, 8, 0.3); background-color: rgba(0,0,0,0.2);">
                     <MudText Typo="Typo.subtitle2" Style="color: #eab308; font-weight: bold;" Class="mr-2">
-                        Saldo: @GetBalance(context.User) PLN
+                        Saldo: @GetBalance(auth.User) PLN
                     </MudText>
-                    <MudIconButton Icon="@Icons.Material.Filled.Add" Size="Size.Small" Style="background-color: #eab308; color: #0f172a;" />
+                    <MudIconButton Icon="@Icons.Material.Filled.Add" Size="Size.Small" Style="background-color: #eab308; color: #0f172a;" OnClick="@(() => NavManager.NavigateTo("/profile"))" />
                 </div>
-
                 <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Inherit" Class="mr-2" />
                 
-                @* AWARYJNY PRZYCISK WYLOGOWANIA (Na wypadek, gdyby menu nadal strajkowało) *@
-                <MudButton Variant="Variant.Text" Color="Color.Error" OnClick="Logout" Class="mr-2">
-                    Wyloguj
-                </MudButton>
-                
-                @* Avatar Użytkownika (Z uproszczonym menu) *@
-                <MudMenu Context="menuCtx" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
-                    <ActivatorContent>
-                        <MudAvatar Color="Color.Primary" Variant="Variant.Filled" Style="cursor: pointer;">
-                            @GetInitials(context.User)
+                @* Działające menu Awatara (MudBlazor v9) *@
+                <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                    <ActivatorContent Context="menuContext">
+                        <MudAvatar Color="Color.Primary" Variant="Variant.Filled" Style="cursor: pointer;" @onclick="menuContext.ToggleAsync">
+                            @GetInitials(auth.User)
                         </MudAvatar>
                     </ActivatorContent>
                     <ChildContent>
+                        <MudMenuItem Href="/profile" Icon="@Icons.Material.Filled.Person">Mój Profil</MudMenuItem>
                         <MudMenuItem OnClick="Logout" Icon="@Icons.Material.Filled.Logout">Wyloguj się</MudMenuItem>
                     </ChildContent>
                 </MudMenu> 
             </Authorized>
             <NotAuthorized>
-                @* Przycisk dla gościa *@
                 <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/login">Zaloguj się</MudButton>
             </NotAuthorized>
         </AuthorizeView>
-
     </MudAppBar>
 
     @* LEWY PANEL (SIDEBAR) *@
     <MudDrawer @bind-Open="_drawerOpen" Elevation="2" ClipMode="DrawerClipMode.Always" Variant="DrawerVariant.Responsive">
         <div class="d-flex align-center pa-4" style="height: 64px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <div class="rounded-lg pa-1 mr-3" style="background: linear-gradient(to bottom right, #a855f7, #7e22ce);">
-                <MudIcon Icon="@Icons.Material.Filled.Gamepad" Style="color: white;" />
-            </div>
+            <div class="rounded-lg pa-1 mr-3" style="background: linear-gradient(to bottom right, #a855f7, #7e22ce);"><MudIcon Icon="@Icons.Material.Filled.Gamepad" Style="color: white;" /></div>
             <MudText Typo="Typo.h5" Style="font-weight: 900; color: white;">Game<span style="color: #a855f7;">Hub</span></MudText>
         </div>
         
         <MudNavMenu Class="pa-2">
             <MudText Typo="Typo.caption" Style="color: #64748b; font-weight: bold;" Class="px-4 mt-4 mb-2 d-block">MENU GŁÓWNE</MudText>
+            
+            @* Zawsze widoczne: *@
             <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Store" IconColor="Color.Inherit">Sklep</MudNavLink>
-            <MudNavLink Href="/library" Icon="@Icons.Material.Filled.LibraryMusic" IconColor="Color.Inherit">Biblioteka</MudNavLink>
-            <MudNavLink Href="/profile" Icon="@Icons.Material.Filled.Person" IconColor="Color.Inherit">Profil</MudNavLink>
-            <MudNavLink Href="/friends" Icon="@Icons.Material.Filled.People" IconColor="Color.Inherit">Znajomi</MudNavLink>
+            
+            @* Widoczne TYLKO po zalogowaniu: Context="userAuth" dodany dla bezpieczeństwa *@
+            <AuthorizeView Context="userAuth">
+                <Authorized>
+                    <MudNavLink Href="/library" Icon="@Icons.Material.Filled.LibraryMusic" IconColor="Color.Inherit">Biblioteka</MudNavLink>
+                    <MudNavLink Href="/profile" Icon="@Icons.Material.Filled.Person" IconColor="Color.Inherit">Profil</MudNavLink>
+                    <MudNavLink Href="/friends" Icon="@Icons.Material.Filled.People" IconColor="Color.Inherit">Znajomi</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
+
+            @* Widoczne TYLKO dla Administratora: Context="adminAuth" zapobiega konfliktom *@
+            <AuthorizeView Roles="Admin" Context="adminAuth">
+                <Authorized>
+                    <MudDivider Class="my-2" Style="background-color: rgba(255,255,255,0.1);" />
+                    <MudNavLink Href="/admin" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AdminPanelSettings" IconColor="Color.Error">Panel Admina</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
+
         </MudNavMenu>
     </MudDrawer>
 
@@ -88,67 +89,32 @@
 
 @code {
     private bool _drawerOpen = true;
-
-    private void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
-
-    // --- METODA WYLOGOWANIA ---
+    private void DrawerToggle() => _drawerOpen = !_drawerOpen;
     private async Task Logout()
     {
         await LocalStorage.RemoveItemAsync("authToken");
         NavManager.NavigateTo("/login", forceLoad: true);
     }
-
-    // --- DYNAMICZNE METODY Z JWT (ZABEZPIECZONE PRZED BŁĘDEM 134) ---
     private string GetInitials(ClaimsPrincipal? user)
     {
-        if (user == null || user.Identity == null || (string.IsNullOrEmpty(user.Identity.Name) && !user.HasClaim(c => c.Type == ClaimTypes.Email)))
-            return "??";
-
+        if (user == null || user.Identity == null || (string.IsNullOrEmpty(user.Identity.Name) && !user.HasClaim(c => c.Type == ClaimTypes.Email))) return "??";
         var name = user.Identity.Name ?? user.FindFirst(ClaimTypes.Email)?.Value ?? "U";
-        
-        if (name.Length >= 2)
-        {
-            return name.Substring(0, 2).ToUpper();
-        }
-        return name.ToUpper();
+        return name.Length >= 2 ? name.Substring(0, 2).ToUpper() : name.ToUpper();
     }
-
     private string GetBalance(ClaimsPrincipal? user)
     {
-        if (user == null || user.Identity == null || !user.Identity.IsAuthenticated)
-            return "0.00";
-
-        var balanceClaim = user.FindFirst("WalletBalance")?.Value 
-                           ?? user.FindFirst("balance")?.Value 
-                           ?? "0.00";
-        return balanceClaim;
+        if (user == null || user.Identity == null || !user.Identity.IsAuthenticated) return "0.00";
+        return user.FindFirst("WalletBalance")?.Value ?? user.FindFirst("balance")?.Value ?? "0.00";
     }
 
-    // --- THEME ---
     private MudTheme _customTheme = new()
     {
         PaletteDark = new PaletteDark()
         {
-            Primary = "#a855f7",
-            Secondary = "#eab308",
-            Background = "#0f172a",
-            Surface = "#020617",
-            AppbarBackground = "#0f172a",
-            TextPrimary = "#e2e8f0",
-            TextSecondary = "#94a3b8",
-            DrawerBackground = "#020617",
-            DrawerText = "#94a3b8",
-            DrawerIcon = "#94a3b8"
+            Primary = "#a855f7", Secondary = "#eab308", Background = "#0f172a", Surface = "#020617",
+            AppbarBackground = "#0f172a", TextPrimary = "#e2e8f0", TextSecondary = "#94a3b8",
+            DrawerBackground = "#020617", DrawerText = "#94a3b8", DrawerIcon = "#94a3b8"
         },
-        Typography = new Typography()
-        {
-            Default = new DefaultTypography()
-            {
-                FontFamily = new[] { "Roboto", "Helvetica", "Arial", "sans-serif" }
-            }
-        }
+        Typography = new Typography() { Default = new DefaultTypography() { FontFamily = new[] { "Roboto", "Helvetica", "Arial", "sans-serif" } } }
     };
 }

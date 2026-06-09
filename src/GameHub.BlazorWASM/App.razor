@@ -1,22 +1,41 @@
-﻿
-
-<CascadingAuthenticationState>
+﻿<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <NotAuthorized>
-                    <p role="alert">Nie masz uprawnień do przeglądania tej strony. Zaloguj się.</p>
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)">
+                <NotAuthorized Context="authContext">
+                    @* ELEGANCKI EKRAN BLOKADY *@
+                    <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex flex-column align-center justify-center mt-16 text-center">
+                        <MudIcon Icon="@Icons.Material.Filled.Lock" Color="Color.Primary" Style="font-size: 6rem;" Class="mb-4" />
+                        
+                        @* POPRAWKA: Usunięto Color.TextPrimary *@
+                        <MudText Typo="Typo.h4" Class="mb-2" Style="font-weight: bold;">
+                            Dostęp Zablokowany
+                        </MudText>
+                        
+                        <MudText Typo="Typo.body1" Style="color: #94a3b8;" Class="mb-8">
+                            Nie masz uprawnień do przeglądania tej strony. Zaloguj się, aby uzyskać pełny dostęp do swoich gier i profilu.
+                        </MudText>
+                        
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" Href="/login" StartIcon="@Icons.Material.Filled.Login">
+                            Przejdź do logowania
+                        </MudButton>
+                    </MudContainer>
                 </NotAuthorized>
-                <Authorizing>
-                    <p>Weryfikacja autoryzacji...</p>
-                </Authorizing>
             </AuthorizeRouteView>
             <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>
         <NotFound>
             <PageTitle>Nie znaleziono</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Niestety, pod tym adresem nic nie ma.</p>
+            <LayoutView Layout="@typeof(Layout.MainLayout)">
+                <MudContainer MaxWidth="MaxWidth.Small" Class="mt-16 text-center">
+                    <MudIcon Icon="@Icons.Material.Filled.QuestionMark" Color="Color.Secondary" Style="font-size: 6rem;" Class="mb-4" />
+                    
+                    @* POPRAWKA: Usunięto Color.TextPrimary *@
+                    <MudText Typo="Typo.h4" Class="mb-4">Błąd 404</MudText>
+                    
+                    <MudText Typo="Typo.body1" Style="color: #94a3b8;" Class="mb-6">Przykro nam, ale podany adres nie istnieje.</MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/">Wróć do Sklepu</MudButton>
+                </MudContainer>
             </LayoutView>
         </NotFound>
     </Router>

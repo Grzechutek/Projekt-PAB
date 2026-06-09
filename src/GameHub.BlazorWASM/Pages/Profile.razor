@@ -1,0 +1,222 @@
+@page "/profile"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-16">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Mój Profil</MudText>
+
+    @if (_isLoading)
+    {
+        <div class="d-flex justify-center mt-16">
+            <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+        </div>
+    }
+    else if (_profile != null)
+    {
+        <MudGrid>
+            @* KARTA PROFILU (LEWA STRONA) *@
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Style="background-color: #1e1e2d; color: white; border-radius: 12px;">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Dane konta</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent Class="d-flex flex-column align-center">
+                        <MudAvatar Color="Color.Secondary" Style="width: 100px; height: 100px; font-size: 3rem;" Class="mb-4">
+                            @(!string.IsNullOrEmpty(_profile.Username) ? _profile.Username.Substring(0, 1).ToUpper() : "?")
+                        </MudAvatar>
+                        
+                        <MudText Typo="Typo.h5" Style="font-weight: bold;">@_profile.Username</MudText>
+                        <MudText Typo="Typo.body2" Style="color: #94a3b8;" Class="mb-4">@_profile.Email</MudText>
+                        
+                        <MudDivider Class="w-100" />
+                        
+                        <MudText Typo="Typo.h6" Style="color: #eab308; font-weight: bold;" Class="mt-4">
+                            Aktualne Saldo: @_currentBalance.ToString("0.00") PLN
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            @* KARTA PORTFELA I HISTORII (PRAWA STRONA) *@
+            <MudItem xs="12" md="8">
+                <MudCard Elevation="4" Style="background-color: #1e1e2d; color: white; border-radius: 12px;">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Zarządzanie Portfelem</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body1" Class="mb-4">Doładuj swoje konto, aby móc kupować gry w naszym sklepie.</MudText>
+                        
+                        @* FORMULARZ DOŁADOWANIA *@
+                        <div class="d-flex gap-4 align-center mb-8">
+                            <MudNumericField T="decimal?" @bind-Value="_topUpAmount" Label="Kwota doładowania (PLN)" Variant="Variant.Outlined" Min="5" Max="1000" Format="N2" HideSpinButtons="true" />
+                            
+                            <MudButton Variant="Variant.Filled" Color="Color.Success" Size="Size.Large" OnClick="TopUpWallet" Disabled="@_isProcessing">
+                                @if (_isProcessing)
+                                {
+                                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                                }
+                                else
+                                {
+                                    <MudText>Doładuj środki</MudText>
+                                }
+                            </MudButton>
+                        </div>
+
+                        <MudDivider Class="mb-6" />
+
+                        @* HISTORIA TRANSAKCJI *@
+                        <MudText Typo="Typo.h6" Class="mb-4" Style="color: #a855f7;">Ostatnie transakcje</MudText>
+                        
+                        @if (_history == null || !_history.Any())
+                        {
+                            <MudPaper Elevation="0" Class="pa-4 text-center" Style="background-color: transparent; border: 1px dashed rgba(255,255,255,0.1);">
+                                <MudText Typo="Typo.body2" Style="color: #64748b;">Twój portfel jest całkowicie pusty. Czas na pierwsze doładowanie!</MudText>
+                            </MudPaper>
+                        }
+                        else
+                        {
+                            <MudTable Items="@_history" Dense="true" Hover="true" Elevation="0" Style="background-color: #0f172a; color: white;">
+                                <HeaderContent>
+                                    <MudTh><MudText Style="color: #94a3b8;">Data</MudText></MudTh>
+                                    <MudTh><MudText Style="color: #94a3b8;">Typ operacji</MudText></MudTh>
+                                    <MudTh><MudText Style="color: #94a3b8;">Kwota</MudText></MudTh>
+                                </HeaderContent>
+                                <RowTemplate Context="rowCtx">
+                                    <MudTd DataLabel="Data">@rowCtx.CreatedAt.ToString("dd.MM.yyyy HH:mm")</MudTd>
+                                    <MudTd DataLabel="Typ">
+                                        @if(rowCtx.Amount > 0)
+                                        {
+                                            <MudChip T="string" Color="Color.Success" Size="Size.Small">Wpłata</MudChip>
+                                        }
+                                        else
+                                        {
+                                            <MudChip T="string" Color="Color.Error" Size="Size.Small">Zakup</MudChip>
+                                        }
+                                    </MudTd>
+                                    <MudTd DataLabel="Kwota" Style="@(rowCtx.Amount > 0 ? "color: #4ade80;" : "color: #f87171;")">
+                                        @(rowCtx.Amount > 0 ? "+" : "")@rowCtx.Amount.ToString("0.00") PLN
+                                    </MudTd>
+                                </RowTemplate>
+                            </MudTable>
+                        }
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    }
+    else
+    {
+        <MudAlert Severity="Severity.Error" Class="mt-8">Nie udało się załadować danych profilu.</MudAlert>
+    }
+</MudContainer>
+
+@code {
+    private bool _isLoading = true;
+    private bool _isProcessing = false;
+    
+    private UserProfileDto? _profile;
+    private List<TransactionHistoryDto> _history = new();
+    
+    private decimal? _topUpAmount;
+    private decimal _currentBalance = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadProfileData();
+    }
+
+    private async Task LoadProfileData()
+    {
+        try
+        {
+            // Pobieramy dane profilu z backendu
+            _profile = await Http.GetFromJsonAsync<UserProfileDto>("api/auth/profile");
+            if (_profile != null)
+            {
+                _currentBalance = _profile.Balance;
+            }
+            
+            // Pobieramy historię transakcji z portfela
+            var historyResult = await Http.GetFromJsonAsync<List<TransactionHistoryDto>>("api/wallet/history");
+            if (historyResult != null)
+            {
+                _history = historyResult.OrderByDescending(h => h.CreatedAt).ToList();
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił problem przy pobieraniu danych.", Severity.Error);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private async Task TopUpWallet()
+    {
+        if (!_topUpAmount.HasValue || _topUpAmount.Value < 5)
+        {
+            Snackbar.Add("Minimalna kwota doładowania to 5 PLN.", Severity.Warning);
+            return;
+        }
+
+        _isProcessing = true;
+        try
+        {
+            var payload = new { Amount = _topUpAmount.Value };
+            
+            // Wysyłamy żądanie do Twojego WalletController
+            var response = await Http.PostAsJsonAsync("api/wallet/topup", payload);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add($"Portfel zasilony kwotą {_topUpAmount.Value} PLN!", Severity.Success);
+                
+                // UWAGA JWT: Token nie aktualizuje się magicznie sam. Saldo na górnym pasku menu odświeży się po relogu.
+                Snackbar.Add("Uwaga: saldo na pasku nawigacji zaktualizuje się przy następnym logowaniu.", Severity.Info);
+                
+                _topUpAmount = null;
+                await LoadProfileData(); // Odświeżamy tabelkę transakcji i stan na tej stronie
+            }
+            else
+            {
+                Snackbar.Add("Transakcja odrzucona przez serwer.", Severity.Error);
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Błąd połączenia z modułem płatności.", Severity.Error);
+        }
+        finally
+        {
+            _isProcessing = false;
+        }
+    }
+
+    // --- Modele DTO --- 
+    // UWAGA: Upewnij się, że ich nazwy zmiennych pasują do tych, które faktycznie zwraca Twój backend.
+    public class UserProfileDto
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public decimal Balance { get; set; }
+    }
+
+    public class TransactionHistoryDto
+    {
+        public int Id { get; set; }
+        public int? GameId { get; set; }
+        public string? GameTitle { get; set; }
+        public decimal Amount { get; set; }
+        public string Type { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; } 
+    }
+}

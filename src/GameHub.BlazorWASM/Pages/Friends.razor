@@ -1,0 +1,293 @@
+@page "/friends"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-16">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Społeczność</MudText>
+
+    <MudTabs Elevation="4" Rounded="true" ApplyEffectsToContainer="true" Style="background-color: #1e1e2d; color: white;">
+        
+        @* ZAKŁADKA 1: MOI ZNAJOMI *@
+        <MudTabPanel Text="Moi Znajomi" Icon="@Icons.Material.Filled.People">
+            @if (_isLoading)
+            {
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+            }
+            else if (!_friends.Any())
+            {
+                <MudText Typo="Typo.body1" Style="color: #94a3b8;">Nie masz jeszcze żadnych znajomych. Przejdź do zakładki "Dodaj znajomego", aby kogoś zaprosić!</MudText>
+            }
+            else
+            {
+                <MudGrid>
+                    @foreach (var friend in _friends)
+                    {
+                        <MudItem xs="12" sm="6" md="4">
+                            <MudCard Elevation="2" Style="background-color: #0f172a;">
+                                <MudCardHeader>
+                                    <CardHeaderAvatar>
+                                        <MudAvatar Color="Color.Secondary">
+                                            @(!string.IsNullOrEmpty(friend.Username) ? friend.Username.Substring(0,1).ToUpper() : "?")
+                                        </MudAvatar>
+                                    </CardHeaderAvatar>
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.h6">@friend.Username</MudText>
+                                        <MudText Typo="Typo.caption" Style="color: #64748b;">Znajomi od: @friend.FriendsSince.ToString("dd.MM.yyyy")</MudText>
+                                    </CardHeaderContent>
+                                    <CardHeaderActions>
+                                        <MudTooltip Text="Zobacz bibliotekę">
+                                           <MudIconButton Icon="@Icons.Material.Filled.LibraryBooks" Color="Color.Info" Href="@($"/friend/{friend.UserId}/library")" />
+                                        </MudTooltip>
+                                        <MudTooltip Text="Usuń ze znajomych">
+                                            <MudIconButton Icon="@Icons.Material.Filled.PersonRemove" Color="Color.Error" OnClick="@(() => RemoveFriendship(friend.FriendshipId, "usunięto ze znajomych"))" />
+                                        </MudTooltip>
+                                    </CardHeaderActions>
+                                </MudCardHeader>
+                            </MudCard>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </MudTabPanel>
+
+        @* ZAKŁADKA 2: OCZEKUJĄCE ZAPROSZENIA *@
+        <MudTabPanel Text="Zaproszenia" Icon="@Icons.Material.Filled.Mail" BadgeData="@_requests.Count" BadgeColor="Color.Error">
+            @if (_isLoading)
+            {
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+            }
+            else if (!_requests.Any())
+            {
+                <MudText Typo="Typo.body1" Style="color: #94a3b8;">Brak nowych zaproszeń do grona znajomych.</MudText>
+            }
+            else
+            {
+                <MudGrid>
+                    @foreach (var request in _requests)
+                    {
+                        <MudItem xs="12" sm="6" md="4">
+                            <MudCard Elevation="2" Style="background-color: #0f172a; border: 1px solid rgba(168, 85, 247, 0.3);">
+                                <MudCardHeader>
+                                    <CardHeaderAvatar>
+                                        <MudAvatar Color="Color.Primary">
+                                            @(!string.IsNullOrEmpty(request.RequesterUsername) ? request.RequesterUsername.Substring(0,1).ToUpper() : "?")
+                                        </MudAvatar>
+                                    </CardHeaderAvatar>
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.h6">@request.RequesterUsername</MudText>
+                                        <MudText Typo="Typo.caption" Style="color: #64748b;">Zaproponowano: @request.SentAt.ToString("dd.MM.yyyy")</MudText>
+                                    </CardHeaderContent>
+                                </MudCardHeader>
+                                <MudCardActions Class="d-flex justify-space-around px-4 pb-4">
+                                    <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="@Icons.Material.Filled.Check" OnClick="@(() => AcceptRequest(request.FriendshipId))">
+                                        Akceptuj
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined" Color="Color.Error" StartIcon="@Icons.Material.Filled.Close" OnClick="@(() => RemoveFriendship(request.FriendshipId, "odrzucono zaproszenie"))">
+                                        Odrzuć
+                                    </MudButton>
+                                </MudCardActions>
+                            </MudCard>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </MudTabPanel>
+
+        @* ZAKŁADKA 3: DODAJ ZNAJOMEGO *@
+        <MudTabPanel Text="Dodaj znajomego" Icon="@Icons.Material.Filled.PersonAdd">
+            <MudContainer MaxWidth="MaxWidth.Small" Class="mt-4 pa-0">
+                <MudText Typo="Typo.h6" Class="mb-4">Wyszukaj gracza po nazwie</MudText>
+                
+                <div class="d-flex gap-4 align-center">
+                    @* DYNAMICZNA WYSZUKIWARKA *@
+                    <MudAutocomplete T="UserSearchDto" Label="Wpisz nazwę użytkownika..." 
+                                     SearchFunc="@SearchUsers" 
+                                     @bind-Value="_selectedUser" 
+                                     ToStringFunc="@(u => u?.Username)"
+                                     Variant="Variant.Outlined" 
+                                     Clearable="true" 
+                                     ShowProgressIndicator="true" />
+                    
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" OnClick="SendInvite" Disabled="@(_isInviting || _selectedUser == null)">
+                        @if (_isInviting)
+                        {
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                        }
+                        else
+                        {
+                            <MudText>Wyślij</MudText>
+                        }
+                    </MudButton>
+                </div>
+            </MudContainer>
+        </MudTabPanel>
+
+    </MudTabs>
+</MudContainer>
+
+@code {
+    private bool _isLoading = true;
+    private bool _isInviting = false;
+    
+    private List<FriendDto> _friends = new();
+    private List<FriendRequestDto> _requests = new();
+    
+    // Zmienna przechowująca wynik wybrany z wyszukiwarki
+    private UserSearchDto? _selectedUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        _isLoading = true;
+        try
+        {
+            var friendsTask = Http.GetFromJsonAsync<List<FriendDto>>("api/friends");
+            var requestsTask = Http.GetFromJsonAsync<List<FriendRequestDto>>("api/friends/requests");
+
+            await Task.WhenAll(friendsTask, requestsTask);
+
+            _friends = friendsTask.Result ?? new List<FriendDto>();
+            _requests = requestsTask.Result ?? new List<FriendRequestDto>();
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił problem z wczytaniem danych społeczności.", Severity.Error);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private async Task AcceptRequest(int friendshipId)
+    {
+        try
+        {
+            var response = await Http.PutAsync($"api/friends/{friendshipId}/accept", null);
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add("Zaproszenie zostało zaakceptowane!", Severity.Success);
+                await LoadData();
+            }
+            else
+            {
+                Snackbar.Add("Nie udało się zaakceptować zaproszenia.", Severity.Error);
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error);
+        }
+    }
+
+    private async Task RemoveFriendship(int friendshipId, string successMessage)
+    {
+        try
+        {
+            var response = await Http.DeleteAsync($"api/friends/{friendshipId}");
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add($"Pomyślnie {successMessage}.", Severity.Info);
+                await LoadData();
+            }
+            else
+            {
+                Snackbar.Add("Wystąpił błąd podczas usuwania relacji.", Severity.Error);
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error);
+        }
+    }
+
+    // Nowa metoda do obsługi wyszukiwania
+    private async Task<IEnumerable<UserSearchDto>> SearchUsers(string value, CancellationToken ct)
+    {
+        // Optymalizacja: szukamy dopiero od 2 wpisanych znaków
+        if (string.IsNullOrWhiteSpace(value) || value.Length < 2)
+            return new List<UserSearchDto>();
+
+        try
+        {
+            var result = await Http.GetFromJsonAsync<List<UserSearchDto>>($"api/users/search?query={value}", ct);
+            return result ?? new List<UserSearchDto>();
+        }
+        catch
+        {
+            return new List<UserSearchDto>();
+        }
+    }
+
+    private async Task SendInvite()
+    {
+        if (_selectedUser == null || _selectedUser.Id <= 0)
+        {
+            Snackbar.Add("Najpierw wybierz gracza z listy.", Severity.Warning);
+            return;
+        }
+
+        _isInviting = true;
+        try
+        {
+            var response = await Http.PostAsync($"api/friends/invite/{_selectedUser.Id}", null);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add($"Zaproszenie do {_selectedUser.Username} zostało wysłane!", Severity.Success);
+                _selectedUser = null; // Czyścimy pole
+            }
+            else
+            {
+                var errorObj = await response.Content.ReadFromJsonAsync<ErrorResponse>();
+                Snackbar.Add(errorObj?.Error ?? "Nie udało się wysłać zaproszenia.", Severity.Warning);
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił błąd krytyczny.", Severity.Error);
+        }
+        finally
+        {
+            _isInviting = false;
+        }
+    }
+
+    // --- Modele DTO ---
+    public class FriendDto
+    {
+        public int FriendshipId { get; set; }
+        public int UserId { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string? AvatarUrl { get; set; }
+        public DateTime FriendsSince { get; set; }
+    }
+
+    public class FriendRequestDto
+    {
+        public int FriendshipId { get; set; }
+        public int RequesterId { get; set; }
+        public string RequesterUsername { get; set; } = string.Empty;
+        public string? RequesterAvatarUrl { get; set; }
+        public DateTime SentAt { get; set; }
+    }
+
+    public class UserSearchDto
+    {
+        public int Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string? AvatarUrl { get; set; }
+    }
+
+    public class ErrorResponse
+    {
+        public string Error { get; set; } = string.Empty;
+    }
+}

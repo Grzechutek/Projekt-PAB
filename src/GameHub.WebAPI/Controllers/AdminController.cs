@@ -9,7 +9,7 @@ namespace GameHub.WebAPI.Controllers;
 
 [ApiController]
 [Route("api/admin")]
-[Authorize(Roles = "Admin")]   // cały kontroler tylko dla admina
+[Authorize(Roles = "Admin")]
 public class AdminController : ControllerBase
 {
     private readonly IUnitOfWork _uow;
@@ -25,16 +25,13 @@ public class AdminController : ControllerBase
     }
 
     // ──────────────────────────────────────────────────────────────────────
-    // GET /api/admin/users  [Admin]
-    //
-    // Lista wszystkich użytkowników — zasila MudDataGrid w panelu admina.
-    // Sortowanie po dacie rejestracji (najnowsi pierwsi).
+    // ZARZĄDZANIE UŻYTKOWNIKAMI
     // ──────────────────────────────────────────────────────────────────────
+
     [HttpGet("users")]
     public async Task<IActionResult> GetUsers(CancellationToken ct)
     {
         var users = await _uow.Users.GetAllAsync(ct);
-
         var dtos = users
             .OrderByDescending(u => u.CreatedAt)
             .Select(u => new UserAdminDto(
@@ -42,81 +39,79 @@ public class AdminController : ControllerBase
                 u.Role, u.IsBlocked, u.WalletBalance, u.CreatedAt))
             .ToList();
 
-        _logger.LogInformation(
-            "GET /api/admin/users — zwrócono {Count} użytkowników", dtos.Count);
-
         return Ok(dtos);
     }
 
-    // ──────────────────────────────────────────────────────────────────────
-    // PATCH /api/admin/users/{id}/block  [Admin]
-    //
-    // Toggle blokady konta: IsBlocked = !IsBlocked.
-    // Admin nie może zablokować własnego konta.
-    // Zwraca aktualny stan IsBlocked po zmianie.
-    // ──────────────────────────────────────────────────────────────────────
     [HttpPatch("users/{id:int}/block")]
     public async Task<IActionResult> ToggleBlock(int id, CancellationToken ct)
     {
         var adminId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
         if (id == adminId)
             return BadRequest(new { error = "Nie możesz zablokować własnego konta." });
 
         var user = await _uow.Users.GetByIdAsync(id, ct);
-        if (user is null)
-            return NotFound(new { error = $"Użytkownik o Id={id} nie istnieje." });
+        if (user is null) return NotFound();
 
         user.IsBlocked = !user.IsBlocked;
         _uow.Users.Update(user);
         await _uow.SaveChangesAsync(ct);
 
-        var action = user.IsBlocked ? "zablokował" : "odblokował";
-        _logger.LogInformation(
-            "Admin {AdminId} {Action} konto userId={UserId}",
-            adminId, action, id);
-
         return Ok(new { id, isBlocked = user.IsBlocked });
     }
 
     // ──────────────────────────────────────────────────────────────────────
-    // PATCH /api/admin/users/{id}/role  [Admin]
-    //
-    // Zmienia rolę użytkownika. Dozwolone: "User", "Admin".
-    // Admin nie może zmienić własnej roli — uchroni się przed przypadkową
-    // utratą dostępu do panelu admina.
+    // ZARZĄDZANIE KATALOGIEM GIER (NOWE)
     // ──────────────────────────────────────────────────────────────────────
-    [HttpPatch("users/{id:int}/role")]
-    public async Task<IActionResult> UpdateRole(
-        int id,
-        [FromBody] UpdateRoleRequest req,
-        CancellationToken ct)
+
+    [HttpGet("games")]
+    public async Task<IActionResult> GetAllGames(CancellationToken ct)
     {
-        var adminId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        // Pobieramy wszystkie gry bez filtrów (UnitOfWork powinien mieć dostęp do bazy)
+        var games = await _uow.Games.GetAllAsync(ct);
+        
+        var dtos = games.Select(g => new {
+            g.Id,
+            g.Title,
+            g.Genre,
+            g.Price,
+            g.CoverImageUrl,
+            g.Description,
+            g.IsVisible // Flaga widoczna tylko dla Admina
+        }).ToList();
 
-        if (id == adminId)
-            return BadRequest(new { error = "Nie możesz zmienić własnej roli." });
+        return Ok(dtos);
+    }
+    [HttpPatch("games/{id:int}/hide")]
+    public async Task<IActionResult> HideGame(int id, CancellationToken ct)
+    {
+        var game = await _uow.Games.GetByIdAsync(id, ct);
+        if (game is null) return NotFound();
 
-        if (!AllowedRoles.Contains(req.Role))
-            return BadRequest(new
-            {
-                error = "Nieprawidłowa rola. Dozwolone wartości: User, Admin."
-            });
-
-        var user = await _uow.Users.GetByIdAsync(id, ct);
-        if (user is null)
-            return NotFound(new { error = $"Użytkownik o Id={id} nie istnieje." });
-
-        var previousRole = user.Role;
-        user.Role = req.Role;
-
-        _uow.Users.Update(user);
+        game.IsVisible = false; // Ukrywamy grę
+        _uow.Games.Update(game);
         await _uow.SaveChangesAsync(ct);
 
-        _logger.LogInformation(
-            "Admin {AdminId} zmienił rolę userId={UserId}: {From} → {To}",
-            adminId, id, previousRole, req.Role);
+        _logger.LogInformation("Admin ukrył grę Id={Id}", id);
+        return Ok();
+    }
 
-        return Ok(new { id, role = user.Role });
+    [HttpPatch("games/{id:int}/restore")]
+    public async Task<IActionResult> RestoreGame(int id, CancellationToken ct)
+    {
+        var game = await _uow.Games.GetByIdAsync(id, ct);
+        if (game is null) return NotFound();
+
+        // Jeśli gra JEST widoczna, to wyrzucamy błąd (nie można przywrócić czegoś, co już działa)
+        if (game.IsVisible)
+            return BadRequest(new { error = "Gra jest już widoczna w sklepie." });
+
+        // PRZYWRACAMY GRĘ -> Ustawiamy flagę na true!
+        game.IsVisible = true;
+        
+        _uow.Games.Update(game);
+        await _uow.SaveChangesAsync(ct);
+
+        _logger.LogInformation("Admin przywrócił grę Id={Id}: {Title}", id, game.Title);
+        return Ok(new { id, isVisible = true });
     }
 }

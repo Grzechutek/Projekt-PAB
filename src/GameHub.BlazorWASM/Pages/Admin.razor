@@ -1,0 +1,415 @@
+@page "/admin"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-16">
+    <MudText Typo="Typo.h3" Color="Color.Error" Class="mb-6" Style="font-weight: bold;">
+        <MudIcon Icon="@Icons.Material.Filled.AdminPanelSettings" Size="Size.Large" Class="mr-2" />
+        Panel Administratora
+    </MudText>
+
+    <MudTabs Elevation="4" Rounded="true" ApplyEffectsToContainer="true" Style="background-color: #1e1e2d; color: white;">
+        
+        @* ───────────────────────────────────────────────────────── *@
+        @* ZAKŁADKA 1: UŻYTKOWNICY *@
+        @* ───────────────────────────────────────────────────────── *@
+        <MudTabPanel Text="Użytkownicy" Icon="@Icons.Material.Filled.Group">
+            @if (_isLoadingUsers)
+            {
+                <div class="pa-8 d-flex justify-center">
+                    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+                </div>
+            }
+            else
+            {
+                <MudTable Items="@_users" Dense="true" Hover="true" Elevation="0" Style="background-color: #0f172a; color: white;">
+                    <HeaderContent>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">ID</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Użytkownik</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Portfel</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Rola</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Status</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Akcje</MudText></MudTh>
+                    </HeaderContent>
+                    <RowTemplate Context="user">
+                        <MudTd DataLabel="ID">@user.Id</MudTd>
+                        <MudTd DataLabel="Użytkownik">
+                            <MudText Typo="Typo.body2" Style="font-weight: bold;">@user.Username</MudText>
+                            <MudText Typo="Typo.caption" Style="color: #64748b;">@user.Email</MudText>
+                        </MudTd>
+                        <MudTd DataLabel="Portfel">@user.WalletBalance.ToString("0.00") PLN</MudTd>
+                        <MudTd DataLabel="Rola">
+                            @if (user.Role == "Admin")
+                            {
+                                <MudChip T="string" Color="Color.Error" Size="Size.Small">Admin</MudChip>
+                            }
+                            else
+                            {
+                                <MudChip T="string" Color="Color.Info" Size="Size.Small">User</MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Status">
+                            @if (user.IsBlocked)
+                            {
+                                <MudChip T="string" Color="Color.Dark" Size="Size.Small">Zablokowany</MudChip>
+                            }
+                            else
+                            {
+                                <MudChip T="string" Color="Color.Success" Size="Size.Small">Aktywny</MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Akcje">
+                            <MudTooltip Text="@(user.Role == "Admin" ? "Zmień na User" : "Awansuj na Admina")">
+                                <MudIconButton Icon="@(user.Role == "Admin" ? Icons.Material.Filled.ArrowDownward : Icons.Material.Filled.ArrowUpward)" 
+                                               Color="@(user.Role == "Admin" ? Color.Warning : Color.Success)" 
+                                               OnClick="@(() => ToggleRole(user))" />
+                            </MudTooltip>
+                            <MudTooltip Text="@(user.IsBlocked ? "Odblokuj" : "Zablokuj")">
+                                <MudIconButton Icon="@(user.IsBlocked ? Icons.Material.Filled.LockOpen : Icons.Material.Filled.Lock)" 
+                                               Color="@(user.IsBlocked ? Color.Success : Color.Error)" 
+                                               OnClick="@(() => ToggleBlock(user))" />
+                            </MudTooltip>
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+            }
+        </MudTabPanel>
+
+        @* ───────────────────────────────────────────────────────── *@
+        @* ZAKŁADKA 2: GRY (SKLEP) *@
+        @* ───────────────────────────────────────────────────────── *@
+        <MudTabPanel Text="Zarządzanie Sklepem" Icon="@Icons.Material.Filled.Storefront">
+            <div class="d-flex justify-space-between align-center pa-4">
+                <MudText Typo="Typo.h5" Style="font-weight: bold;">Baza Gier</MudText>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="OpenAddDrawer">
+                    Dodaj nową grę
+                </MudButton>
+            </div>
+
+            @if (_isLoadingGames)
+            {
+                <div class="pa-8 d-flex justify-center">
+                    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+                </div>
+            }
+            else
+            {
+                <MudTable Items="@_games" Dense="true" Hover="true" Elevation="0" Style="background-color: #0f172a; color: white;">
+                    <HeaderContent>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Okładka</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Tytuł</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Gatunek</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Cena</MudText></MudTh>
+                        <MudTh><MudText Style="color: #94a3b8; font-weight: bold;">Akcje</MudText></MudTh>
+                    </HeaderContent>
+                    <RowTemplate Context="game">
+                        @* Przezroczystość dla ukrytych gier *@
+                        <MudTd DataLabel="Okładka" Style="@(!game.IsVisible ? "opacity: 0.5;" : "")">
+                            <MudImage Src="@(string.IsNullOrEmpty(game.CoverImageUrl) ? "https://placehold.co/100x100/2a2a35/a855f7?text=Brak" : game.CoverImageUrl)" Width="50" Height="50" ObjectFit="ObjectFit.Cover" Class="rounded" />
+                        </MudTd>
+                        
+                        <MudTd DataLabel="Tytuł" Style="@(!game.IsVisible ? "opacity: 0.5;" : "")">
+                            <MudText Typo="Typo.body2" Style="font-weight: bold;">
+                                @game.Title
+                                @if(!game.IsVisible)
+                                {
+                                    <MudChip T="string" Color="Color.Dark" Size="Size.Small" Class="ml-2">Ukryta</MudChip>
+                                }
+                            </MudText>
+                        </MudTd>
+                        
+                        <MudTd DataLabel="Gatunek" Style="@(!game.IsVisible ? "opacity: 0.5;" : "")">@game.Genre</MudTd>
+                        <MudTd DataLabel="Cena" Style="@(!game.IsVisible ? "opacity: 0.5;" : "")">@game.Price.ToString("0.00") PLN</MudTd>
+                        
+                        <MudTd DataLabel="Akcje">
+                            <MudTooltip Text="Edytuj">
+                                <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" OnClick="@(() => OpenEditDrawer(game))" />
+                            </MudTooltip>
+                            
+                            @* Przycisk Przywróć lub Ukryj zależnie od statusu *@
+                            @if(!game.IsVisible)
+                            {
+                                <MudTooltip Text="Przywróć do sklepu">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Restore" Color="Color.Success" OnClick="@(() => RestoreGame(game.Id))" />
+                                </MudTooltip>
+                            }
+                            else
+                            {
+                                <MudTooltip Text="Ukryj w sklepie (Soft Delete)">
+                                    <MudIconButton Icon="@Icons.Material.Filled.VisibilityOff" Color="Color.Error" OnClick="@(() => HideGame(game.Id))" />
+                                </MudTooltip>
+                            }
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+            }
+        </MudTabPanel>
+
+    </MudTabs>
+</MudContainer>
+
+@* ───────────────────────────────────────────────────────── *@
+@* WYSUWANY PANEL BOCZNY (DRAWER) DO FORMULARZA GRY *@
+@* ───────────────────────────────────────────────────────── *@
+<MudDrawer @bind-Open="@_isDrawerOpen" Anchor="Anchor.End" Elevation="4" Variant="@DrawerVariant.Temporary" Width="400px" Style="background-color: #1e1e2d; color: white;">
+    <MudDrawerHeader Class="d-flex justify-space-between align-center">
+        <MudText Typo="Typo.h6" Style="font-weight: bold;">@(_isEditing ? "Edytuj Grę" : "Dodaj Grę")</MudText>
+        <MudIconButton Icon="@Icons.Material.Filled.Close" Color="Color.Surface" OnClick="@(() => _isDrawerOpen = false)" />
+    </MudDrawerHeader>
+
+    <MudContainer Class="pa-4">
+        <MudTextField @bind-Value="_gameForm.Title" Label="Tytuł" Variant="Variant.Outlined" Class="mb-4" />
+        <MudTextField @bind-Value="_gameForm.Genre" Label="Gatunek (np. RPG, Akcja)" Variant="Variant.Outlined" Class="mb-4" />
+        <MudNumericField @bind-Value="_gameForm.Price" Label="Cena (PLN)" Variant="Variant.Outlined" Min="0" Format="N2" Class="mb-4" />
+        
+        <MudTextField @bind-Value="_gameForm.CoverImageUrl" Label="Ścieżka do okładki" Variant="Variant.Outlined" Class="mb-2" />
+        <MudText Typo="Typo.caption" Style="color: #94a3b8;" Class="d-block mb-4">
+            Przykład: <b>/images/games/Cyber_Odyssey.png</b>
+        </MudText>
+
+        <MudTextField @bind-Value="_gameForm.Description" Label="Opis gry" Variant="Variant.Outlined" Lines="5" Class="mb-6" />
+
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" Size="Size.Large" OnClick="SaveGame" Disabled="@_isSaving">
+            @if (_isSaving)
+            {
+                <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+            }
+            else
+            {
+                <MudText>Zapisz</MudText>
+            }
+        </MudButton>
+    </MudContainer>
+</MudDrawer>
+
+@code {
+    // --- STAN KOMPONENTU ---
+    private bool _isLoadingUsers = true;
+    private bool _isLoadingGames = true;
+    private bool _isDrawerOpen = false;
+    private bool _isEditing = false;
+    private bool _isSaving = false;
+    private int _editingGameId = 0;
+
+    private List<UserAdminDto> _users = new();
+    private List<GameAdminDto> _games = new();
+    
+    // Model formularza podpięty pod pola w boczny panelu
+    private GameFormModel _gameForm = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUsers();
+        await LoadGames();
+    }
+
+    // --- LOGIKA UŻYTKOWNIKÓW ---
+    private async Task LoadUsers()
+    {
+        _isLoadingUsers = true;
+        try
+        {
+            var result = await Http.GetFromJsonAsync<List<UserAdminDto>>("api/admin/users");
+            if (result != null) _users = result;
+        }
+        catch { Snackbar.Add("Błąd pobierania użytkowników.", Severity.Error); }
+        finally { _isLoadingUsers = false; }
+    }
+
+    private async Task ToggleBlock(UserAdminDto user)
+    {
+        try
+        {
+            var response = await Http.PatchAsync($"api/admin/users/{user.Id}/block", null);
+            if (response.IsSuccessStatusCode)
+            {
+                user.IsBlocked = !user.IsBlocked;
+                Snackbar.Add(user.IsBlocked ? "Konto zablokowane." : "Konto odblokowane.", user.IsBlocked ? Severity.Warning : Severity.Success);
+            }
+            else { Snackbar.Add("Nie można zmienić statusu blokady.", Severity.Error); }
+        }
+        catch { Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error); }
+    }
+
+    private async Task ToggleRole(UserAdminDto user)
+    {
+        var newRole = user.Role == "Admin" ? "User" : "Admin";
+        try
+        {
+            var payload = new { Role = newRole };
+            var response = await Http.PatchAsJsonAsync($"api/admin/users/{user.Id}/role", payload);
+            if (response.IsSuccessStatusCode)
+            {
+                user.Role = newRole;
+                Snackbar.Add($"Rola zmieniona na: {newRole}", Severity.Success);
+            }
+            else { Snackbar.Add("Nie można zmienić roli (nie możesz zmienić własnej!).", Severity.Error); }
+        }
+        catch { Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error); }
+    }
+
+    // --- LOGIKA GIER (SKLEPU) ---
+    private async Task LoadGames()
+    {
+        _isLoadingGames = true;
+        try
+        {
+            // ODPYTUJEMY API ADMINA - zwraca również ukryte gry (IsVisible = false)
+            var result = await Http.GetFromJsonAsync<List<GameAdminDto>>("api/admin/games");
+            if (result != null) _games = result;
+        }
+        catch { Snackbar.Add("Błąd pobierania gier.", Severity.Error); }
+        finally { _isLoadingGames = false; }
+    }
+
+    private void OpenAddDrawer()
+    {
+        _isEditing = false;
+        _gameForm = new GameFormModel(); // Pusty formularz
+        _isDrawerOpen = true;
+    }
+
+    private void OpenEditDrawer(GameAdminDto game)
+    {
+        _isEditing = true;
+        _editingGameId = game.Id;
+        _gameForm = new GameFormModel
+        {
+            Title = game.Title,
+            Genre = game.Genre,
+            Price = game.Price,
+            CoverImageUrl = game.CoverImageUrl ?? string.Empty,
+            Description = game.Description ?? string.Empty
+        };
+        _isDrawerOpen = true;
+    }
+
+    private async Task SaveGame()
+    {
+        if (string.IsNullOrWhiteSpace(_gameForm.Title) || string.IsNullOrWhiteSpace(_gameForm.Genre))
+        {
+            Snackbar.Add("Tytuł i Gatunek są wymagane.", Severity.Warning);
+            return;
+        }
+
+        _isSaving = true;
+        try
+        {
+            HttpResponseMessage response;
+            
+            if (_isEditing)
+            {
+                // Aktualizacja (PUT) - zakładamy, że leci na stary endpoint api/games/{id}
+                response = await Http.PutAsJsonAsync($"api/games/{_editingGameId}", _gameForm);
+            }
+            else
+            {
+                // Tworzenie (POST)
+                response = await Http.PostAsJsonAsync("api/games", _gameForm);
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add(_isEditing ? "Gra zaktualizowana!" : "Nowa gra dodana!", Severity.Success);
+                _isDrawerOpen = false;
+                await LoadGames(); // Odświeżenie tabeli
+            }
+            else
+            {
+                Snackbar.Add("Serwer odrzucił żądanie.", Severity.Error);
+            }
+        }
+        catch
+        {
+            Snackbar.Add("Wystąpił błąd podczas zapisywania.", Severity.Error);
+        }
+        finally
+        {
+            _isSaving = false;
+        }
+    }
+
+   private async Task HideGame(int id)
+    {
+        try
+        {
+            // Zmieniliśmy endpoint na dedykowany do ukrywania
+            var response = await Http.PatchAsync($"api/admin/games/{id}/hide", null);
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add("Gra została pomyślnie ukryta.", Severity.Info);
+                await LoadGames(); 
+            }
+            else
+            {
+                Snackbar.Add("Nie udało się ukryć gry.", Severity.Error);
+            }
+        }
+        catch
+        {
+            Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error);
+        }
+    }
+
+    private async Task RestoreGame(int id)
+    {
+        try
+        {
+            // Przywracanie z ukrycia (IsVisible = true) przez endpoint Admina
+            var response = await Http.PatchAsync($"api/admin/games/{id}/restore", null);
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add("Gra została przywrócona i jest widoczna w sklepie.", Severity.Success);
+                await LoadGames(); // Odśwież tabelę
+            }
+            else
+            {
+                Snackbar.Add("Nie udało się przywrócić gry.", Severity.Error);
+            }
+        }
+        catch
+        {
+            Snackbar.Add("Błąd komunikacji z serwerem.", Severity.Error);
+        }
+    }
+
+    // --- Modele DTO ---
+    public class UserAdminDto
+    {
+        public int Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
+        public bool IsBlocked { get; set; }
+        public decimal WalletBalance { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
+
+    public class GameAdminDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Genre { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public string? CoverImageUrl { get; set; }
+        public string? Description { get; set; }
+        public bool IsVisible { get; set; } // Zmienione z IsDeleted
+    }
+
+    public class GameFormModel
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Genre { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public string CoverImageUrl { get; set; } = string.Empty;
+    }
+
+    public class ErrorResponse
+    {
+        public string Error { get; set; } = string.Empty;
+    }
+}

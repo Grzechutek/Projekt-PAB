@@ -55,4 +55,18 @@ public class AuthService
         ((CustomAuthStateProvider)_authStateProvider).MarkUserAsLoggedOut();
         _httpClient.DefaultRequestHeaders.Authorization = null;
     }
+    // --- METODA DOŁADOWANIA PORTFELA ---
+    public async Task<bool> TopUpWalletAsync(decimal amount)
+    {
+        var token = await _localStorage.GetItemAsync<string>("authToken");
+        if (!string.IsNullOrEmpty(token))
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+        }
+
+        // Wysyłamy prośbę na nowy endpoint backendowy, który zaraz stworzymy
+        var response = await _httpClient.PostAsJsonAsync("api/auth/topup", new { Amount = amount });
+        
+        return response.IsSuccessStatusCode;
+    }
 }

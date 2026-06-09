@@ -1,0 +1,278 @@
+2026-06-10 00:04:00.550 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-10 00:04:00.594 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 7.9823 ms
+2026-06-10 00:04:00.675 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-10 00:04:00.707 +02:00 [INF] HTTP GET /api/games responded 200 in 105.1542 ms
+2026-06-10 00:04:02.858 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 1.0218 ms
+2026-06-10 00:04:02.897 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 36.9889 ms
+2026-06-10 00:04:02.980 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0952 ms
+2026-06-10 00:04:02.993 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 13.0108 ms
+2026-06-10 00:04:13.603 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/restore responded 204 in 0.2618 ms
+2026-06-10 00:04:13.665 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 60.1213 ms
+2026-06-10 00:04:15.132 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 6.9775 ms
+2026-06-10 00:04:16.070 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 3.9153 ms
+2026-06-10 00:04:22.289 +02:00 [INF] HTTP OPTIONS /api/admin/games/6/restore responded 204 in 0.1760 ms
+2026-06-10 00:04:22.294 +02:00 [INF] HTTP PATCH /api/admin/games/6/restore responded 400 in 3.2455 ms
+2026-06-10 00:14:23.731 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.3910 ms
+2026-06-10 00:14:23.737 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 3.6350 ms
+2026-06-10 00:14:23.915 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0759 ms
+2026-06-10 00:14:23.918 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 1.6907 ms
+2026-06-10 00:14:28.178 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/restore responded 204 in 0.2904 ms
+2026-06-10 00:14:28.184 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 4.8808 ms
+2026-06-10 00:15:33.131 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-10 00:15:33.186 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 9.6653 ms
+2026-06-10 00:15:33.268 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-10 00:15:33.304 +02:00 [INF] HTTP GET /api/games responded 200 in 108.5883 ms
+2026-06-10 00:15:35.113 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 1.1855 ms
+2026-06-10 00:15:35.154 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 39.6381 ms
+2026-06-10 00:15:35.236 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0987 ms
+2026-06-10 00:15:35.252 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 15.2768 ms
+2026-06-10 00:15:38.757 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/restore responded 204 in 0.3304 ms
+2026-06-10 00:15:38.817 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 58.8689 ms
+2026-06-10 00:15:39.646 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 6.9413 ms
+2026-06-10 00:15:39.849 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 400 in 4.0239 ms
+2026-06-10 00:19:04.638 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-10 00:19:04.684 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 8.9718 ms
+2026-06-10 00:19:04.768 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-10 00:19:04.802 +02:00 [INF] HTTP GET /api/games responded 200 in 107.8462 ms
+2026-06-10 00:19:07.192 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 1.0491 ms
+2026-06-10 00:19:07.232 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 39.0836 ms
+2026-06-10 00:19:07.314 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.1044 ms
+2026-06-10 00:19:07.328 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 13.2045 ms
+2026-06-10 00:19:11.605 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/restore responded 204 in 0.2855 ms
+2026-06-10 00:19:11.691 +02:00 [INF] Admin przywrócił grę Id=1: Cyber Odyssey
+2026-06-10 00:19:11.692 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 200 in 85.0533 ms
+2026-06-10 00:19:11.704 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 1.1512 ms
+2026-06-10 00:19:44.458 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1904 ms
+2026-06-10 00:19:44.796 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-10 00:19:44.797 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 337.7468 ms
+2026-06-10 00:19:44.885 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0538 ms
+2026-06-10 00:19:44.887 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:19:44.887 +02:00 [INF] HTTP GET /api/games responded 200 in 2.1536 ms
+2026-06-10 00:19:48.683 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1522 ms
+2026-06-10 00:19:48.724 +02:00 [INF] HTTP GET /api/games/library responded 200 in 40.6780 ms
+2026-06-10 00:19:49.898 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.2689 ms
+2026-06-10 00:19:49.921 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:19:49.924 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 24.5948 ms
+2026-06-10 00:19:49.931 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0953 ms
+2026-06-10 00:19:49.957 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:19:49.958 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 27.1501 ms
+2026-06-10 00:20:06.326 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3456 ms
+2026-06-10 00:20:06.333 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:20:06.334 +02:00 [INF] HTTP GET /api/games responded 200 in 4.0994 ms
+2026-06-10 00:24:11.860 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.5938 ms
+2026-06-10 00:24:11.871 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:24:11.871 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 8.5456 ms
+2026-06-10 00:24:11.887 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0969 ms
+2026-06-10 00:24:11.890 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:24:11.891 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 3.1395 ms
+2026-06-10 00:24:21.784 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2133 ms
+2026-06-10 00:24:21.789 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.1316 ms
+2026-06-10 00:24:23.017 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1853 ms
+2026-06-10 00:24:23.021 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:24:23.022 +02:00 [INF] HTTP GET /api/games responded 200 in 3.2163 ms
+2026-06-10 00:24:27.962 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0765 ms
+2026-06-10 00:24:27.964 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.7045 ms
+2026-06-10 00:24:29.531 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2266 ms
+2026-06-10 00:24:29.535 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:24:29.536 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1430 ms
+2026-06-10 00:24:32.067 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:24:32.067 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0012 ms
+2026-06-10 00:24:34.297 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0955 ms
+2026-06-10 00:24:34.300 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:24:34.301 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 2.5068 ms
+2026-06-10 00:24:34.314 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0729 ms
+2026-06-10 00:24:34.318 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:24:34.319 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 3.9192 ms
+2026-06-10 00:24:37.155 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1876 ms
+2026-06-10 00:24:37.159 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:24:37.160 +02:00 [INF] HTTP GET /api/games responded 200 in 3.0568 ms
+2026-06-10 00:24:39.773 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1391 ms
+2026-06-10 00:24:39.778 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:24:39.778 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 3.6186 ms
+2026-06-10 00:24:39.786 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.1296 ms
+2026-06-10 00:24:39.790 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:24:39.790 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 3.6391 ms
+2026-06-10 00:24:57.228 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2593 ms
+2026-06-10 00:24:57.234 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.2629 ms
+2026-06-10 00:24:59.100 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1630 ms
+2026-06-10 00:24:59.104 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:24:59.104 +02:00 [INF] HTTP GET /api/games responded 200 in 3.0919 ms
+2026-06-10 00:25:00.981 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.2570 ms
+2026-06-10 00:25:01.979 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:25:01.980 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6463 ms
+2026-06-10 00:25:06.476 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1772 ms
+2026-06-10 00:25:06.479 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:25:06.479 +02:00 [INF] HTTP GET /api/games responded 200 in 1.7793 ms
+2026-06-10 00:25:10.637 +02:00 [INF] HTTP OPTIONS /api/games/4 responded 204 in 0.1335 ms
+2026-06-10 00:25:10.641 +02:00 [INF] GET /api/games/4 — 'Dungeon Crawler X', średnia ocen: brak
+2026-06-10 00:25:10.642 +02:00 [INF] HTTP GET /api/games/4 responded 200 in 3.9297 ms
+2026-06-10 00:25:10.658 +02:00 [INF] HTTP OPTIONS /api/games/4/reviews responded 204 in 0.0344 ms
+2026-06-10 00:25:10.660 +02:00 [INF] GET /api/games/4/reviews — zwrócono 0 recenzji
+2026-06-10 00:25:10.660 +02:00 [INF] HTTP GET /api/games/4/reviews responded 200 in 1.2116 ms
+2026-06-10 00:25:13.597 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1433 ms
+2026-06-10 00:25:13.601 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:25:13.602 +02:00 [INF] HTTP GET /api/games responded 200 in 3.9393 ms
+2026-06-10 00:29:14.976 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.7636 ms
+2026-06-10 00:29:14.989 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:29:14.990 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 12.9520 ms
+2026-06-10 00:29:14.994 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0821 ms
+2026-06-10 00:29:14.996 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:29:14.996 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 2.3240 ms
+2026-06-10 00:29:17.599 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2620 ms
+2026-06-10 00:29:17.603 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:29:17.604 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1946 ms
+2026-06-10 00:29:19.051 +02:00 [INF] HTTP OPTIONS /api/games/4 responded 204 in 0.1502 ms
+2026-06-10 00:29:19.055 +02:00 [INF] GET /api/games/4 — 'Dungeon Crawler X', średnia ocen: brak
+2026-06-10 00:29:19.055 +02:00 [INF] HTTP GET /api/games/4 responded 200 in 2.9945 ms
+2026-06-10 00:29:19.064 +02:00 [INF] HTTP OPTIONS /api/games/4/reviews responded 204 in 0.0860 ms
+2026-06-10 00:29:19.068 +02:00 [INF] GET /api/games/4/reviews — zwrócono 0 recenzji
+2026-06-10 00:29:19.068 +02:00 [INF] HTTP GET /api/games/4/reviews responded 200 in 3.2157 ms
+2026-06-10 00:29:19.962 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:29:19.962 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9293 ms
+2026-06-10 00:29:21.180 +02:00 [INF] HTTP OPTIONS /api/games/3 responded 204 in 0.0555 ms
+2026-06-10 00:29:21.183 +02:00 [INF] GET /api/games/3 — 'Galactic Frontier', średnia ocen: brak
+2026-06-10 00:29:21.183 +02:00 [INF] HTTP GET /api/games/3 responded 200 in 2.0594 ms
+2026-06-10 00:29:21.189 +02:00 [INF] HTTP OPTIONS /api/games/3/reviews responded 204 in 0.0348 ms
+2026-06-10 00:29:21.191 +02:00 [INF] GET /api/games/3/reviews — zwrócono 0 recenzji
+2026-06-10 00:29:21.191 +02:00 [INF] HTTP GET /api/games/3/reviews responded 200 in 1.7251 ms
+2026-06-10 00:29:24.168 +02:00 [INF] GET /api/games/3 — 'Galactic Frontier', średnia ocen: brak
+2026-06-10 00:29:24.168 +02:00 [INF] HTTP GET /api/games/3 responded 200 in 2.0645 ms
+2026-06-10 00:29:24.246 +02:00 [INF] GET /api/games/3/reviews — zwrócono 0 recenzji
+2026-06-10 00:29:24.247 +02:00 [INF] HTTP GET /api/games/3/reviews responded 200 in 2.8752 ms
+2026-06-10 00:29:27.396 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2014 ms
+2026-06-10 00:29:27.402 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.8797 ms
+2026-06-10 00:29:27.989 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0802 ms
+2026-06-10 00:29:27.991 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:29:27.992 +02:00 [INF] HTTP GET /api/games responded 200 in 2.1512 ms
+2026-06-10 00:29:29.735 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0794 ms
+2026-06-10 00:29:29.738 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:29:29.738 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 2.7491 ms
+2026-06-10 00:29:29.747 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.1008 ms
+2026-06-10 00:29:29.751 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:29:29.752 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 3.3885 ms
+2026-06-10 00:29:31.851 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:29:31.852 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2480 ms
+2026-06-10 00:29:33.016 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0838 ms
+2026-06-10 00:29:33.020 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.7644 ms
+2026-06-10 00:29:34.656 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:29:34.656 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 2.7359 ms
+2026-06-10 00:29:34.664 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:29:34.665 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 2.8618 ms
+2026-06-10 00:31:14.837 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0449 ms
+2026-06-10 00:31:15.068 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-10 00:31:15.068 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 230.1423 ms
+2026-06-10 00:31:15.159 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0310 ms
+2026-06-10 00:31:15.160 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:31:15.160 +02:00 [INF] HTTP GET /api/games responded 200 in 0.7032 ms
+2026-06-10 00:31:16.108 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0905 ms
+2026-06-10 00:31:16.112 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:31:16.113 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 3.2655 ms
+2026-06-10 00:31:16.129 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0249 ms
+2026-06-10 00:31:16.130 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:31:16.130 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 0.9616 ms
+2026-06-10 00:31:47.471 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0331 ms
+2026-06-10 00:31:47.475 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:31:47.475 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 1.2321 ms
+2026-06-10 00:31:47.546 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0704 ms
+2026-06-10 00:31:47.549 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:31:47.549 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 2.6138 ms
+2026-06-10 00:32:57.568 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-10 00:32:57.614 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 6.6942 ms
+2026-06-10 00:32:57.695 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:32:57.727 +02:00 [INF] HTTP GET /api/games responded 200 in 104.6276 ms
+2026-06-10 00:32:59.009 +02:00 [INF] HTTP OPTIONS /api/games/4 responded 204 in 0.2182 ms
+2026-06-10 00:32:59.060 +02:00 [INF] GET /api/games/4 — 'Dungeon Crawler X', średnia ocen: brak
+2026-06-10 00:32:59.061 +02:00 [INF] HTTP GET /api/games/4 responded 200 in 50.7928 ms
+2026-06-10 00:32:59.065 +02:00 [INF] HTTP OPTIONS /api/games/4/reviews responded 204 in 0.0712 ms
+2026-06-10 00:32:59.085 +02:00 [INF] GET /api/games/4/reviews — zwrócono 0 recenzji
+2026-06-10 00:32:59.086 +02:00 [INF] HTTP GET /api/games/4/reviews responded 200 in 20.6395 ms
+2026-06-10 00:36:03.450 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.4519 ms
+2026-06-10 00:36:03.493 +02:00 [INF] HTTP GET /api/games/library responded 200 in 41.6026 ms
+2026-06-10 00:36:04.102 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2259 ms
+2026-06-10 00:36:04.107 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:36:04.107 +02:00 [INF] HTTP GET /api/games responded 200 in 4.5107 ms
+2026-06-10 00:36:05.071 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.2321 ms
+2026-06-10 00:36:05.082 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-10 00:36:05.086 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 14.2067 ms
+2026-06-10 00:36:05.095 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0886 ms
+2026-06-10 00:36:05.104 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-10 00:36:05.105 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 9.1570 ms
+2026-06-10 00:36:09.065 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:36:09.065 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9823 ms
+2026-06-10 00:36:27.023 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.2540 ms
+2026-06-10 00:36:27.052 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 27.9556 ms
+2026-06-10 00:36:27.058 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1039 ms
+2026-06-10 00:36:27.076 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 16.9748 ms
+2026-06-10 00:36:52.305 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1904 ms
+2026-06-10 00:36:52.307 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1234 ms
+2026-06-10 00:36:52.321 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-10 00:36:52.322 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 13.9463 ms
+2026-06-10 00:36:52.322 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-10 00:36:52.323 +02:00 [INF] HTTP GET /api/friends responded 200 in 16.7016 ms
+2026-06-10 00:37:00.949 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.3570 ms
+2026-06-10 00:37:00.955 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.6350 ms
+2026-06-10 00:37:04.081 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.2654 ms
+2026-06-10 00:37:04.086 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 3.8064 ms
+2026-06-10 00:37:04.095 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1637 ms
+2026-06-10 00:37:04.100 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 3.2931 ms
+2026-06-10 00:37:08.827 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2472 ms
+2026-06-10 00:37:08.832 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:37:08.832 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6161 ms
+2026-06-10 00:37:50.301 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1011 ms
+2026-06-10 00:37:50.644 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-10 00:37:50.645 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 342.5838 ms
+2026-06-10 00:37:50.712 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0471 ms
+2026-06-10 00:37:50.714 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:37:50.714 +02:00 [INF] HTTP GET /api/games responded 200 in 0.8963 ms
+2026-06-10 00:37:59.736 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1552 ms
+2026-06-10 00:37:59.753 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 16.2953 ms
+2026-06-10 00:37:59.853 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0460 ms
+2026-06-10 00:37:59.868 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 14.1369 ms
+2026-06-10 00:38:18.457 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/hide responded 204 in 0.3496 ms
+2026-06-10 00:38:18.515 +02:00 [INF] Admin ukrył grę Id=1
+2026-06-10 00:38:18.515 +02:00 [INF] HTTP PATCH /api/admin/games/1/hide responded 200 in 56.6000 ms
+2026-06-10 00:38:18.526 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0358 ms
+2026-06-10 00:38:18.528 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 0.7962 ms
+2026-06-10 00:38:23.890 +02:00 [INF] HTTP OPTIONS /api/admin/games/1/restore responded 204 in 0.1491 ms
+2026-06-10 00:38:23.901 +02:00 [INF] Admin przywrócił grę Id=1: Cyber Odyssey
+2026-06-10 00:38:23.903 +02:00 [INF] HTTP PATCH /api/admin/games/1/restore responded 200 in 10.8370 ms
+2026-06-10 00:38:23.921 +02:00 [INF] HTTP OPTIONS /api/admin/games responded 204 in 0.0458 ms
+2026-06-10 00:38:23.924 +02:00 [INF] HTTP GET /api/admin/games responded 200 in 1.7128 ms
+2026-06-10 00:38:45.296 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1183 ms
+2026-06-10 00:38:45.301 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:38:45.302 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9692 ms
+2026-06-10 00:39:33.235 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1120 ms
+2026-06-10 00:39:33.240 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.1942 ms
+2026-06-10 00:39:34.218 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.1066 ms
+2026-06-10 00:39:34.222 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 3.0641 ms
+2026-06-10 00:39:34.237 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1300 ms
+2026-06-10 00:39:34.240 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.3256 ms
+2026-06-10 00:39:35.799 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.0762 ms
+2026-06-10 00:39:36.814 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1031 ms
+2026-06-10 00:39:36.818 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:39:36.819 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8302 ms
+2026-06-10 00:39:37.832 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 3.2861 ms
+2026-06-10 00:39:37.845 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.4980 ms
+2026-06-10 00:39:38.501 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1204 ms
+2026-06-10 00:39:38.503 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1105 ms
+2026-06-10 00:39:38.505 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-10 00:39:38.506 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.2900 ms
+2026-06-10 00:39:38.506 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-10 00:39:38.506 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.2270 ms
+2026-06-10 00:39:41.098 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.1572 ms
+2026-06-10 00:39:41.102 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 3.5142 ms
+2026-06-10 00:39:41.109 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0814 ms
+2026-06-10 00:39:41.112 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.9478 ms
+2026-06-10 00:39:42.945 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1334 ms
+2026-06-10 00:39:42.949 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.4626 ms
+2026-06-10 00:39:44.030 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0831 ms
+2026-06-10 00:39:44.034 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-10 00:39:44.034 +02:00 [INF] HTTP GET /api/games responded 200 in 3.4766 ms
+2026-06-10 00:39:44.849 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 2.5230 ms
+2026-06-10 00:39:44.863 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.3565 ms
+2026-06-10 00:39:46.029 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1073 ms
+2026-06-10 00:39:46.029 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0158 ms
+2026-06-10 00:39:46.033 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-10 00:39:46.033 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-10 00:39:46.033 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.4045 ms
+2026-06-10 00:39:46.033 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.3874 ms

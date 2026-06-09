@@ -1,0 +1,228 @@
+@page "/game/{Id:int}"
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-16">
+    @if (_isLoading)
+    {
+        <div class="d-flex justify-center mt-16">
+            <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+        </div>
+    }
+    else if (_game == null)
+    {
+        <MudAlert Severity="Severity.Error" Class="mt-8">Nie odnaleziono gry o podanym identyfikatorze.</MudAlert>
+    }
+    else
+    {
+        @* NAGŁÓWEK GRY (Hero Section) *@
+        <MudPaper Elevation="4" Class="pa-6 mb-8" Style="background-color: #1e1e2d; color: white; border-radius: 12px;">
+            <MudGrid Spacing="6">
+                
+                @* LEWA STRONA: OKŁADKA GRY *@
+                <MudItem xs="12" md="5" lg="4">
+                    <MudImage Src="@(string.IsNullOrEmpty(_game.CoverImageUrl) ? "https://placehold.co/800x400/2a2a35/a855f7?text=Brak+Okładki" : _game.CoverImageUrl)" 
+                              Alt="@_game.Title" 
+                              Elevation="4" 
+                              Fluid="true"
+                              Class="rounded-lg" 
+                              Style="width: 100%; max-height: 400px; object-fit: cover;" />
+                </MudItem>
+                
+                @* PRAWA STRONA: SZCZEGÓŁY *@
+                <MudItem xs="12" md="7" lg="8" Class="d-flex flex-column justify-center">
+                    <MudText Typo="Typo.h2" Style="font-weight: bold; color: #a855f7; line-height: 1.2;" Class="mb-2">@_game.Title</MudText>
+                    
+                    <div class="d-flex align-center mt-2 mb-6">
+                        <MudRating SelectedValue="@_averageRating" ReadOnly="true" Size="Size.Medium" />
+                        <MudText Typo="Typo.body1" Class="ml-2" Style="color: #94a3b8;">(@_reviews.Count recenzji)</MudText>
+                    </div>
+                    
+                    <MudText Typo="Typo.h4" Style="color: #eab308; font-weight: bold;" Class="mb-6">
+                        @_game.Price.ToString("0.00") PLN
+                    </MudText>
+                    
+                    <MudText Typo="Typo.body1" Style="color: #cbd5e1; line-height: 1.8;">@_game.Description</MudText>
+                </MudItem>
+                
+            </MudGrid>
+        </MudPaper>
+
+        @* SEKCJA RECENZJI I OCEN *@
+        <MudText Typo="Typo.h4" Color="Color.Primary" Class="mb-4" Style="font-weight: bold;">Recenzje Graczy</MudText>
+        
+        <MudGrid>
+            @* Formularz dodawania nowej opinii (Tylko dla zalogowanych) *@
+            <AuthorizeView>
+                <Authorized>
+                    <MudItem xs="12" md="4">
+                        <MudCard Elevation="3" Style="background-color: #0f172a; border: 1px solid rgba(168, 85, 247, 0.3);">
+                            <MudCardHeader>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6" Color="Color.Primary">Napisz recenzję</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText Typo="Typo.body2" Class="mb-2">Twoja ocena:</MudText>
+                                <MudRating @bind-SelectedValue="_newReviewRating" Size="Size.Large" Class="mb-4" />
+                                
+                                <MudTextField @bind-Value="_newReviewContent" Label="Co myślisz o tej grze?" Variant="Variant.Outlined" Lines="4" MaxLength="500" />
+                            </MudCardContent>
+                            <MudCardActions Class="px-4 pb-4">
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="SubmitReview" Disabled="@_isSubmitting">
+                                    @if (_isSubmitting)
+                                    {
+                                        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                                    }
+                                    else
+                                    {
+                                        <MudText>Opublikuj opinię</MudText>
+                                    }
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                </Authorized>
+            </AuthorizeView>
+
+            @* Lista istniejących recenzji *@
+            <MudItem xs="12" md="8">
+                @if (!_reviews.Any())
+                {
+                    <MudPaper Elevation="0" Class="pa-8 text-center" Style="background-color: transparent; border: 2px dashed rgba(255,255,255,0.1);">
+                        <MudIcon Icon="@Icons.Material.Filled.RateReview" Style="font-size: 4rem; color: #64748b;" Class="mb-4" />
+                        <MudText Typo="Typo.h6" Style="color: #94a3b8;">Brak recenzji</MudText>
+                        <MudText Typo="Typo.body2" Style="color: #64748b;">Bądź pierwszą osobą, która oceni ten tytuł!</MudText>
+                    </MudPaper>
+                }
+                else
+                {
+                    <div class="d-flex flex-column gap-4">
+                        @foreach (var review in _reviews)
+                        {
+                            <MudCard Elevation="2" Style="background-color: #1e1e2d;">
+                                <MudCardHeader>
+                                    <CardHeaderAvatar>
+                                        <MudAvatar Color="Color.Secondary" Size="Size.Small">
+                                            @(!string.IsNullOrEmpty(review.Username) ? review.Username.Substring(0, 1).ToUpper() : "?")
+                                        </MudAvatar>
+                                    </CardHeaderAvatar>
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.subtitle2" Style="font-weight: bold;">@review.Username</MudText>
+                                        <MudText Typo="Typo.caption" Style="color: #64748b;">@review.CreatedAt.ToString("dd.MM.yyyy HH:mm")</MudText>
+                                    </CardHeaderContent>
+                                    <CardHeaderActions>
+                                        <MudRating SelectedValue="@review.Rating" ReadOnly="true" Size="Size.Small" />
+                                    </CardHeaderActions>
+                                </MudCardHeader>
+                                <MudCardContent>
+                                    <MudText Typo="Typo.body2">@review.Content</MudText>
+                                </MudCardContent>
+                            </MudCard>
+                        }
+                    </div>
+                }
+            </MudItem>
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private bool _isLoading = true;
+    private GameDetailsDto? _game;
+    private List<ReviewDto> _reviews = new();
+    private int _averageRating = 0;
+
+    // Pola formularza nowej recenzji
+    private int _newReviewRating = 5;
+    private string _newReviewContent = string.Empty;
+    private bool _isSubmitting = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadGameDetails();
+    }
+
+    private async Task LoadGameDetails()
+    {
+        try
+        {
+            _game = await Http.GetFromJsonAsync<GameDetailsDto>($"api/games/{Id}");
+            
+            var fetchedReviews = await Http.GetFromJsonAsync<List<ReviewDto>>($"api/games/{Id}/reviews");
+            if (fetchedReviews != null)
+            {
+                _reviews = fetchedReviews;
+                if (_reviews.Any())
+                {
+                    _averageRating = (int)Math.Round(_reviews.Average(r => r.Rating));
+                }
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił problem podczas pobierania danych gry.", Severity.Error);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private async Task SubmitReview()
+    {
+        if (string.IsNullOrWhiteSpace(_newReviewContent))
+        {
+            Snackbar.Add("Treść recenzji nie może być pusta.", Severity.Warning);
+            return;
+        }
+
+        _isSubmitting = true;
+        try
+        {
+            var payload = new { Rating = _newReviewRating, Content = _newReviewContent };
+            var response = await Http.PostAsJsonAsync($"api/games/{Id}/reviews", payload);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Snackbar.Add("Dziękujemy! Twoja recenzja została opublikowana.", Severity.Success);
+                _newReviewContent = string.Empty;
+                await LoadGameDetails();
+            }
+            else
+            {
+                Snackbar.Add("Błąd podczas dodawania recenzji. Upewnij się, że posiadasz tę grę.", Severity.Error);
+            }
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił błąd krytyczny.", Severity.Error);
+        }
+        finally
+        {
+            _isSubmitting = false;
+        }
+    }
+
+    public class GameDetailsDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public string? CoverImageUrl { get; set; }
+    }
+
+    public class ReviewDto
+    {
+        public int Id { get; set; }
+        public int Rating { get; set; }
+        public string Content { get; set; } = string.Empty;
+        public string Username { get; set; } = "Anonim"; 
+        public DateTime CreatedAt { get; set; }
+    }
+}

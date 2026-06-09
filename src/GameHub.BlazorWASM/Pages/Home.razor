@@ -1,75 +1,119 @@
 ﻿@page "/"
-@using GameHub.BlazorWASM.Models
-@using GameHub.BlazorWASM.Services
-@inject GameService GameService
-@inject IDialogService DialogService
+@using System.Net.Http.Json
+@inject HttpClient Http
 @inject ISnackbar Snackbar
 
-<MudText Typo="Typo.h3" GutterBottom="true" Color="Color.Primary">Sklep</MudText>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Sklep GameHub</MudText>
 
-@if (games == null)
-{
-    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
-}
-else if (!games.Any())
-{
-    <MudText Typo="Typo.h6">Brak gier w sklepie.</MudText>
-}
-else
-{
-    <MudGrid>
-        @foreach (var game in games)
-        {
-            <MudItem xs="12" sm="6" md="4" lg="3">
-                <MudCard Elevation="4" Style="height: 100%; display: flex; flex-direction: column; background-color: #1e1e2d; color: white;">
-                    <MudCardMedia Image="@(string.IsNullOrEmpty(game.CoverImageUrl) ? "https://placehold.co/600x400/2a2a3c/a855f7?text=Brak+Ok%C5%82adki" : game.CoverImageUrl)" Height="200" />
-                    <MudCardContent>
-                        <MudText Typo="Typo.h6">@game.Title</MudText>
-                        <MudText Typo="Typo.body2" Color="Color.Primary" Class="mb-2">@game.Genre</MudText>
-                        <MudText Typo="Typo.body2" Style="flex-grow: 1; color: #a0a0b0;">
-                            @(game.Description?.Length > 80 ? game.Description.Substring(0, 80) + "..." : game.Description)
-                        </MudText>
-                    </MudCardContent>
-                    <MudCardActions Class="mt-auto d-flex justify-space-between align-center">
-                        <MudText Typo="Typo.h6" Color="Color.Success"><strong>@game.Price PLN</strong></MudText>
-                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => HandleBuyClick(game))">Kup</MudButton>
-                    </MudCardActions>
-                </MudCard>
-            </MudItem>
-        }
-    </MudGrid>
-}
+    @if (_games == null)
+    {
+        <div class="d-flex justify-center mt-16">
+            <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+        </div>
+    }
+    else if (!_games.Any())
+    {
+        <MudText Typo="Typo.h5" Style="color: #94a3b8;">Brak gier w aktualnej ofercie.</MudText>
+    }
+    else
+    {
+        <MudGrid>
+            @foreach (var game in _games)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="3">
+                    <MudCard Elevation="4" Style="background-color: #1e1e2d; color: white; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                        <MudCardMedia Image="@(string.IsNullOrEmpty(game.CoverImageUrl) ? "https://placehold.co/600x400/2a2a35/a855f7?text=Brak+Okładki" : game.CoverImageUrl)" Height="200" />
+                        
+                        <MudCardContent>
+                            <MudText Typo="Typo.h6" Style="font-weight: bold;">@game.Title</MudText>
+                            <MudText Typo="Typo.body2" Style="color: #94a3b8;" Class="mb-4">
+                                @(game.Description.Length > 80 ? game.Description.Substring(0, 80) + "..." : game.Description)
+                            </MudText>
+                            <MudSpacer />
+                            <MudText Typo="Typo.h5" Style="color: #eab308; font-weight: bold;">
+                                @game.Price.ToString("0.00") PLN
+                            </MudText>
+                        </MudCardContent>
+                        
+                        @* Zaktualizowana sekcja z dwoma przyciskami *@
+                        <MudCardActions Class="mt-auto pb-4 px-4 d-flex align-center gap-2">
+                            
+                            <div style="flex: 1;">
+                                <AuthorizeView>
+                                    <Authorized>
+                                        <MudButton Variant="Variant.Filled" Color="Color.Success" FullWidth="true" OnClick="@(() => BuyGame(game.Id))" Disabled="@_isProcessing">
+                                            Kup teraz
+                                        </MudButton>
+                                    </Authorized>
+                                    <NotAuthorized>
+                                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" FullWidth="true" Href="/login">
+                                            Zaloguj się
+                                        </MudButton>
+                                    </NotAuthorized>
+                                </AuthorizeView>
+                            </div>
+                            
+                            <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="@($"/game/{game.Id}")">
+                                Szczegóły
+                            </MudButton>
+                            
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+            }
+        </MudGrid>
+    }
+</MudContainer>
 
 @code {
-    private List<GameDto>? games;
+    private List<GameDto>? _games;
+    private bool _isProcessing = false;
 
     protected override async Task OnInitializedAsync()
     {
-        // Pobieramy dane z Twojego API
-        games = await GameService.GetGamesAsync();
+        try
+        {
+            _games = await Http.GetFromJsonAsync<List<GameDto>>("api/games");
+        }
+        catch (Exception)
+        {
+            Snackbar.Add("Nie udało się połączyć z serwerem sklepu.", Severity.Error);
+        }
     }
 
-    private async Task HandleBuyClick(GameDto game)
+    private async Task BuyGame(int gameId)
     {
-        // TUTAJ JEST POPRAWKA: ShowMessageBoxAsync zamiast ShowMessageBox
-        bool? result = await DialogService.ShowMessageBoxAsync(
-            "Potwierdzenie zakupu",
-            $"Czy na pewno chcesz kupić grę '{game.Title}' za {game.Price} PLN?",
-            yesText: "Kupuję", cancelText: "Anuluj");
-
-        // 2. Jeśli użytkownik kliknął "Kupuję"
-        if (result == true)
+        _isProcessing = true;
+        try
         {
-            var success = await GameService.BuyGameAsync(game.Id);
-
-            if (success)
+            var response = await Http.PostAsync($"api/games/{gameId}/buy", null);
+            
+            if (response.IsSuccessStatusCode)
             {
-                Snackbar.Add($"Sukces! Gra {game.Title} została dodana do biblioteki.", Severity.Success);
+                Snackbar.Add("Gra została dodana do Twojej biblioteki!", Severity.Success);
             }
             else
             {
-                Snackbar.Add("Zakup nie powiódł się. Sprawdź saldo portfela lub czy masz już tę grę.", Severity.Error);
+                Snackbar.Add("Nie udało się sfinalizować zakupu. Sprawdź saldo portfela.", Severity.Warning);
             }
         }
+        catch (Exception)
+        {
+            Snackbar.Add("Wystąpił błąd transakcji.", Severity.Error);
+        }
+        finally
+        {
+            _isProcessing = false;
+        }
+    }
+
+    public class GameDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public string? CoverImageUrl { get; set; }
     }
 }

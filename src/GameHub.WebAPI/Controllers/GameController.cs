@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace GameHub.WebAPI.Controllers;
-
+public record CreateReviewRequest(int Rating, string Content);
 [ApiController]
 [Route("api/games")]
 public class GamesController : ControllerBase
@@ -235,4 +235,5 @@ public class GamesController : ControllerBase
 
         return Ok(dtos);
     }
+    
 }

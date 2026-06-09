@@ -84,4 +84,5 @@ public class AuthService : IAuthService
         _uow.Users.Update(user);
         await _uow.SaveChangesAsync(ct);
     }
+
 }

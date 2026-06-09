@@ -102,3 +102,163 @@ System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address 
    at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
 2026-06-09 09:40:17.936 +02:00 [WRN] Failed to determine the https port for redirect.
 2026-06-09 09:51:29.733 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:18:31.287 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:30:39.948 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:42:24.469 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:53:39.468 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:07:46.033 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:15:44.088 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:27:03.391 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:27:09.355 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 1.3545 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:27:09.361 +02:00 [ERR] Connection id "0HNM68FO8GNQV", Request id "0HNM68FO8GNQV:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:08.423 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.4816 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:08.426 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:11.881 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.3331 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:11.883 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:0000000A": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:48.099 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.1002 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:48.099 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:00000014": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:34:04.795 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:34:08.254 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.9859 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:34:08.261 +02:00 [ERR] Connection id "0HNM68JLRAAR5", Request id "0HNM68JLRAAR5:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:34:26.888 +02:00 [ERR] HTTP POST /api/games/1/reviews responded 500 in 0.1493 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.Create (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.AddReview (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:34:26.889 +02:00 [ERR] Connection id "0HNM68JLRAAR5", Request id "0HNM68JLRAAR5:0000000A": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.Create (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.AddReview (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:52:29.114 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:19:47.637 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:33:52.049 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:48:43.755 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 21:18:08.628 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:17:53.140 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:21:13.851 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:35:18.882 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:49:50.990 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:50:17.042 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:51:51.705 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:53:12.408 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 23:51:05.511 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 23:51:15.796 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace GameHub.WebAPI.Controllers;
-
+public record TopUpRequest(decimal Amount);
 [ApiController]
 [Route("api/auth")]
 public class AuthController : ControllerBase
@@ -81,6 +81,35 @@ public class AuthController : ControllerBase
         catch (KeyNotFoundException ex)
         {
             return NotFound(new { error = ex.Message });
+        }
+    }
+    [Authorize]
+    [HttpPost("topup")]
+    public async Task<IActionResult> TopUp(
+        [FromBody] TopUpRequest req, 
+        [FromServices] IWalletService walletService, 
+        CancellationToken ct)
+    {
+        // 1. Pobieramy ID zalogowanego użytkownika z Tokena JWT
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        try
+        {
+            // 2. Wywołujemy Twój świetnie napisany serwis portfela
+            var newBalance = await walletService.TopUpAsync(userId, req.Amount, ct);
+            
+            _logger.LogInformation("Użytkownik {UserId} doładował konto kwotą {Amount}", userId, req.Amount);
+            
+            return Ok(new { message = "Portfel został zasilony.", newBalance });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { error = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Błąd podczas doładowania konta dla {UserId}", userId);
+            return BadRequest(new { error = "Wystąpił błąd podczas transakcji." });
         }
     }
 }

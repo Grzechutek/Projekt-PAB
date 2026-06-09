@@ -388,3 +388,1115 @@ System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address 
 2026-06-09 09:58:33.574 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0347 ms
 2026-06-09 09:58:33.575 +02:00 [INF] GET /api/games — zwrócono 5 wyników
 2026-06-09 09:58:33.575 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9940 ms
+2026-06-09 17:18:31.287 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:18:31.331 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 10.2403 ms
+2026-06-09 17:18:31.421 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:18:31.460 +02:00 [INF] HTTP GET /api/games responded 200 in 116.3742 ms
+2026-06-09 17:18:55.133 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:18:55.134 +02:00 [INF] HTTP GET /api/games responded 200 in 28.5432 ms
+2026-06-09 17:19:19.046 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2683 ms
+2026-06-09 17:19:19.410 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:19:19.411 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 362.9323 ms
+2026-06-09 17:19:19.497 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0761 ms
+2026-06-09 17:19:19.500 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:19:19.500 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2668 ms
+2026-06-09 17:19:27.532 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2616 ms
+2026-06-09 17:19:27.577 +02:00 [INF] HTTP GET /api/games/library responded 200 in 42.8703 ms
+2026-06-09 17:19:30.474 +02:00 [INF] HTTP OPTIONS /api/auth/topup responded 204 in 0.3409 ms
+2026-06-09 17:19:30.591 +02:00 [INF] Użytkownik 3 doładował konto kwotą 50.00
+2026-06-09 17:19:30.592 +02:00 [INF] HTTP POST /api/auth/topup responded 200 in 116.0730 ms
+2026-06-09 17:19:56.980 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1633 ms
+2026-06-09 17:19:57.214 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:19:57.214 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 232.1415 ms
+2026-06-09 17:19:57.297 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0780 ms
+2026-06-09 17:19:57.298 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:19:57.299 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9471 ms
+2026-06-09 17:20:02.908 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2246 ms
+2026-06-09 17:20:02.914 +02:00 [INF] HTTP GET /api/games/library responded 200 in 5.0545 ms
+2026-06-09 17:20:03.705 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.4436 ms
+2026-06-09 17:20:03.710 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:20:03.711 +02:00 [INF] HTTP GET /api/games responded 200 in 4.2799 ms
+2026-06-09 17:20:04.303 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.8901 ms
+2026-06-09 17:20:05.174 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:20:05.175 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8014 ms
+2026-06-09 17:20:10.682 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.2362 ms
+2026-06-09 17:20:10.714 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 30.6410 ms
+2026-06-09 17:20:15.387 +02:00 [INF] HTTP OPTIONS /api/games/5/buy responded 204 in 0.3476 ms
+2026-06-09 17:20:15.396 +02:00 [INF] HTTP POST /api/games/5/buy responded 400 in 6.7615 ms
+2026-06-09 17:20:18.874 +02:00 [INF] HTTP OPTIONS /api/games/2/buy responded 204 in 0.1833 ms
+2026-06-09 17:20:18.940 +02:00 [INF] User 3 purchased game 2
+2026-06-09 17:20:18.941 +02:00 [INF] HTTP POST /api/games/2/buy responded 200 in 32.6038 ms
+2026-06-09 17:20:20.478 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2627 ms
+2026-06-09 17:20:20.483 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.6673 ms
+2026-06-09 17:30:39.948 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:30:40.037 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:30:40.065 +02:00 [INF] HTTP GET /api/games responded 200 in 82.4401 ms
+2026-06-09 17:30:56.024 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.3048 ms
+2026-06-09 17:30:56.401 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:30:56.402 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 376.8356 ms
+2026-06-09 17:30:56.495 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0910 ms
+2026-06-09 17:30:56.515 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:30:56.515 +02:00 [INF] HTTP GET /api/games responded 200 in 19.9388 ms
+2026-06-09 17:31:02.133 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1215 ms
+2026-06-09 17:31:02.137 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:31:02.138 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8451 ms
+2026-06-09 17:31:09.553 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3738 ms
+2026-06-09 17:31:09.557 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:31:09.558 +02:00 [INF] HTTP GET /api/games responded 200 in 3.7685 ms
+2026-06-09 17:36:10.533 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.3076 ms
+2026-06-09 17:36:10.764 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:36:10.764 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 230.2600 ms
+2026-06-09 17:36:10.846 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0761 ms
+2026-06-09 17:36:10.848 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:36:10.849 +02:00 [INF] HTTP GET /api/games responded 200 in 1.9230 ms
+2026-06-09 17:39:59.090 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.8972 ms
+2026-06-09 17:39:59.319 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:39:59.320 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 227.8023 ms
+2026-06-09 17:39:59.406 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0588 ms
+2026-06-09 17:39:59.408 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:39:59.408 +02:00 [INF] HTTP GET /api/games responded 200 in 1.1928 ms
+2026-06-09 17:42:24.469 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:42:24.521 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 7.6144 ms
+2026-06-09 17:42:24.917 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 17:42:24.921 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 393.6301 ms
+2026-06-09 17:42:25.008 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2876 ms
+2026-06-09 17:42:25.049 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:42:25.058 +02:00 [INF] HTTP GET /api/games responded 200 in 48.9075 ms
+2026-06-09 17:53:39.468 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 17:53:39.512 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 6.2864 ms
+2026-06-09 17:53:39.579 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:53:39.603 +02:00 [INF] HTTP GET /api/games responded 200 in 84.3913 ms
+2026-06-09 17:53:46.746 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:53:46.747 +02:00 [INF] HTTP GET /api/games responded 200 in 41.3433 ms
+2026-06-09 17:54:06.818 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 17:54:06.819 +02:00 [INF] HTTP GET /api/games responded 200 in 8.5037 ms
+2026-06-09 18:06:42.221 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:06:42.224 +02:00 [INF] HTTP GET /api/games responded 200 in 17.2086 ms
+2026-06-09 18:07:46.033 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:07:46.127 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:07:46.157 +02:00 [INF] HTTP GET /api/games responded 200 in 87.3018 ms
+2026-06-09 18:07:52.018 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:07:52.019 +02:00 [INF] HTTP GET /api/games responded 200 in 41.4873 ms
+2026-06-09 18:08:12.281 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.0616 ms
+2026-06-09 18:08:12.651 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 18:08:12.651 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 368.6713 ms
+2026-06-09 18:08:12.742 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0774 ms
+2026-06-09 18:08:12.760 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:08:12.761 +02:00 [INF] HTTP GET /api/games responded 200 in 17.7623 ms
+2026-06-09 18:08:16.522 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2936 ms
+2026-06-09 18:08:16.572 +02:00 [INF] HTTP GET /api/games/library responded 200 in 48.7661 ms
+2026-06-09 18:08:23.252 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.3704 ms
+2026-06-09 18:08:23.259 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.9810 ms
+2026-06-09 18:08:23.829 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2050 ms
+2026-06-09 18:08:23.834 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:08:23.834 +02:00 [INF] HTTP GET /api/games responded 200 in 3.8547 ms
+2026-06-09 18:09:24.187 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:09:24.187 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1074 ms
+2026-06-09 18:15:44.088 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:15:44.187 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:15:44.222 +02:00 [INF] HTTP GET /api/games responded 200 in 98.6616 ms
+2026-06-09 18:15:59.867 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.7779 ms
+2026-06-09 18:16:00.249 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 18:16:00.250 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 381.4413 ms
+2026-06-09 18:16:00.342 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0891 ms
+2026-06-09 18:16:00.361 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:16:00.361 +02:00 [INF] HTTP GET /api/games responded 200 in 18.7463 ms
+2026-06-09 18:16:03.225 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2488 ms
+2026-06-09 18:16:03.277 +02:00 [INF] HTTP GET /api/games/library responded 200 in 50.7678 ms
+2026-06-09 18:16:12.040 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1604 ms
+2026-06-09 18:16:12.044 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.3507 ms
+2026-06-09 18:16:13.539 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2275 ms
+2026-06-09 18:16:13.543 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:16:13.544 +02:00 [INF] HTTP GET /api/games responded 200 in 3.5195 ms
+2026-06-09 18:16:15.952 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.4351 ms
+2026-06-09 18:16:16.802 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:16:16.803 +02:00 [INF] HTTP GET /api/games responded 200 in 3.9030 ms
+2026-06-09 18:16:51.228 +02:00 [INF] HTTP OPTIONS /api/auth/topup responded 204 in 0.2847 ms
+2026-06-09 18:16:51.343 +02:00 [INF] Użytkownik 3 doładował konto kwotą 50.00
+2026-06-09 18:16:51.344 +02:00 [INF] HTTP POST /api/auth/topup responded 200 in 113.9633 ms
+2026-06-09 18:17:11.557 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1207 ms
+2026-06-09 18:17:11.789 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 18:17:11.789 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 231.4128 ms
+2026-06-09 18:17:11.877 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0692 ms
+2026-06-09 18:17:11.878 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:17:11.878 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0211 ms
+2026-06-09 18:17:14.154 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1410 ms
+2026-06-09 18:17:14.157 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.6992 ms
+2026-06-09 18:17:16.902 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1909 ms
+2026-06-09 18:17:16.906 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:17:16.906 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9881 ms
+2026-06-09 18:17:22.410 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.4197 ms
+2026-06-09 18:17:22.463 +02:00 [INF] User 3 purchased game 1
+2026-06-09 18:17:22.464 +02:00 [INF] HTTP POST /api/games/1/buy responded 200 in 51.3953 ms
+2026-06-09 18:17:24.300 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1787 ms
+2026-06-09 18:17:24.305 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.4633 ms
+2026-06-09 18:27:03.391 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:27:03.439 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 9.6673 ms
+2026-06-09 18:27:03.530 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:27:03.572 +02:00 [INF] HTTP GET /api/games responded 200 in 123.3818 ms
+2026-06-09 18:27:07.586 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.9990 ms
+2026-06-09 18:27:07.660 +02:00 [INF] HTTP GET /api/games/library responded 200 in 72.1998 ms
+2026-06-09 18:27:09.289 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1807 ms
+2026-06-09 18:27:09.345 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:27:09.347 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 57.2186 ms
+2026-06-09 18:27:09.353 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.1026 ms
+2026-06-09 18:27:09.355 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 1.3545 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:27:09.361 +02:00 [ERR] Connection id "0HNM68FO8GNQV", Request id "0HNM68FO8GNQV:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:06.041 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.5770 ms
+2026-06-09 18:32:06.055 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:32:06.056 +02:00 [INF] HTTP GET /api/games responded 200 in 13.0743 ms
+2026-06-09 18:32:07.117 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0818 ms
+2026-06-09 18:32:07.120 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.0841 ms
+2026-06-09 18:32:08.408 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.2919 ms
+2026-06-09 18:32:08.417 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:32:08.418 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 8.6144 ms
+2026-06-09 18:32:08.421 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.1920 ms
+2026-06-09 18:32:08.423 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.4816 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:08.426 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:11.807 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:32:11.807 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 1.3305 ms
+2026-06-09 18:32:11.881 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.3331 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:11.883 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:0000000A": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:32:45.602 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2548 ms
+2026-06-09 18:32:45.932 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 18:32:45.932 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 328.9228 ms
+2026-06-09 18:32:46.032 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0720 ms
+2026-06-09 18:32:46.034 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:32:46.034 +02:00 [INF] HTTP GET /api/games responded 200 in 1.1261 ms
+2026-06-09 18:32:47.065 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1748 ms
+2026-06-09 18:32:47.073 +02:00 [INF] HTTP GET /api/games/library responded 200 in 5.6323 ms
+2026-06-09 18:32:48.083 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.3053 ms
+2026-06-09 18:32:48.086 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:32:48.086 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 2.5127 ms
+2026-06-09 18:32:48.098 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0850 ms
+2026-06-09 18:32:48.099 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.1002 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:32:48.099 +02:00 [ERR] Connection id "0HNM68FO8GNR0", Request id "0HNM68FO8GNR0:00000014": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:34:04.795 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:34:04.837 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 7.7819 ms
+2026-06-09 18:34:04.914 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:34:04.944 +02:00 [INF] HTTP GET /api/games responded 200 in 100.5067 ms
+2026-06-09 18:34:07.057 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.7741 ms
+2026-06-09 18:34:07.125 +02:00 [INF] HTTP GET /api/games/library responded 200 in 67.2684 ms
+2026-06-09 18:34:08.189 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1299 ms
+2026-06-09 18:34:08.245 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:34:08.247 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 57.4497 ms
+2026-06-09 18:34:08.253 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0990 ms
+2026-06-09 18:34:08.254 +02:00 [ERR] HTTP GET /api/games/1/reviews responded 500 in 0.9859 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:34:08.261 +02:00 [ERR] Connection id "0HNM68JLRAAR5", Request id "0HNM68JLRAAR5:00000008": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.GetByGame (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.GetReviews (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:34:26.885 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.2894 ms
+2026-06-09 18:34:26.888 +02:00 [ERR] HTTP POST /api/games/1/reviews responded 500 in 0.1493 ms
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.Create (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.AddReview (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 18:34:26.889 +02:00 [ERR] Connection id "0HNM68JLRAAR5", Request id "0HNM68JLRAAR5:0000000A": An unhandled exception was thrown by the application.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+GameHub.WebAPI.Controllers.ReviewsController.Create (GameHub.WebAPI)
+GameHub.WebAPI.Controllers.GamesController.AddReview (GameHub.WebAPI)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2026-06-09 18:52:29.114 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 18:52:29.157 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 7.6319 ms
+2026-06-09 18:52:29.236 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 18:52:29.270 +02:00 [INF] HTTP GET /api/games responded 200 in 102.5418 ms
+2026-06-09 18:52:33.306 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 1.0801 ms
+2026-06-09 18:52:33.383 +02:00 [INF] HTTP GET /api/games/library responded 200 in 74.6372 ms
+2026-06-09 18:52:34.850 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1123 ms
+2026-06-09 18:52:34.906 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 9,00
+2026-06-09 18:52:34.908 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 56.6280 ms
+2026-06-09 18:52:34.913 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0876 ms
+2026-06-09 18:52:34.936 +02:00 [INF] GET /api/games/1/reviews — zwrócono 1 recenzji
+2026-06-09 18:52:34.937 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 23.4743 ms
+2026-06-09 18:52:48.691 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.2727 ms
+2026-06-09 18:52:48.788 +02:00 [INF] User 3 dodał recenzję do gry 1 (Rating=5)
+2026-06-09 18:52:48.793 +02:00 [INF] HTTP POST /api/games/1/reviews responded 201 in 100.2682 ms
+2026-06-09 18:52:48.802 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0504 ms
+2026-06-09 18:52:48.803 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-09 18:52:48.804 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 1.2025 ms
+2026-06-09 18:52:48.807 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-09 18:52:48.807 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 1.1700 ms
+2026-06-09 19:01:08.742 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.4603 ms
+2026-06-09 19:01:08.751 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-09 19:01:08.752 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 7.1057 ms
+2026-06-09 19:01:08.823 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.0604 ms
+2026-06-09 19:01:08.825 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-09 19:01:08.825 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 1.9750 ms
+2026-06-09 19:01:21.618 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.6665 ms
+2026-06-09 19:01:21.619 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.2415 ms
+2026-06-09 19:01:21.640 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:01:21.641 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 20.4121 ms
+2026-06-09 19:01:21.642 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:01:21.643 +02:00 [INF] HTTP GET /api/friends responded 200 in 23.6098 ms
+2026-06-09 19:01:35.149 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.2913 ms
+2026-06-09 19:01:35.149 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2914 ms
+2026-06-09 19:01:35.153 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:01:35.153 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:01:35.154 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 3.0226 ms
+2026-06-09 19:01:35.154 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.0464 ms
+2026-06-09 19:02:43.896 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.5826 ms
+2026-06-09 19:02:44.222 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 19:02:44.222 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 324.4283 ms
+2026-06-09 19:02:44.318 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0421 ms
+2026-06-09 19:02:44.319 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:02:44.319 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0748 ms
+2026-06-09 19:02:45.676 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2057 ms
+2026-06-09 19:02:45.678 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1187 ms
+2026-06-09 19:02:45.681 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:02:45.682 +02:00 [INF] GET /api/friends — userId=2, 1 znajomych
+2026-06-09 19:02:45.682 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.8735 ms
+2026-06-09 19:02:45.682 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.5501 ms
+2026-06-09 19:02:48.994 +02:00 [INF] HTTP OPTIONS /api/friends/0 responded 204 in 0.2107 ms
+2026-06-09 19:02:49.011 +02:00 [INF] HTTP DELETE /api/friends/0 responded 404 in 15.4081 ms
+2026-06-09 19:03:18.165 +02:00 [INF] HTTP OPTIONS /api/friends/0 responded 204 in 0.1817 ms
+2026-06-09 19:03:18.171 +02:00 [INF] HTTP DELETE /api/friends/0 responded 404 in 3.7024 ms
+2026-06-09 19:03:25.911 +02:00 [INF] HTTP OPTIONS /api/friends/0 responded 204 in 0.1444 ms
+2026-06-09 19:03:25.916 +02:00 [INF] HTTP DELETE /api/friends/0 responded 404 in 3.0744 ms
+2026-06-09 19:04:07.829 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0810 ms
+2026-06-09 19:04:07.834 +02:00 [INF] HTTP POST /api/auth/login responded 401 in 3.1210 ms
+2026-06-09 19:04:26.060 +02:00 [INF] HTTP OPTIONS /api/auth/register responded 204 in 0.0525 ms
+2026-06-09 19:04:26.305 +02:00 [INF] New user registered: Test2115
+2026-06-09 19:04:26.305 +02:00 [INF] HTTP POST /api/auth/register responded 200 in 244.1415 ms
+2026-06-09 19:04:26.310 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0300 ms
+2026-06-09 19:04:26.508 +02:00 [INF] User logged in: Test2115@test.com
+2026-06-09 19:04:26.508 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 197.8188 ms
+2026-06-09 19:04:26.587 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0409 ms
+2026-06-09 19:04:26.588 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:04:26.588 +02:00 [INF] HTTP GET /api/games responded 200 in 0.8648 ms
+2026-06-09 19:04:28.382 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1033 ms
+2026-06-09 19:04:28.383 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0522 ms
+2026-06-09 19:04:28.386 +02:00 [INF] GET /api/friends — userId=5, 0 znajomych
+2026-06-09 19:04:28.386 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:04:28.386 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.7431 ms
+2026-06-09 19:04:28.386 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.2545 ms
+2026-06-09 19:11:52.368 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.3235 ms
+2026-06-09 19:11:52.368 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0349 ms
+2026-06-09 19:11:52.375 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:11:52.376 +02:00 [INF] HTTP GET /api/friends responded 200 in 6.2403 ms
+2026-06-09 19:11:52.526 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:11:52.527 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 156.9895 ms
+2026-06-09 19:11:53.080 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0633 ms
+2026-06-09 19:11:53.082 +02:00 [INF] GET /api/friends — userId=5, 0 znajomych
+2026-06-09 19:11:53.082 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.1600 ms
+2026-06-09 19:11:53.085 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0287 ms
+2026-06-09 19:11:53.087 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:11:53.087 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.3325 ms
+2026-06-09 19:12:02.966 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0414 ms
+2026-06-09 19:12:02.968 +02:00 [INF] GET /api/friends — userId=5, 0 znajomych
+2026-06-09 19:12:02.968 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.2300 ms
+2026-06-09 19:12:02.972 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.2350 ms
+2026-06-09 19:12:02.974 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:12:02.975 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.1158 ms
+2026-06-09 19:12:10.190 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0312 ms
+2026-06-09 19:12:10.192 +02:00 [INF] GET /api/friends — userId=5, 0 znajomych
+2026-06-09 19:12:10.192 +02:00 [INF] HTTP GET /api/friends responded 200 in 0.9805 ms
+2026-06-09 19:12:10.193 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0158 ms
+2026-06-09 19:12:10.193 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:12:10.194 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 0.3747 ms
+2026-06-09 19:19:47.637 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:19:47.728 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:19:47.759 +02:00 [INF] HTTP GET /api/games responded 200 in 89.1446 ms
+2026-06-09 19:20:06.143 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.8622 ms
+2026-06-09 19:20:06.528 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 19:20:06.529 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 384.5355 ms
+2026-06-09 19:20:06.621 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1053 ms
+2026-06-09 19:20:06.641 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:20:06.641 +02:00 [INF] HTTP GET /api/games responded 200 in 19.1639 ms
+2026-06-09 19:20:45.567 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1875 ms
+2026-06-09 19:20:45.799 +02:00 [INF] User logged in: Test2115@test.com
+2026-06-09 19:20:45.799 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 230.8715 ms
+2026-06-09 19:20:45.895 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0592 ms
+2026-06-09 19:20:45.897 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:20:45.898 +02:00 [INF] HTTP GET /api/games responded 200 in 2.0908 ms
+2026-06-09 19:20:47.644 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2370 ms
+2026-06-09 19:20:47.646 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0794 ms
+2026-06-09 19:20:47.686 +02:00 [INF] GET /api/friends — userId=5, 0 znajomych
+2026-06-09 19:20:47.686 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:20:47.687 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 39.6365 ms
+2026-06-09 19:20:47.687 +02:00 [INF] HTTP GET /api/friends responded 200 in 41.9689 ms
+2026-06-09 19:21:44.572 +02:00 [INF] HTTP OPTIONS /api/friends/invite/2 responded 204 in 0.3456 ms
+2026-06-09 19:21:44.682 +02:00 [INF] User 5 wysłał zaproszenie do userId=2
+2026-06-09 19:21:44.683 +02:00 [INF] HTTP POST /api/friends/invite/2 responded 200 in 107.7755 ms
+2026-06-09 19:21:51.308 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.4793 ms
+2026-06-09 19:21:51.310 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1027 ms
+2026-06-09 19:21:51.314 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:21:51.314 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 4.0160 ms
+2026-06-09 19:21:51.317 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:21:51.319 +02:00 [INF] HTTP GET /api/friends responded 200 in 8.3757 ms
+2026-06-09 19:21:55.267 +02:00 [INF] HTTP OPTIONS /api/friends/1 responded 204 in 0.3404 ms
+2026-06-09 19:21:55.297 +02:00 [INF] User 3 usunął znajomego (FriendshipId=1)
+2026-06-09 19:21:55.297 +02:00 [INF] HTTP DELETE /api/friends/1 responded 204 in 28.0606 ms
+2026-06-09 19:21:55.318 +02:00 [INF] GET /api/friends — userId=3, 0 znajomych
+2026-06-09 19:21:55.318 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:21:55.318 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.0962 ms
+2026-06-09 19:21:55.318 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.1325 ms
+2026-06-09 19:22:19.499 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2177 ms
+2026-06-09 19:22:19.731 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 19:22:19.731 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 230.4988 ms
+2026-06-09 19:22:19.819 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0514 ms
+2026-06-09 19:22:19.820 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:22:19.820 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0278 ms
+2026-06-09 19:22:21.638 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2563 ms
+2026-06-09 19:22:21.640 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0899 ms
+2026-06-09 19:22:21.643 +02:00 [INF] GET /api/friends — userId=2, 0 znajomych
+2026-06-09 19:22:21.644 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.7240 ms
+2026-06-09 19:22:21.645 +02:00 [INF] GET /api/friends/requests — userId=2, 1 oczekujących
+2026-06-09 19:22:21.646 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 5.7568 ms
+2026-06-09 19:22:24.400 +02:00 [INF] HTTP OPTIONS /api/friends/2/accept responded 204 in 0.1959 ms
+2026-06-09 19:22:24.417 +02:00 [INF] User 2 zaakceptował zaproszenie Id=2
+2026-06-09 19:22:24.417 +02:00 [INF] HTTP PUT /api/friends/2/accept responded 200 in 15.3531 ms
+2026-06-09 19:22:24.438 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:22:24.438 +02:00 [INF] GET /api/friends — userId=2, 1 znajomych
+2026-06-09 19:22:24.438 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.6405 ms
+2026-06-09 19:22:24.438 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.6440 ms
+2026-06-09 19:30:44.175 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.4386 ms
+2026-06-09 19:30:44.176 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0313 ms
+2026-06-09 19:30:44.182 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:30:44.183 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 5.4610 ms
+2026-06-09 19:30:45.185 +02:00 [INF] GET /api/friends — userId=2, 1 znajomych
+2026-06-09 19:30:45.186 +02:00 [INF] HTTP GET /api/friends responded 200 in 1008.9477 ms
+2026-06-09 19:30:45.188 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.6354 ms
+2026-06-09 19:30:45.192 +02:00 [INF] GET /api/friends — userId=5, 1 znajomych
+2026-06-09 19:30:45.193 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.3303 ms
+2026-06-09 19:30:45.197 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0678 ms
+2026-06-09 19:30:45.200 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:30:45.201 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.6080 ms
+2026-06-09 19:30:54.246 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 1.1408 ms
+2026-06-09 19:30:54.249 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.8086 ms
+2026-06-09 19:30:54.517 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.1102 ms
+2026-06-09 19:30:54.519 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.7067 ms
+2026-06-09 19:31:00.861 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.1142 ms
+2026-06-09 19:31:00.863 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.5993 ms
+2026-06-09 19:31:01.131 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0999 ms
+2026-06-09 19:31:01.133 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.6104 ms
+2026-06-09 19:31:01.306 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.1046 ms
+2026-06-09 19:31:01.309 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.5797 ms
+2026-06-09 19:31:06.068 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.1049 ms
+2026-06-09 19:31:06.071 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.5728 ms
+2026-06-09 19:31:06.447 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0998 ms
+2026-06-09 19:31:06.449 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.6130 ms
+2026-06-09 19:31:15.268 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.1264 ms
+2026-06-09 19:31:15.270 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.6292 ms
+2026-06-09 19:31:16.059 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0974 ms
+2026-06-09 19:31:16.061 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.5975 ms
+2026-06-09 19:31:16.309 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4533 ms
+2026-06-09 19:31:42.038 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0484 ms
+2026-06-09 19:31:42.040 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4205 ms
+2026-06-09 19:31:49.519 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0349 ms
+2026-06-09 19:31:49.521 +02:00 [INF] GET /api/friends — userId=5, 1 znajomych
+2026-06-09 19:31:49.521 +02:00 [INF] HTTP GET /api/friends responded 200 in 0.9331 ms
+2026-06-09 19:31:49.521 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0128 ms
+2026-06-09 19:31:49.522 +02:00 [INF] GET /api/friends/requests — userId=5, 0 oczekujących
+2026-06-09 19:31:49.522 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 0.4918 ms
+2026-06-09 19:31:53.605 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0939 ms
+2026-06-09 19:31:53.607 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.5764 ms
+2026-06-09 19:31:53.914 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0685 ms
+2026-06-09 19:31:53.916 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4156 ms
+2026-06-09 19:31:54.221 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0693 ms
+2026-06-09 19:31:54.223 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4785 ms
+2026-06-09 19:31:57.626 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4555 ms
+2026-06-09 19:31:57.843 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0408 ms
+2026-06-09 19:31:57.844 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.2733 ms
+2026-06-09 19:31:58.048 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4417 ms
+2026-06-09 19:31:58.284 +02:00 [INF] HTTP GET /api/users/search responded 404 in 0.4884 ms
+2026-06-09 19:33:52.049 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:33:52.095 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 9.4168 ms
+2026-06-09 19:33:52.206 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:33:52.238 +02:00 [INF] HTTP GET /api/games responded 200 in 128.9881 ms
+2026-06-09 19:33:55.983 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.8377 ms
+2026-06-09 19:33:55.984 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1474 ms
+2026-06-09 19:33:56.042 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:33:56.043 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 58.1369 ms
+2026-06-09 19:33:56.044 +02:00 [INF] GET /api/friends — userId=2, 1 znajomych
+2026-06-09 19:33:56.044 +02:00 [INF] HTTP GET /api/friends responded 200 in 59.8617 ms
+2026-06-09 19:34:01.230 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.3531 ms
+2026-06-09 19:34:01.264 +02:00 [INF] HTTP GET /api/users/search responded 200 in 31.7153 ms
+2026-06-09 19:34:01.504 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.0563 ms
+2026-06-09 19:34:01.506 +02:00 [INF] HTTP GET /api/users/search responded 200 in 1.9835 ms
+2026-06-09 19:34:04.094 +02:00 [INF] HTTP OPTIONS /api/friends/invite/3 responded 204 in 0.2970 ms
+2026-06-09 19:34:04.199 +02:00 [INF] User 2 wysłał zaproszenie do userId=3
+2026-06-09 19:34:04.200 +02:00 [INF] HTTP POST /api/friends/invite/3 responded 200 in 103.8418 ms
+2026-06-09 19:34:45.940 +02:00 [INF] HTTP OPTIONS /api/users/search responded 204 in 0.3721 ms
+2026-06-09 19:34:45.947 +02:00 [INF] HTTP GET /api/users/search responded 200 in 4.0455 ms
+2026-06-09 19:35:08.601 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1007 ms
+2026-06-09 19:35:08.930 +02:00 [INF] User logged in: bob@gamehub.com
+2026-06-09 19:35:08.931 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 328.1103 ms
+2026-06-09 19:35:09.021 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0698 ms
+2026-06-09 19:35:09.022 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:35:09.022 +02:00 [INF] HTTP GET /api/games responded 200 in 1.2312 ms
+2026-06-09 19:35:10.499 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1753 ms
+2026-06-09 19:35:10.500 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0834 ms
+2026-06-09 19:35:10.504 +02:00 [INF] GET /api/friends — userId=3, 0 znajomych
+2026-06-09 19:35:10.504 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.2623 ms
+2026-06-09 19:35:10.507 +02:00 [INF] GET /api/friends/requests — userId=3, 1 oczekujących
+2026-06-09 19:35:10.508 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 7.0155 ms
+2026-06-09 19:35:12.849 +02:00 [INF] HTTP OPTIONS /api/friends/3/accept responded 204 in 0.3458 ms
+2026-06-09 19:35:12.878 +02:00 [INF] User 3 zaakceptował zaproszenie Id=3
+2026-06-09 19:35:12.878 +02:00 [INF] HTTP PUT /api/friends/3/accept responded 200 in 27.9375 ms
+2026-06-09 19:35:12.896 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:35:12.897 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:35:12.897 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.2420 ms
+2026-06-09 19:35:12.897 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.5118 ms
+2026-06-09 19:41:51.241 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.9944 ms
+2026-06-09 19:41:51.241 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 1.7128 ms
+2026-06-09 19:41:51.246 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0769 ms
+2026-06-09 19:41:51.250 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0780 ms
+2026-06-09 19:41:51.252 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 19:41:51.253 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:41:51.253 +02:00 [INF] HTTP GET /api/friends responded 200 in 9.1449 ms
+2026-06-09 19:41:51.253 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.9439 ms
+2026-06-09 19:41:51.403 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:41:51.403 +02:00 [INF] HTTP GET /api/friends responded 200 in 156.1654 ms
+2026-06-09 19:41:52.252 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:41:52.252 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1008.4731 ms
+2026-06-09 19:41:57.879 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 1.2599 ms
+2026-06-09 19:41:57.882 +02:00 [INF] HTTP GET /api/users/3/library responded 404 in 0.7658 ms
+2026-06-09 19:42:02.069 +02:00 [INF] HTTP GET /api/users/3/library responded 404 in 0.1868 ms
+2026-06-09 19:42:06.289 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.4572 ms
+2026-06-09 19:42:06.334 +02:00 [INF] HTTP GET /api/games/library responded 200 in 43.2580 ms
+2026-06-09 19:42:07.985 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1478 ms
+2026-06-09 19:42:07.987 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0405 ms
+2026-06-09 19:42:07.989 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:42:07.989 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 19:42:07.990 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.6941 ms
+2026-06-09 19:42:07.990 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.1563 ms
+2026-06-09 19:42:09.844 +02:00 [INF] HTTP OPTIONS /api/users/5/library responded 204 in 0.0783 ms
+2026-06-09 19:42:09.845 +02:00 [INF] HTTP GET /api/users/5/library responded 404 in 0.4196 ms
+2026-06-09 19:42:11.186 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:42:11.186 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 19:42:11.186 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.4828 ms
+2026-06-09 19:42:11.186 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.9765 ms
+2026-06-09 19:42:12.581 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.1540 ms
+2026-06-09 19:42:12.584 +02:00 [INF] HTTP GET /api/users/3/library responded 404 in 0.5858 ms
+2026-06-09 19:42:14.133 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2387 ms
+2026-06-09 19:42:14.134 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0291 ms
+2026-06-09 19:42:14.139 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:42:14.139 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 19:42:14.139 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.2020 ms
+2026-06-09 19:42:14.139 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 3.1993 ms
+2026-06-09 19:42:20.837 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0364 ms
+2026-06-09 19:42:20.838 +02:00 [INF] GET /api/friends — userId=3, 1 znajomych
+2026-06-09 19:42:20.838 +02:00 [INF] HTTP GET /api/friends responded 200 in 0.9846 ms
+2026-06-09 19:42:20.839 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0148 ms
+2026-06-09 19:42:20.840 +02:00 [INF] GET /api/friends/requests — userId=3, 0 oczekujących
+2026-06-09 19:42:20.840 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 0.4777 ms
+2026-06-09 19:42:21.898 +02:00 [INF] HTTP OPTIONS /api/users/2/library responded 204 in 0.0986 ms
+2026-06-09 19:42:21.900 +02:00 [INF] HTTP GET /api/users/2/library responded 404 in 0.7672 ms
+2026-06-09 19:48:43.755 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 19:48:43.799 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 8.6024 ms
+2026-06-09 19:48:43.880 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:48:43.912 +02:00 [INF] HTTP GET /api/games responded 200 in 105.2833 ms
+2026-06-09 19:48:48.935 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.5565 ms
+2026-06-09 19:48:48.936 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1111 ms
+2026-06-09 19:48:48.996 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 19:48:48.997 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 59.7755 ms
+2026-06-09 19:48:48.998 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 19:48:48.998 +02:00 [INF] HTTP GET /api/friends responded 200 in 62.2971 ms
+2026-06-09 19:48:51.599 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.2782 ms
+2026-06-09 19:48:51.646 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 45.4201 ms
+2026-06-09 19:54:37.353 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 1.3848 ms
+2026-06-09 19:54:37.391 +02:00 [INF] HTTP GET /api/games/library responded 200 in 34.9725 ms
+2026-06-09 19:54:45.607 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1642 ms
+2026-06-09 19:54:45.662 +02:00 [INF] GET /api/games/1 — 'Cyber Odyssey', średnia ocen: 7,00
+2026-06-09 19:54:45.663 +02:00 [INF] HTTP GET /api/games/1 responded 200 in 55.1355 ms
+2026-06-09 19:54:45.670 +02:00 [INF] HTTP OPTIONS /api/games/1/reviews responded 204 in 0.1270 ms
+2026-06-09 19:54:45.679 +02:00 [INF] GET /api/games/1/reviews — zwrócono 2 recenzji
+2026-06-09 19:54:45.680 +02:00 [INF] HTTP GET /api/games/1/reviews responded 200 in 10.1766 ms
+2026-06-09 19:56:39.850 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 1.4521 ms
+2026-06-09 19:56:39.867 +02:00 [INF] HTTP GET /api/games/library responded 200 in 12.7551 ms
+2026-06-09 19:56:42.177 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.2070 ms
+2026-06-09 19:56:42.182 +02:00 [INF] GET /api/games/2 — 'Shadow Tactics', średnia ocen: 8,00
+2026-06-09 19:56:42.183 +02:00 [INF] HTTP GET /api/games/2 responded 200 in 4.8000 ms
+2026-06-09 19:56:42.186 +02:00 [INF] HTTP OPTIONS /api/games/2/reviews responded 204 in 0.1147 ms
+2026-06-09 19:56:42.190 +02:00 [INF] GET /api/games/2/reviews — zwrócono 1 recenzji
+2026-06-09 19:56:42.191 +02:00 [INF] HTTP GET /api/games/2/reviews responded 200 in 4.5544 ms
+2026-06-09 19:57:27.351 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.4267 ms
+2026-06-09 19:57:27.358 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.2720 ms
+2026-06-09 19:57:32.798 +02:00 [INF] HTTP OPTIONS /api/games/3 responded 204 in 0.1704 ms
+2026-06-09 19:57:32.802 +02:00 [INF] GET /api/games/3 — 'Galactic Frontier', średnia ocen: brak
+2026-06-09 19:57:32.803 +02:00 [INF] HTTP GET /api/games/3 responded 200 in 4.3965 ms
+2026-06-09 19:57:32.805 +02:00 [INF] HTTP OPTIONS /api/games/3/reviews responded 204 in 0.1004 ms
+2026-06-09 19:57:32.807 +02:00 [INF] GET /api/games/3/reviews — zwrócono 0 recenzji
+2026-06-09 19:57:32.808 +02:00 [INF] HTTP GET /api/games/3/reviews responded 200 in 1.9248 ms
+2026-06-09 19:58:28.357 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1262 ms
+2026-06-09 19:58:28.361 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.9763 ms
+2026-06-09 19:58:32.056 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1272 ms
+2026-06-09 19:58:32.059 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 19:58:32.059 +02:00 [INF] HTTP GET /api/games responded 200 in 2.1540 ms
+2026-06-09 19:59:28.262 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.1929 ms
+2026-06-09 19:59:28.289 +02:00 [INF] HTTP POST /api/games/4/buy responded 400 in 24.2773 ms
+2026-06-09 20:11:07.656 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 1.1558 ms
+2026-06-09 20:11:07.667 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 20:11:07.667 +02:00 [INF] HTTP GET /api/games responded 200 in 8.9884 ms
+2026-06-09 20:11:11.495 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.2953 ms
+2026-06-09 20:11:11.520 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 24.0893 ms
+2026-06-09 20:11:11.526 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0667 ms
+2026-06-09 20:11:11.548 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 20.6316 ms
+2026-06-09 20:11:21.463 +02:00 [INF] HTTP OPTIONS /api/wallet/topup responded 204 in 0.1187 ms
+2026-06-09 20:11:21.565 +02:00 [INF] TopUp 100 PLN for userId 2
+2026-06-09 20:11:21.566 +02:00 [INF] HTTP POST /api/wallet/topup responded 200 in 100.8713 ms
+2026-06-09 20:11:21.588 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.0416 ms
+2026-06-09 20:11:21.590 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 1.3539 ms
+2026-06-09 20:11:21.591 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0275 ms
+2026-06-09 20:11:21.592 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 0.7684 ms
+2026-06-09 20:17:47.791 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.3783 ms
+2026-06-09 20:17:47.804 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 10.9187 ms
+2026-06-09 20:17:47.876 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0388 ms
+2026-06-09 20:17:47.878 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 1.7203 ms
+2026-06-09 21:18:08.628 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 21:18:08.673 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 9.6039 ms
+2026-06-09 21:18:08.752 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 21:18:08.782 +02:00 [INF] HTTP GET /api/games responded 200 in 102.2390 ms
+2026-06-09 21:19:30.492 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.1458 ms
+2026-06-09 21:19:30.876 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-09 21:19:30.878 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 383.6545 ms
+2026-06-09 21:19:30.937 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0785 ms
+2026-06-09 21:19:30.941 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 21:19:30.941 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1333 ms
+2026-06-09 21:19:39.843 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2190 ms
+2026-06-09 21:19:39.894 +02:00 [INF] HTTP GET /api/games/library responded 200 in 48.9873 ms
+2026-06-09 21:19:41.809 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.4037 ms
+2026-06-09 21:19:41.866 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 55.0247 ms
+2026-06-09 21:19:41.873 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1005 ms
+2026-06-09 21:19:41.896 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 22.7454 ms
+2026-06-09 21:19:43.800 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2909 ms
+2026-06-09 21:19:43.804 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1266 ms
+2026-06-09 21:19:43.821 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-09 21:19:43.821 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-09 21:19:43.822 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 17.0642 ms
+2026-06-09 21:19:43.822 +02:00 [INF] HTTP GET /api/friends responded 200 in 20.4294 ms
+2026-06-09 21:19:45.571 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3775 ms
+2026-06-09 21:19:45.576 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 21:19:45.577 +02:00 [INF] HTTP GET /api/games responded 200 in 4.4998 ms
+2026-06-09 22:17:53.140 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:17:53.184 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 7.9068 ms
+2026-06-09 22:17:53.264 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:17:53.295 +02:00 [INF] HTTP GET /api/games responded 200 in 103.5266 ms
+2026-06-09 22:18:05.315 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.3949 ms
+2026-06-09 22:18:05.383 +02:00 [INF] HTTP GET /api/games/library responded 200 in 67.3426 ms
+2026-06-09 22:18:06.978 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.2956 ms
+2026-06-09 22:18:07.040 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 60.3423 ms
+2026-06-09 22:18:07.045 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0641 ms
+2026-06-09 22:18:07.068 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 22.2445 ms
+2026-06-09 22:18:07.425 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0820 ms
+2026-06-09 22:18:07.426 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0648 ms
+2026-06-09 22:18:07.434 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-09 22:18:07.434 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-09 22:18:07.435 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 7.7208 ms
+2026-06-09 22:18:07.435 +02:00 [INF] HTTP GET /api/friends responded 200 in 9.5802 ms
+2026-06-09 22:18:32.664 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1295 ms
+2026-06-09 22:18:32.997 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-09 22:18:32.997 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 332.5073 ms
+2026-06-09 22:18:33.081 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0514 ms
+2026-06-09 22:18:33.083 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:18:33.084 +02:00 [INF] HTTP GET /api/games responded 200 in 1.9532 ms
+2026-06-09 22:18:42.425 +02:00 [INF] HTTP OPTIONS /api/games/1/buy responded 204 in 0.3543 ms
+2026-06-09 22:18:42.461 +02:00 [INF] HTTP POST /api/games/1/buy responded 400 in 33.0443 ms
+2026-06-09 22:18:44.436 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.1614 ms
+2026-06-09 22:18:44.442 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 5.2029 ms
+2026-06-09 22:18:44.456 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0675 ms
+2026-06-09 22:18:44.457 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 0.9797 ms
+2026-06-09 22:18:46.033 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2983 ms
+2026-06-09 22:18:46.034 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1546 ms
+2026-06-09 22:18:46.036 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-09 22:18:46.037 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.4697 ms
+2026-06-09 22:18:46.038 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-09 22:18:46.038 +02:00 [INF] HTTP GET /api/friends responded 200 in 4.2828 ms
+2026-06-09 22:18:47.268 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 3.6650 ms
+2026-06-09 22:18:47.285 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 3.0876 ms
+2026-06-09 22:18:47.833 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3430 ms
+2026-06-09 22:18:47.837 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:18:47.838 +02:00 [INF] HTTP GET /api/games responded 200 in 3.5365 ms
+2026-06-09 22:21:13.851 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:21:13.889 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 6.1447 ms
+2026-06-09 22:21:13.961 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:21:13.989 +02:00 [INF] HTTP GET /api/games responded 200 in 93.2414 ms
+2026-06-09 22:24:09.373 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.0215 ms
+2026-06-09 22:24:09.749 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-09 22:24:09.750 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 375.8368 ms
+2026-06-09 22:24:09.856 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0701 ms
+2026-06-09 22:24:09.859 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:24:09.859 +02:00 [INF] HTTP GET /api/games responded 200 in 2.9728 ms
+2026-06-09 22:24:17.578 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.2483 ms
+2026-06-09 22:24:17.636 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 56.3872 ms
+2026-06-09 22:24:17.641 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0819 ms
+2026-06-09 22:24:17.665 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 23.8305 ms
+2026-06-09 22:24:20.499 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1511 ms
+2026-06-09 22:24:20.530 +02:00 [INF] HTTP GET /api/games/library responded 200 in 30.1728 ms
+2026-06-09 22:24:21.318 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2239 ms
+2026-06-09 22:24:21.323 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:24:21.323 +02:00 [INF] HTTP GET /api/games responded 200 in 3.4987 ms
+2026-06-09 22:24:22.952 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2036 ms
+2026-06-09 22:24:22.953 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1808 ms
+2026-06-09 22:24:22.970 +02:00 [INF] GET /api/friends/requests — userId=1, 0 oczekujących
+2026-06-09 22:24:22.971 +02:00 [INF] GET /api/friends — userId=1, 0 znajomych
+2026-06-09 22:24:22.971 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 16.8169 ms
+2026-06-09 22:24:22.971 +02:00 [INF] HTTP GET /api/friends responded 200 in 18.1635 ms
+2026-06-09 22:24:24.337 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.3204 ms
+2026-06-09 22:24:24.345 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 6.3475 ms
+2026-06-09 22:24:24.353 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1389 ms
+2026-06-09 22:24:24.358 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 3.3776 ms
+2026-06-09 22:24:24.854 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:24:24.855 +02:00 [INF] HTTP GET /api/games responded 200 in 3.9303 ms
+2026-06-09 22:24:26.141 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.7015 ms
+2026-06-09 22:24:26.146 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.5608 ms
+2026-06-09 22:24:27.665 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2781 ms
+2026-06-09 22:24:27.670 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:24:27.671 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6030 ms
+2026-06-09 22:28:09.173 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3679 ms
+2026-06-09 22:28:09.180 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:28:09.181 +02:00 [INF] HTTP GET /api/games responded 200 in 5.8840 ms
+2026-06-09 22:28:18.006 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1436 ms
+2026-06-09 22:28:18.020 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:28:18.021 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 14.8307 ms
+2026-06-09 22:28:18.121 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1258 ms
+2026-06-09 22:28:18.123 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:28:18.123 +02:00 [INF] HTTP GET /api/games responded 200 in 1.4940 ms
+2026-06-09 22:28:34.914 +02:00 [INF] HTTP OPTIONS /api/admin/users/4/block responded 204 in 0.3105 ms
+2026-06-09 22:28:34.975 +02:00 [INF] Admin 1 zablokował konto userId=4
+2026-06-09 22:28:34.976 +02:00 [INF] HTTP PATCH /api/admin/users/4/block responded 200 in 59.7059 ms
+2026-06-09 22:28:36.608 +02:00 [INF] Admin 1 odblokował konto userId=4
+2026-06-09 22:28:36.608 +02:00 [INF] HTTP PATCH /api/admin/users/4/block responded 200 in 5.7291 ms
+2026-06-09 22:28:37.750 +02:00 [INF] Admin 1 zablokował konto userId=4
+2026-06-09 22:28:37.750 +02:00 [INF] HTTP PATCH /api/admin/users/4/block responded 200 in 5.2059 ms
+2026-06-09 22:28:39.706 +02:00 [INF] HTTP OPTIONS /api/admin/users/5/block responded 204 in 0.1150 ms
+2026-06-09 22:28:39.713 +02:00 [INF] Admin 1 zablokował konto userId=5
+2026-06-09 22:28:39.713 +02:00 [INF] HTTP PATCH /api/admin/users/5/block responded 200 in 5.3992 ms
+2026-06-09 22:28:40.604 +02:00 [INF] Admin 1 odblokował konto userId=5
+2026-06-09 22:28:40.604 +02:00 [INF] HTTP PATCH /api/admin/users/5/block responded 200 in 5.3798 ms
+2026-06-09 22:29:07.357 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0743 ms
+2026-06-09 22:29:07.390 +02:00 [INF] Admin zaktualizował grę Id=1
+2026-06-09 22:29:07.390 +02:00 [INF] HTTP PUT /api/games/1 responded 204 in 31.6539 ms
+2026-06-09 22:29:07.394 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0314 ms
+2026-06-09 22:29:07.395 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:29:07.396 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9125 ms
+2026-06-09 22:35:18.882 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 22:35:18.928 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 8.5085 ms
+2026-06-09 22:35:19.009 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:35:19.042 +02:00 [INF] HTTP GET /api/games responded 200 in 105.6968 ms
+2026-06-09 22:35:50.023 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 1.0940 ms
+2026-06-09 22:35:50.060 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:35:50.062 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 36.7869 ms
+2026-06-09 22:35:50.146 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1030 ms
+2026-06-09 22:35:50.156 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:35:50.157 +02:00 [INF] HTTP GET /api/games responded 200 in 10.0938 ms
+2026-06-09 22:36:32.543 +02:00 [INF] HTTP OPTIONS /api/games/4 responded 204 in 0.1291 ms
+2026-06-09 22:36:32.639 +02:00 [INF] Admin zaktualizował grę Id=4
+2026-06-09 22:36:32.639 +02:00 [INF] HTTP PUT /api/games/4 responded 204 in 94.4740 ms
+2026-06-09 22:36:32.650 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0617 ms
+2026-06-09 22:36:32.652 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:36:32.652 +02:00 [INF] HTTP GET /api/games responded 200 in 1.1905 ms
+2026-06-09 22:36:57.723 +02:00 [INF] HTTP OPTIONS /api/games/3 responded 204 in 0.2137 ms
+2026-06-09 22:36:57.730 +02:00 [INF] Admin zaktualizował grę Id=3
+2026-06-09 22:36:57.730 +02:00 [INF] HTTP PUT /api/games/3 responded 204 in 5.2091 ms
+2026-06-09 22:36:57.745 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1630 ms
+2026-06-09 22:36:57.748 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:36:57.749 +02:00 [INF] HTTP GET /api/games responded 200 in 2.8292 ms
+2026-06-09 22:37:25.346 +02:00 [INF] HTTP OPTIONS /api/games/5 responded 204 in 0.2485 ms
+2026-06-09 22:37:25.352 +02:00 [INF] Admin zaktualizował grę Id=5
+2026-06-09 22:37:25.352 +02:00 [INF] HTTP PUT /api/games/5 responded 204 in 4.9350 ms
+2026-06-09 22:37:25.366 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1538 ms
+2026-06-09 22:37:25.369 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:37:25.370 +02:00 [INF] HTTP GET /api/games responded 200 in 2.7056 ms
+2026-06-09 22:37:56.804 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.1416 ms
+2026-06-09 22:37:56.810 +02:00 [INF] Admin zaktualizował grę Id=2
+2026-06-09 22:37:56.810 +02:00 [INF] HTTP PUT /api/games/2 responded 204 in 4.2064 ms
+2026-06-09 22:37:56.830 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.2708 ms
+2026-06-09 22:37:56.833 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:37:56.833 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2808 ms
+2026-06-09 22:38:02.473 +02:00 [INF] HTTP OPTIONS /api/games/3 responded 204 in 0.3091 ms
+2026-06-09 22:38:02.476 +02:00 [INF] Admin zaktualizował grę Id=3
+2026-06-09 22:38:02.476 +02:00 [INF] HTTP PUT /api/games/3 responded 204 in 2.6705 ms
+2026-06-09 22:38:02.490 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1008 ms
+2026-06-09 22:38:02.492 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:38:02.493 +02:00 [INF] HTTP GET /api/games responded 200 in 2.0724 ms
+2026-06-09 22:38:08.661 +02:00 [INF] HTTP OPTIONS /api/games/4 responded 204 in 0.2655 ms
+2026-06-09 22:38:08.666 +02:00 [INF] Admin zaktualizował grę Id=4
+2026-06-09 22:38:08.666 +02:00 [INF] HTTP PUT /api/games/4 responded 204 in 3.1736 ms
+2026-06-09 22:38:08.681 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0455 ms
+2026-06-09 22:38:08.683 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:38:08.683 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0693 ms
+2026-06-09 22:38:39.499 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1336 ms
+2026-06-09 22:38:39.504 +02:00 [INF] Admin zaktualizował grę Id=1
+2026-06-09 22:38:39.504 +02:00 [INF] HTTP PUT /api/games/1 responded 204 in 3.4383 ms
+2026-06-09 22:38:39.519 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0601 ms
+2026-06-09 22:38:39.520 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:38:39.520 +02:00 [INF] HTTP GET /api/games responded 200 in 0.9468 ms
+2026-06-09 22:38:42.793 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.2192 ms
+2026-06-09 22:38:42.833 +02:00 [INF] HTTP GET /api/games/library responded 200 in 38.8006 ms
+2026-06-09 22:38:43.950 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:38:43.951 +02:00 [INF] HTTP GET /api/games responded 200 in 3.6355 ms
+2026-06-09 22:38:45.734 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1297 ms
+2026-06-09 22:38:45.738 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:38:45.738 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 2.8608 ms
+2026-06-09 22:38:45.784 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0673 ms
+2026-06-09 22:38:45.787 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:38:45.787 +02:00 [INF] HTTP GET /api/games responded 200 in 2.5159 ms
+2026-06-09 22:39:00.956 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.1434 ms
+2026-06-09 22:39:01.284 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-09 22:39:01.285 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 327.9534 ms
+2026-06-09 22:39:01.375 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0315 ms
+2026-06-09 22:39:01.376 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:39:01.376 +02:00 [INF] HTTP GET /api/games responded 200 in 0.8028 ms
+2026-06-09 22:39:02.951 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1400 ms
+2026-06-09 22:39:02.955 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:39:02.955 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 2.7240 ms
+2026-06-09 22:39:03.060 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:39:03.061 +02:00 [INF] HTTP GET /api/games responded 200 in 1.9825 ms
+2026-06-09 22:39:11.892 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.6280 ms
+2026-06-09 22:39:11.898 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:39:11.898 +02:00 [INF] HTTP GET /api/games responded 200 in 3.1620 ms
+2026-06-09 22:39:12.883 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1123 ms
+2026-06-09 22:39:12.887 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:39:12.888 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 2.6924 ms
+2026-06-09 22:39:12.935 +02:00 [INF] GET /api/games — zwrócono 5 wyników
+2026-06-09 22:39:12.935 +02:00 [INF] HTTP GET /api/games responded 200 in 0.8942 ms
+2026-06-09 22:39:16.836 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1084 ms
+2026-06-09 22:39:16.847 +02:00 [INF] Admin ukrył grę 'Cyber Odyssey' Id=1 (soft-delete)
+2026-06-09 22:39:16.848 +02:00 [INF] HTTP DELETE /api/games/1 responded 204 in 9.9073 ms
+2026-06-09 22:39:16.877 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:39:16.877 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2919 ms
+2026-06-09 22:39:29.472 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1066 ms
+2026-06-09 22:39:29.476 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:39:29.477 +02:00 [INF] HTTP GET /api/games responded 200 in 3.4367 ms
+2026-06-09 22:39:33.536 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.1117 ms
+2026-06-09 22:39:33.539 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 22:39:33.539 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 2.7192 ms
+2026-06-09 22:39:33.585 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:39:33.585 +02:00 [INF] HTTP GET /api/games responded 200 in 1.4930 ms
+2026-06-09 22:39:43.164 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1105 ms
+2026-06-09 22:39:43.168 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.0198 ms
+2026-06-09 22:39:44.388 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.1461 ms
+2026-06-09 22:39:44.392 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:39:44.392 +02:00 [INF] HTTP GET /api/games responded 200 in 2.2822 ms
+2026-06-09 22:43:31.067 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.5561 ms
+2026-06-09 22:43:31.075 +02:00 [INF] HTTP GET /api/games/library responded 200 in 5.3954 ms
+2026-06-09 22:43:32.943 +02:00 [INF] HTTP GET /api/games/library responded 200 in 0.9351 ms
+2026-06-09 22:43:34.212 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0811 ms
+2026-06-09 22:43:34.220 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:43:34.221 +02:00 [INF] HTTP GET /api/games responded 200 in 4.5807 ms
+2026-06-09 22:43:39.123 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1536 ms
+2026-06-09 22:43:39.127 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.4321 ms
+2026-06-09 22:44:01.267 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0720 ms
+2026-06-09 22:44:01.499 +02:00 [INF] User logged in: alice@gamehub.com
+2026-06-09 22:44:01.499 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 230.6739 ms
+2026-06-09 22:44:01.591 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0249 ms
+2026-06-09 22:44:01.592 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:44:01.592 +02:00 [INF] HTTP GET /api/games responded 200 in 0.7251 ms
+2026-06-09 22:44:03.544 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1375 ms
+2026-06-09 22:44:03.549 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.0106 ms
+2026-06-09 22:44:06.041 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:44:06.041 +02:00 [INF] HTTP GET /api/games responded 200 in 2.4893 ms
+2026-06-09 22:44:07.573 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.9301 ms
+2026-06-09 22:44:09.576 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1006 ms
+2026-06-09 22:44:09.579 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1252 ms
+2026-06-09 22:44:09.613 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:44:09.613 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 33.7022 ms
+2026-06-09 22:44:09.615 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:44:09.615 +02:00 [INF] HTTP GET /api/friends responded 200 in 37.8659 ms
+2026-06-09 22:44:13.239 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.2316 ms
+2026-06-09 22:44:13.263 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 23.5551 ms
+2026-06-09 22:44:18.318 +02:00 [INF] HTTP OPTIONS /api/games/5 responded 204 in 0.1229 ms
+2026-06-09 22:44:18.332 +02:00 [INF] GET /api/games/5 — 'Racing Legends', średnia ocen: brak
+2026-06-09 22:44:18.332 +02:00 [INF] HTTP GET /api/games/5 responded 200 in 13.7566 ms
+2026-06-09 22:44:18.340 +02:00 [INF] HTTP OPTIONS /api/games/5/reviews responded 204 in 0.0640 ms
+2026-06-09 22:44:18.353 +02:00 [INF] GET /api/games/5/reviews — zwrócono 0 recenzji
+2026-06-09 22:44:18.353 +02:00 [INF] HTTP GET /api/games/5/reviews responded 200 in 12.9686 ms
+2026-06-09 22:49:43.894 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.5461 ms
+2026-06-09 22:49:43.901 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:49:43.902 +02:00 [INF] HTTP GET /api/games responded 200 in 6.4053 ms
+2026-06-09 22:49:45.273 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1597 ms
+2026-06-09 22:49:45.278 +02:00 [INF] HTTP GET /api/games/library responded 200 in 4.3634 ms
+2026-06-09 22:49:47.353 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0861 ms
+2026-06-09 22:49:47.355 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0303 ms
+2026-06-09 22:49:47.357 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:49:47.358 +02:00 [INF] HTTP GET /api/friends responded 200 in 3.4944 ms
+2026-06-09 22:49:47.358 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:49:47.358 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.3101 ms
+2026-06-09 22:49:48.936 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.1152 ms
+2026-06-09 22:49:48.940 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 3.4238 ms
+2026-06-09 22:49:50.987 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0674 ms
+2026-06-09 22:49:50.990 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:49:50.992 +02:00 [INF] HTTP GET /api/games/1 responded 404 in 4.3533 ms
+2026-06-09 22:49:55.419 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1168 ms
+2026-06-09 22:49:55.424 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.8340 ms
+2026-06-09 22:50:14.734 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.3282 ms
+2026-06-09 22:50:14.734 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0159 ms
+2026-06-09 22:50:14.736 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:50:14.736 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:50:14.736 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.2779 ms
+2026-06-09 22:50:14.736 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.2787 ms
+2026-06-09 22:50:15.825 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.0696 ms
+2026-06-09 22:50:15.828 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 2.1590 ms
+2026-06-09 22:50:17.038 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0894 ms
+2026-06-09 22:50:17.042 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:50:17.042 +02:00 [INF] HTTP GET /api/games/1 responded 404 in 2.9214 ms
+2026-06-09 22:50:18.456 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:50:18.456 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:50:18.456 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.2363 ms
+2026-06-09 22:50:18.456 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.6296 ms
+2026-06-09 22:50:20.309 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.1474 ms
+2026-06-09 22:50:20.340 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 29.8633 ms
+2026-06-09 22:50:20.348 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0674 ms
+2026-06-09 22:50:20.364 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 14.8285 ms
+2026-06-09 22:50:20.668 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0260 ms
+2026-06-09 22:50:20.669 +02:00 [INF] HTTP GET /api/games/library responded 200 in 0.6682 ms
+2026-06-09 22:50:21.831 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.0970 ms
+2026-06-09 22:50:21.838 +02:00 [INF] GET /api/games/2 — 'Shadow Tactics', średnia ocen: 8,00
+2026-06-09 22:50:21.841 +02:00 [INF] HTTP GET /api/games/2 responded 200 in 9.2747 ms
+2026-06-09 22:50:21.849 +02:00 [INF] HTTP OPTIONS /api/games/2/reviews responded 204 in 0.0333 ms
+2026-06-09 22:50:21.851 +02:00 [INF] GET /api/games/2/reviews — zwrócono 1 recenzji
+2026-06-09 22:50:21.852 +02:00 [INF] HTTP GET /api/games/2/reviews responded 200 in 2.8592 ms
+2026-06-09 22:51:37.666 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.3888 ms
+2026-06-09 22:51:37.673 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:51:37.674 +02:00 [INF] HTTP GET /api/games responded 200 in 6.3105 ms
+2026-06-09 22:51:41.553 +02:00 [INF] HTTP OPTIONS /api/games/5/buy responded 204 in 0.2048 ms
+2026-06-09 22:51:41.570 +02:00 [INF] HTTP POST /api/games/5/buy responded 400 in 15.9305 ms
+2026-06-09 22:51:42.606 +02:00 [INF] HTTP OPTIONS /api/games/2/buy responded 204 in 0.0865 ms
+2026-06-09 22:51:42.611 +02:00 [INF] HTTP POST /api/games/2/buy responded 400 in 3.3563 ms
+2026-06-09 22:51:43.728 +02:00 [INF] HTTP OPTIONS /api/games/4/buy responded 204 in 0.0748 ms
+2026-06-09 22:51:43.731 +02:00 [INF] HTTP POST /api/games/4/buy responded 400 in 1.7513 ms
+2026-06-09 22:51:45.568 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1007 ms
+2026-06-09 22:51:45.571 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.4462 ms
+2026-06-09 22:51:51.703 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.0508 ms
+2026-06-09 22:51:51.705 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:51:51.706 +02:00 [INF] HTTP GET /api/games/1 responded 404 in 2.3460 ms
+2026-06-09 22:51:53.778 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0590 ms
+2026-06-09 22:51:53.781 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.4968 ms
+2026-06-09 22:51:55.615 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.1225 ms
+2026-06-09 22:51:55.619 +02:00 [INF] GET /api/games/2 — 'Shadow Tactics', średnia ocen: 8,00
+2026-06-09 22:51:55.619 +02:00 [INF] HTTP GET /api/games/2 responded 200 in 3.0935 ms
+2026-06-09 22:51:55.626 +02:00 [INF] HTTP OPTIONS /api/games/2/reviews responded 204 in 0.0746 ms
+2026-06-09 22:51:55.630 +02:00 [INF] GET /api/games/2/reviews — zwrócono 1 recenzji
+2026-06-09 22:51:55.630 +02:00 [INF] HTTP GET /api/games/2/reviews responded 200 in 2.9715 ms
+2026-06-09 22:52:03.002 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0798 ms
+2026-06-09 22:52:03.007 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.9255 ms
+2026-06-09 22:52:04.336 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1290 ms
+2026-06-09 22:52:04.336 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1290 ms
+2026-06-09 22:52:04.339 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:52:04.340 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 2.1393 ms
+2026-06-09 22:52:04.340 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:52:04.340 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.6995 ms
+2026-06-09 22:52:10.712 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.0470 ms
+2026-06-09 22:52:10.714 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 1.4445 ms
+2026-06-09 22:52:16.512 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.1071 ms
+2026-06-09 22:52:16.517 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 2.6050 ms
+2026-06-09 22:52:16.527 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.1213 ms
+2026-06-09 22:52:16.530 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.1940 ms
+2026-06-09 22:53:09.134 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0803 ms
+2026-06-09 22:53:09.140 +02:00 [INF] HTTP GET /api/games/library responded 200 in 3.4192 ms
+2026-06-09 22:53:12.405 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.1344 ms
+2026-06-09 22:53:12.408 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 22:53:12.409 +02:00 [INF] HTTP GET /api/games/1 responded 404 in 3.0085 ms
+2026-06-09 22:53:13.417 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.7502 ms
+2026-06-09 22:53:14.597 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.0910 ms
+2026-06-09 22:53:14.601 +02:00 [INF] GET /api/games/2 — 'Shadow Tactics', średnia ocen: 8,00
+2026-06-09 22:53:14.601 +02:00 [INF] HTTP GET /api/games/2 responded 200 in 2.7541 ms
+2026-06-09 22:53:14.610 +02:00 [INF] HTTP OPTIONS /api/games/2/reviews responded 204 in 0.0826 ms
+2026-06-09 22:53:14.613 +02:00 [INF] GET /api/games/2/reviews — zwrócono 1 recenzji
+2026-06-09 22:53:14.613 +02:00 [INF] HTTP GET /api/games/2/reviews responded 200 in 2.3843 ms
+2026-06-09 22:55:27.146 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0905 ms
+2026-06-09 22:55:27.149 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:55:27.149 +02:00 [INF] HTTP GET /api/games responded 200 in 1.7091 ms
+2026-06-09 22:57:58.682 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0745 ms
+2026-06-09 22:57:58.684 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.4392 ms
+2026-06-09 22:58:09.422 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1551 ms
+2026-06-09 22:58:09.425 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.1408 ms
+2026-06-09 22:58:30.430 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.1227 ms
+2026-06-09 22:58:30.432 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0426 ms
+2026-06-09 22:58:30.434 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:58:30.434 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.6715 ms
+2026-06-09 22:58:30.435 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:58:30.436 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.9307 ms
+2026-06-09 22:58:34.295 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0817 ms
+2026-06-09 22:58:34.298 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:58:34.299 +02:00 [INF] HTTP GET /api/games responded 200 in 1.8119 ms
+2026-06-09 22:58:35.053 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.1382 ms
+2026-06-09 22:58:35.058 +02:00 [INF] HTTP GET /api/games/library responded 200 in 2.9348 ms
+2026-06-09 22:58:35.924 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.0791 ms
+2026-06-09 22:58:35.928 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 2.1714 ms
+2026-06-09 22:58:35.938 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0825 ms
+2026-06-09 22:58:35.941 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 2.4018 ms
+2026-06-09 22:58:39.052 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0739 ms
+2026-06-09 22:58:39.052 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0214 ms
+2026-06-09 22:58:39.055 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:58:39.056 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:58:39.056 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.9094 ms
+2026-06-09 22:58:39.056 +02:00 [INF] HTTP GET /api/friends responded 200 in 2.0047 ms
+2026-06-09 22:58:42.380 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0774 ms
+2026-06-09 22:58:42.383 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 22:58:42.383 +02:00 [INF] HTTP GET /api/games responded 200 in 1.9424 ms
+2026-06-09 22:58:43.080 +02:00 [INF] HTTP OPTIONS /api/games/library responded 204 in 0.0875 ms
+2026-06-09 22:58:43.083 +02:00 [INF] HTTP GET /api/games/library responded 200 in 1.9269 ms
+2026-06-09 22:58:47.059 +02:00 [INF] HTTP OPTIONS /api/auth/profile responded 204 in 0.0784 ms
+2026-06-09 22:58:47.063 +02:00 [INF] HTTP GET /api/auth/profile responded 200 in 2.0653 ms
+2026-06-09 22:58:47.074 +02:00 [INF] HTTP OPTIONS /api/wallet/history responded 204 in 0.0920 ms
+2026-06-09 22:58:47.076 +02:00 [INF] HTTP GET /api/wallet/history responded 200 in 1.8879 ms
+2026-06-09 22:58:47.736 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.0803 ms
+2026-06-09 22:58:47.737 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0308 ms
+2026-06-09 22:58:47.739 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 22:58:47.739 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 22:58:47.739 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 1.6565 ms
+2026-06-09 22:58:47.739 +02:00 [INF] HTTP GET /api/friends responded 200 in 1.8757 ms
+2026-06-09 23:51:05.511 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-06-09 23:51:05.576 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 16.2962 ms
+2026-06-09 23:51:05.686 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 23:51:05.728 +02:00 [INF] HTTP GET /api/games responded 200 in 142.7055 ms
+2026-06-09 23:51:11.445 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.8650 ms
+2026-06-09 23:51:11.446 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.1958 ms
+2026-06-09 23:51:11.507 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 23:51:11.508 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 60.9291 ms
+2026-06-09 23:51:11.509 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 23:51:11.510 +02:00 [INF] HTTP GET /api/friends responded 200 in 62.5047 ms
+2026-06-09 23:51:13.519 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.4040 ms
+2026-06-09 23:51:13.571 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 50.1107 ms
+2026-06-09 23:51:15.749 +02:00 [INF] HTTP OPTIONS /api/games/1 responded 204 in 0.2143 ms
+2026-06-09 23:51:15.796 +02:00 [WRN] GET /api/games/1 — nie znaleziono gry
+2026-06-09 23:51:15.797 +02:00 [INF] HTTP GET /api/games/1 responded 404 in 47.1041 ms
+2026-06-09 23:51:18.417 +02:00 [INF] HTTP OPTIONS /api/friends responded 204 in 0.2623 ms
+2026-06-09 23:51:18.417 +02:00 [INF] HTTP OPTIONS /api/friends/requests responded 204 in 0.0385 ms
+2026-06-09 23:51:18.424 +02:00 [INF] GET /api/friends/requests — userId=2, 0 oczekujących
+2026-06-09 23:51:18.424 +02:00 [INF] GET /api/friends — userId=2, 2 znajomych
+2026-06-09 23:51:18.425 +02:00 [INF] HTTP GET /api/friends responded 200 in 6.5856 ms
+2026-06-09 23:51:18.425 +02:00 [INF] HTTP GET /api/friends/requests responded 200 in 6.6335 ms
+2026-06-09 23:51:20.372 +02:00 [INF] HTTP OPTIONS /api/users/3/library responded 204 in 0.3562 ms
+2026-06-09 23:51:20.378 +02:00 [INF] HTTP GET /api/users/3/library responded 200 in 4.6343 ms
+2026-06-09 23:51:21.579 +02:00 [INF] HTTP OPTIONS /api/games/2 responded 204 in 0.1935 ms
+2026-06-09 23:51:21.591 +02:00 [INF] GET /api/games/2 — 'Shadow Tactics', średnia ocen: 8,00
+2026-06-09 23:51:21.593 +02:00 [INF] HTTP GET /api/games/2 responded 200 in 13.2930 ms
+2026-06-09 23:51:21.598 +02:00 [INF] HTTP OPTIONS /api/games/2/reviews responded 204 in 0.0565 ms
+2026-06-09 23:51:21.605 +02:00 [INF] GET /api/games/2/reviews — zwrócono 1 recenzji
+2026-06-09 23:51:21.606 +02:00 [INF] HTTP GET /api/games/2/reviews responded 200 in 7.6195 ms
+2026-06-09 23:52:22.367 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.3825 ms
+2026-06-09 23:52:22.694 +02:00 [INF] User logged in: admin@gamehub.com
+2026-06-09 23:52:22.694 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 326.2156 ms
+2026-06-09 23:52:22.766 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0477 ms
+2026-06-09 23:52:22.767 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 23:52:22.768 +02:00 [INF] HTTP GET /api/games responded 200 in 1.0083 ms
+2026-06-09 23:52:25.345 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.2554 ms
+2026-06-09 23:52:25.359 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 23:52:25.362 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 15.7368 ms
+2026-06-09 23:52:25.459 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 23:52:25.460 +02:00 [INF] HTTP GET /api/games responded 200 in 3.0739 ms
+2026-06-09 23:58:44.111 +02:00 [INF] HTTP OPTIONS /api/admin/users responded 204 in 0.4951 ms
+2026-06-09 23:58:44.118 +02:00 [INF] GET /api/admin/users — zwrócono 5 użytkowników
+2026-06-09 23:58:44.119 +02:00 [INF] HTTP GET /api/admin/users responded 200 in 5.8455 ms
+2026-06-09 23:58:44.282 +02:00 [INF] HTTP OPTIONS /api/games responded 204 in 0.0779 ms
+2026-06-09 23:58:44.284 +02:00 [INF] GET /api/games — zwrócono 4 wyników
+2026-06-09 23:58:44.284 +02:00 [INF] HTTP GET /api/games responded 200 in 1.9933 ms
