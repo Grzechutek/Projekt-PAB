@@ -14,7 +14,16 @@
     <MudAppBar Elevation="1" Color="Color.Surface" Fixed="true">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggle" />
         <MudSpacer />
-        <MudTextField T="string" Placeholder="Szukaj gier..." Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Margin="Margin.Dense" Class="mr-6" Style="max-width: 400px; background-color: rgba(0,0,0,0.2);" />
+        <MudTextField T="string"
+                      Placeholder="Szukaj gier..."
+                      Variant="Variant.Outlined"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      Margin="Margin.Dense"
+                      Class="mr-6"
+                      Style="max-width: 400px; background-color: rgba(0,0,0,0.2);"
+                      Value="_searchQuery"
+                      ValueChanged="@(val => { _searchQuery = val; StateHasChanged(); })" />
 
         @* UWAGA: Context="auth" zapobiega błędom InvalidCastException *@
         <AuthorizeView Context="auth">
@@ -82,12 +91,15 @@
     @* GŁÓWNA ZAWARTOŚĆ *@
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pa-6">
-            @Body
+            <CascadingValue Value="_searchQuery" Name="SearchQuery">
+                @Body
+            </CascadingValue>
         </MudContainer>
     </MudMainContent>
 </MudLayout>
 
 @code {
+    private string _searchQuery = string.Empty;
     private bool _drawerOpen = true;
     private void DrawerToggle() => _drawerOpen = !_drawerOpen;
     private async Task Logout()

@@ -1,8 +1,8 @@
-﻿# GameHub — Architektura i inicjalizacja
+# GameHub — Architektura i inicjalizacja
 
 ## Struktura solution
 
-```
+```         
 GameHub.sln
 └── src/
     ├── GameHub.SharedKernel/      ← BaseEntity, wspólne typy
@@ -16,7 +16,7 @@ GameHub.sln
 
 ## Graf zależności
 
-```
+```         
 SharedKernel
     └── Domain          (ref: SharedKernel)
           └── Application     (ref: Domain)
@@ -29,7 +29,7 @@ BlazorWASM              (ref: SharedKernel)   ← komunikuje się z WebAPI przez
 
 ## Komendy CLI — uruchom raz po klonowaniu
 
-```bash
+``` bash
 # 0. Upewnij się, że masz .NET 8 SDK
 dotnet --version   # wymagane: 8.x.x
 
@@ -47,7 +47,7 @@ dotnet run --project src/GameHub.WebAPI
 ## Pliki do wklejenia po inicjalizacji
 
 | Plik | Docelowa lokalizacja |
-|------|---------------------|
+|----|----|
 | `BaseEntity.cs` | `src/GameHub.SharedKernel/` |
 | `User.cs` | `src/GameHub.Domain/Entities/` |
 | `Game.cs` | `src/GameHub.Domain/Entities/` |
@@ -64,7 +64,7 @@ dotnet run --project src/GameHub.WebAPI
 
 ## Następne kroki (Infrastructure)
 
-```csharp
+``` csharp
 // 1. Dodaj AppDbContext w GameHub.Infrastructure
 public class AppDbContext : DbContext
 {
@@ -86,7 +86,7 @@ dotnet ef database update --project src/GameHub.Infrastructure \
 
 ## Logi — gdzie szukać
 
-```
+```         
 src/GameHub.WebAPI/logs/
     gamehub-YYYY-MM-DD.log       ← wszystkie logi (Info+)
     errors-YYYY-MM-DD.log        ← tylko Warning/Error/Fatal

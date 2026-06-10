@@ -97,7 +97,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowBlazorWasm",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5191") // Zmieńcie port!
+            policy.WithOrigins("https://localhost:7282", "http://localhost:5191") // Zmieńcie port!
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });

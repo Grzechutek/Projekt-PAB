@@ -61,4 +61,19 @@ public class CustomAuthStateProvider : AuthenticationStateProvider
         }
         return Convert.FromBase64String(base64);
     }
+    public async Task UpdateBalanceClaim(decimal newBalance)
+    {
+        var token = await _localStorage.GetItemAsync<string>("authToken");
+        if (string.IsNullOrWhiteSpace(token)) return;
+
+        var claims = ParseClaimsFromJwt(token).ToList();
+
+        // Usuwamy stary claim salda
+        claims.RemoveAll(c => c.Type == "WalletBalance" || c.Type == "balance");
+        claims.Add(new Claim("WalletBalance", newBalance.ToString("0.00")));
+
+        var authenticatedUser = new ClaimsPrincipal(new ClaimsIdentity(claims, "jwt"));
+        var authState = Task.FromResult(new AuthenticationState(authenticatedUser));
+        NotifyAuthenticationStateChanged(authState);
+    }
 }

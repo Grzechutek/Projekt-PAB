@@ -33,7 +33,9 @@
     {
         @* SIATKA POSIADANYCH GIER *@
         <MudGrid>
-            @foreach (var game in _myGames)
+            @foreach (var game in _myGames.Where(g =>
+    string.IsNullOrEmpty(SearchQuery) ||
+    g.Title.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
                 <MudItem xs="12" sm="6" md="4" lg="3">
                     <MudCard Elevation="4" Style="background-color: #1e1e2d; color: white; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
@@ -67,6 +69,8 @@
 </MudContainer>
 
 @code {
+    [CascadingParameter(Name = "SearchQuery")]
+    public string SearchQuery { get; set; } = string.Empty;
     private List<LibraryGameDto>? _myGames;
     private bool _isLoading = true;
 

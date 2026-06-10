@@ -2,8 +2,10 @@
 @attribute [Microsoft.AspNetCore.Authorization.Authorize]
 
 @using System.Net.Http.Json
+@using GameHub.BlazorWASM.Security
 @inject HttpClient Http
 @inject ISnackbar Snackbar
+@inject AuthenticationStateProvider AuthStateProvider
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-16">
     <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-6" Style="font-weight: bold;">Mój Profil</MudText>
@@ -140,7 +142,7 @@
             _profile = await Http.GetFromJsonAsync<UserProfileDto>("api/auth/profile");
             if (_profile != null)
             {
-                _currentBalance = _profile.Balance;
+                _currentBalance = _profile.WalletBalance; // ← było _profile.Balance
             }
             
             // Pobieramy historię transakcji z portfela
@@ -178,13 +180,15 @@
 
             if (response.IsSuccessStatusCode)
             {
-                Snackbar.Add($"Portfel zasilony kwotą {_topUpAmount.Value} PLN!", Severity.Success);
-                
-                // UWAGA JWT: Token nie aktualizuje się magicznie sam. Saldo na górnym pasku menu odświeży się po relogu.
-                Snackbar.Add("Uwaga: saldo na pasku nawigacji zaktualizuje się przy następnym logowaniu.", Severity.Info);
-                
+                var result = await response.Content.ReadFromJsonAsync<TopUpResponseDto>();
+
+                Snackbar.Add($"Portfel zasilony kwotą {_topUpAmount.Value} PLN!", Severity.Success); 
                 _topUpAmount = null;
-                await LoadProfileData(); // Odświeżamy tabelkę transakcji i stan na tej stronie
+
+                await LoadProfileData();// Odświeżamy tabelkę transakcji i stan na tej stronie
+
+                if (result != null)
+                    await ((CustomAuthStateProvider)AuthStateProvider).UpdateBalanceClaim(result.NewBalance);
             }
             else
             {
@@ -207,7 +211,7 @@
     {
         public string Username { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public decimal Balance { get; set; }
+        public decimal WalletBalance { get; set; }
     }
 
     public class TransactionHistoryDto
@@ -218,5 +222,10 @@
         public decimal Amount { get; set; }
         public string Type { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } 
+    }
+
+    public class TopUpResponseDto
+    {
+        public decimal NewBalance { get; set; }
     }
 }
